@@ -31,7 +31,7 @@ This is a capstone's source code for Software Development ITSS project
 >
 > #### Update
 > 
-> - Duy has to do User Interface by Screen Builder lst version for **ALL USE CASE** by hisself befor assigned deadline.
+> - Duy has to do User Interface by Screen Builder lst version for **ALL USE CASE** by himself befor assigned deadline.
 > - Giao has to do Subsystem design by herself before assigned deadline
 >
 
