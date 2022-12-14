@@ -13,6 +13,14 @@ This is a capstone's source code for Software Development ITSS project
 | Rent bike     | Phạm Thị Quỳnh Giao     |
 | Return bike   | Lê Thanh Giang          |
 
+### How to turn in
+- Step 1: Create a branch with syntax feature/use_case. Example: "feature/view_dock"
+- Step 2: Upload your work on that branch
+- Step 3: Pull lst code from main branch 
+- Step 4: Push your work on that branch
+- Step 5: Create pull request to main branch
+- Step 6: Announce to your's leader to review code and merge code. **DO NOT MERGE CODE BY YOURSELF**
+
 ### Phase 1
 
 > #### For phase 1, each individual have to do 
