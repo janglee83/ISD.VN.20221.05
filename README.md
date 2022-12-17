@@ -31,8 +31,8 @@ This is a capstone's source code for Software Development ITSS project
 >
 > #### Update
 > 
-> - Duy has to do User Interface by Screen Builder lst version for **ALL USE CASE** by himself befor assigned deadline.
-> - Giao has to do Subsystem design by herself before assigned deadline
+> - Duy has to do User Interface by Screen Builder lst version for **ALL USE CASE** by himself befor assigned deadline (22/12/2022)
+> - Giang has to do Design data modeling by himself before assigned deadline (22/12/2022)
 >
 
 **DEADLINE**: 18/12/2022
