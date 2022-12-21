@@ -6,12 +6,11 @@ This is a capstone's source code for Software Development ITSS project
 
 ### Devided Use Case's handler
 
-| Use Case      | Assigned person's name  |
-| :---          |    :---                 |
-| View dock     | Bùi Ngọc Duy            |
-| View bike     | Lê Thanh Giang          |
-| Rent bike     | Phạm Thị Quỳnh Giao     |
-| Return bike   | Lê Thanh Giang          |
+| Use Case        | Assigned person's name  |
+| :---            |    :---                 |
+| Bike info       | Bùi Ngọc Duy            |
+| Rent bike       | Phạm Thị Quỳnh Giao     |
+| Return bike     | Lê Thanh Giang          |
 
 ### How to turn in
 - Step 1: Create a branch with syntax feature/use_case. Example: "feature/view_dock"
@@ -31,8 +30,8 @@ This is a capstone's source code for Software Development ITSS project
 >
 > #### Update
 > 
-> - Duy has to do User Interface by Screen Builder lst version for **ALL USE CASE** by himself befor assigned deadline.
-> - Giao has to do Subsystem design by herself before assigned deadline
+> - Duy has to do User Interface by Screen Builder lst version for **ALL USE CASE** by himself befor assigned deadline (22/12/2022)
+> - Giang has to do Design data modeling by himself before assigned deadline (22/12/2022)
 >
 
 **DEADLINE**: 18/12/2022

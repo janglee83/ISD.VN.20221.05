@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ListView layoutX="13.0" layoutY="62.0" prefHeight="380.0" prefWidth="282.0" />
+      <Label layoutX="110.0" layoutY="24.0" text="Bike's Ìnomation" />
+      <Label layoutX="44.0" layoutY="69.0" text="Biển Số:" />
+      <Label layoutX="44.0" layoutY="130.0" text="Loại Xe:" />
+      <Label layoutX="55.0" layoutY="216.0" text="Pin:" />
+      <Label layoutX="15.0" layoutY="302.0" text="Thời gian sử dụng dự kiến:" />
+      <Label layoutX="209.0" layoutY="69.0" text="12AA456" />
+      <Label layoutX="212.0" layoutY="130.0" text="Xe Điện" />
+      <Label layoutX="223.0" layoutY="216.0" text="50%" />
+      <Label layoutX="223.0" layoutY="302.0" text="01:30" />
+   </children>
+</AnchorPane>
