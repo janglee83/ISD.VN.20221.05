@@ -8,7 +8,7 @@ This is a capstone's source code for Software Development ITSS project
 
 | Use Case        | Assigned person's name  |
 | :---            |    :---                 |
-| View bike info  | Bùi Ngọc Duy            |
+| Bike info       | Bùi Ngọc Duy            |
 | Rent bike       | Phạm Thị Quỳnh Giao     |
 | Return bike     | Lê Thanh Giang          |
 
