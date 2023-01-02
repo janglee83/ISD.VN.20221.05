@@ -26,6 +26,7 @@ This is a capstone's source code for Software Development ITSS project
 >
 > - Analysis Diagram for that's assigned use case.
 > - Update Interactionn Diagrams based on entity list and SRS
+> - Relationship Class Diagrams for that's assigned use case.
 >
 > #### Update
 > 
