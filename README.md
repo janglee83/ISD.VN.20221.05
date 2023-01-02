@@ -29,7 +29,7 @@ This is a capstone's source code for Software Development ITSS project
 >
 > #### Update
 > 
-> - Duy has to do User Interface by Screen Builder lst version for **ALL USE CASE** by himself befor assigned deadline
+> - Duy has to do **User Interface** by Screen Builder lst version for **ALL USE CASE** by himself befor assigned deadline
 > - Giang has to do **Design data modeling** and **Class diagram** by himself before assigned deadline
 > - Giao has to do **Subsystem design** for that's assigned use case by herself before assigned deadline
 >
