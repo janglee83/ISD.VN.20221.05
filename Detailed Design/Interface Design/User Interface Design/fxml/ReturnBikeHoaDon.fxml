@@ -19,25 +19,7 @@
             <Image url="@image/bike.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="home" fitHeight="53.0" fitWidth="61.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/home.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="homeLabel" layoutX="128.0" layoutY="61.0" prefHeight="17.0" prefWidth="51.0" text="Home" textAlignment="CENTER">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Label>
-      <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0">
-         <children>
-            <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/back.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0" />
       <Label layoutX="640.0" layoutY="6.0" text="Payment">
          <font>
             <Font size="48.0" />
