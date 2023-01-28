@@ -201,5 +201,7 @@
             </GridPane>
          </content>
       </ScrollPane>
+      <Button layoutX="1221.0" layoutY="15.0" mnemonicParsing="false" text="RentBike" />
+      <Button layoutX="1221.0" layoutY="53.0" mnemonicParsing="false" text="Return bike" />
    </children>
 </AnchorPane>

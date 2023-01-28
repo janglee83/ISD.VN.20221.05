@@ -99,7 +99,7 @@
                <children>
                   <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="D:\ITSS\image\xd.jpg" />
+                        <Image url="@image\xd.jpg" />
                      </image>
                   </ImageView>
                   <Button alignment="CENTER" layoutX="62.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xem " wrapText="true">

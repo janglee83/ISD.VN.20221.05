@@ -1,4 +1,6 @@
 import java.io.IOException;
+
+import controller.RentBikeController;
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;

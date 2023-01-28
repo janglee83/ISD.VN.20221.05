@@ -39,4 +39,7 @@ public class Configs {
 
 	public static final String DATABASE_PASSWORD = "123456";
 
+	// url for subsystem
+	public static final String URL = "url";
+
 }
