@@ -1,12 +1,7 @@
-package data_access_layer.databasae;
+package data_access_layer.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Date;
 import java.util.logging.Logger;
 
 import utlis.Configs;
@@ -28,12 +23,12 @@ public class database {
             // Setup the connection with the DB
             connect = DriverManager.getConnection("jdbc:mysql://localhost/" + Configs.DATABASE_NAME + "?" + "user=" + Configs.DATABASE_USER +"&password=" + Configs.DATABASE_PASSWORD);
 
-        } catch (Exception e) {
-            throw e;
-        } finally {
-            close();
+            //logger
+            LOGGER.info("Connect database successfully");
+        } catch (Exception exception) {
+            LOGGER.info(exception.getMessage());
         }
-
+        return connect;
     }
 
     // You need to close the resultSet
@@ -47,4 +42,7 @@ public class database {
         }
     }
 
+    public static void main(String[] args) {
+        database.getConnection();
+    }
 }

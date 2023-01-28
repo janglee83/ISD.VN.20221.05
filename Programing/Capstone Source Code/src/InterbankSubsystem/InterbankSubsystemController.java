@@ -1,5 +1,7 @@
 package InterbankSubsystem;
 
+import java.util.HashMap;
+
 import entity.transaction.Transaction;
 
 public class InterbankSubsystemController implements InterbankInterface {

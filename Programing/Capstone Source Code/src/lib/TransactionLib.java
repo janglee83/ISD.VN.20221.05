@@ -1,6 +1,11 @@
 package lib;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,11 +16,26 @@ public class TransactionLib {
 
 	private static Logger LOGGER = utlis.Helper.getLogger(utlis.Helper.class.getName());
 
-	public static HashMap<String, Object> processTransaction(HashMap<String, Object> body) {
-		//Start connect
-		HttpURLConnection connection = generateConnection(url, null, null);
+	public static String processTransaction(HashMap<String, Object> body) throws IOException {
+		// get payload
+		final String payload = utlis.Helper.convertHashmapWithIteration(body);
 
-		return null;
+		//Start connect
+		HttpURLConnection connection = generateConnection(utlis.Configs.URL, "PATCH", null);
+		Writer writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));
+		writer.write(payload);
+		writer.close();
+
+		BufferedReader bufferIn = utlis.Helper.handlerBuffer(connection);
+		StringBuilder response = new StringBuilder();
+		String inputLine;
+
+		while ((inputLine = bufferIn.readLine()) != null) {
+			response.append(inputLine);
+		}
+		bufferIn.close();
+		LOGGER.info("Response Info: " + response.toString());
+		return response.toString();
 	}
 
 	public static HashMap<String, Object> getBalance(HashMap<String, Object> body) {
