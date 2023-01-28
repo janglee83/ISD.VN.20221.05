@@ -1,15 +1,49 @@
 package lib;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 public class TransactionLib {
 
-	public HashMap<String, Object> processTransaction(HashMap<String, Object> body) {
+	private static Logger LOGGER = utlis.Helper.getLogger(utlis.Helper.class.getName());
+
+	public static HashMap<String, Object> processTransaction(HashMap<String, Object> body) {
+		//Start connect
+		HttpURLConnection connection = generateConnection(url, null, null);
+
 		return null;
 	}
 
-	public HashMap<String, Object> getBalance(HashMap<String, Object> body) {
+	public static HashMap<String, Object> getBalance(HashMap<String, Object> body) {
 		return null;
+	}
+
+	private static void processLogger(String url, String payload) {
+		LOGGER.info("Request Info:\nRequest URL: " + url + "\n" + "Payload Data: " + payload + "\n");
+	}
+
+	private static HttpURLConnection generateConnection(String url, String requestMethod, String token) throws IOException {
+		// setup conncection
+		final var connection = (HttpURLConnection) turnStringIntoUrl(url).openConnection();
+		connection.setDoInput(true);
+		connection.setDoOutput(true);
+		connection.setRequestMethod(requestMethod);
+		connection.setRequestProperty("Content-Type", "application/json");
+
+		if (requestMethod.equals("GET") && token != null) {
+			connection.setRequestProperty("Authorization", "Bearer " + token);
+		}
+
+		return connection;
+	}
+
+	private static URL turnStringIntoUrl(String stringUrl) throws MalformedURLException {
+		final URL url = new URL(stringUrl);
+		return url;
 	}
 
 }
