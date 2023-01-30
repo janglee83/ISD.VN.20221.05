@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 import utlis.Configs;
 
-public class Database {
+public class database {
     //connection
     private static Connection connect = null;
 
@@ -43,6 +43,6 @@ public class Database {
     }
 
     public static void main(String[] args) {
-        Database.getConnection();
+        database.getConnection();
     }
 }

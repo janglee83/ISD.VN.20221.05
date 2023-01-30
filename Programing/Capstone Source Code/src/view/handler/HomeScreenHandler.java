@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import controller.RentBikeController;
+import controller.ViewController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
@@ -37,6 +38,20 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         returnBikeHandler.setHomeScreenHandler(homeScreenHandler);
         returnBikeHandler.setScreenTitle("Return bike");
         returnBikeHandler.show();
+    }
+    @FXML
+    void dockDetailHandler(MouseEvent event) throws IOException {
+        //initialize controller
+        ViewController viewController = new ViewController();
+
+        // display Return bike screen
+        DockDetailHandler dockDetailHandler = new DockDetailHandler(Configs.DOCK_DETAIL_SCREEN_PATH, this.stage);
+        // configs
+        dockDetailHandler.setPreviousScreen(this);
+        dockDetailHandler.setBaseController(viewController);
+        dockDetailHandler.setHomeScreenHandler(homeScreenHandler);
+        dockDetailHandler.setScreenTitle("Dock Detail");
+        dockDetailHandler.show();
     }
 
 }
