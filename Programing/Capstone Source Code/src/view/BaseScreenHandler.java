@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.Hashtable;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import view.handler.HomeScreenHandler;
+
 import java.util.Objects;
 
 public class BaseScreenHandler extends FXMLScreenHandler {
@@ -20,7 +22,9 @@ public class BaseScreenHandler extends FXMLScreenHandler {
 
   	protected Hashtable<String, String> messages;
 
-	private BaseScreenHandler(String screenPath) throws IOException {
+	protected HomeScreenHandler  homeScreenHandler;
+
+	protected BaseScreenHandler(String screenPath) throws IOException {
 		super(screenPath);
 		this.stage = new Stage();
 	}
@@ -45,7 +49,6 @@ public class BaseScreenHandler extends FXMLScreenHandler {
 		return this.prevScreenHandler;
 	}
 
-
 	public void show() {
 		if (Objects.isNull(this.scene))
 			this.scene = new Scene(this.content);
@@ -64,8 +67,8 @@ public class BaseScreenHandler extends FXMLScreenHandler {
 		return this.baseController;
 	}
 
-	public void setHomeScreen(int homeScreenHandler) {
-
+	public void setHomeScreenHandler(HomeScreenHandler homeScreenHandler) {
+		this.homeScreenHandler = homeScreenHandler;
 	}
 
 }

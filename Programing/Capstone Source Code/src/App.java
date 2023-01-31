@@ -26,7 +26,7 @@ public class App extends Application {
   public void start(Stage primaryStage) {
     try {
       //initialize the screen
-      VBox root = (VBox) FXMLLoader.load(getClass().getResource(Configs.LOADING_PATH));
+      VBox root = (VBox) FXMLLoader.load(getClass().getResource(Configs.LOADING_SCREEN_PATH));
       Scene scene = new Scene(root);
 
       primaryStage.setScene(scene);
@@ -53,7 +53,7 @@ public class App extends Application {
       // After fade out, load actual content
       fadeOut.setOnFinished((e) -> {
         try {
-          HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_PATH, primaryStage);
+          HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_SCREEN_PATH, primaryStage);
           homeScreenHandler.setScreenTitle("Home Screen");
           // homeScreenHandler.setImage();
           homeScreenHandler.show();

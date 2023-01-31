@@ -1,5 +1,7 @@
 package entity.bike;
 
+import java.util.HashMap;
+
 import entity.dock.Dock;
 
 public class Bike extends Dock {

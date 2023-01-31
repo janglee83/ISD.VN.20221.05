@@ -1,8 +1,13 @@
 package entity.dock;
 
+import java.util.HashMap;
+import java.util.List;
+
 import entity.bike.Bike;
 
 public class Dock {
+
+	private int dockId;
 
 	private String dockName;
 
@@ -10,36 +15,49 @@ public class Dock {
 
 	private int dockArea;
 
-	private List<Bike> bikeList;
-
 	private HashMap<String, Integer> numberOfEmptyDockPoint;
 
 	private String dockImageUrl;
 
-	private Bike[] bike;
-
-	public void getListDock() {
-
+	// getter setter function
+	public int getDockId() {
+		return dockId;
 	}
 
-	public void getAvailableNumberPosition() {
-
+	public void setDockId(Integer dockId) {
+		this.dockId = dockId;
 	}
 
-	public void updateAvailablePosition() {
-
+	public String getDockName() {
+		return dockName;
 	}
 
-	public void updateEmpty() {
-
+	public void setDockName(String dockName) {
+		this.dockName = dockName;
 	}
 
-	public void getBike() {
-
+	public String getDockAddress() {
+		return dockAddress;
 	}
 
-	public void getDock() {
+	public void setDockAddress(String dockAddress) {
+		this.dockAddress = dockAddress;
+	}
 
+	public int getDockArea() {
+		return dockArea;
+	}
+
+	public void setDockArea(Integer dockArea) {
+		this.dockArea = dockArea;
+	}
+
+	public String getDockImageUrl() {
+		return dockImageUrl;
+	}
+
+	public void setDockImageUrl(String dockImageUrl) {
+		this.dockImageUrl = dockImageUrl;
 	}
 
 }

@@ -1,5 +1,5 @@
 package entity.dock;
-
-public class dockBikeList {
+// chua danh sach cac bike cua 1 dock
+public class DockBikeList {
 
 }

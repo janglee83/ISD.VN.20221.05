@@ -76,7 +76,7 @@
             <Image url="@image/xdd.jpg" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" layoutX="115.0" layoutY="708.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe" wrapText="true">
+      <Button onMouseClicked="#returnBikeChooseDockHandler" alignment="CENTER" layoutX="115.0" layoutY="708.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe" wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>

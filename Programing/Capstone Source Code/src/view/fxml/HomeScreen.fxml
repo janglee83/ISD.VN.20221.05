@@ -35,7 +35,7 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="searchInput" layoutX="226.0" layoutY="23.0" onAction="#onEnter" prefHeight="43.0" prefWidth="869.0" promptText="Search" style="-fx-background-color: #ffffff; -fx-border-color: #111111;">
+      <TextField fx:id="searchInput" layoutX="226.0" layoutY="23.0" prefHeight="43.0" prefWidth="869.0" promptText="Search" style="-fx-background-color: #ffffff; -fx-border-color: #111111;">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
@@ -44,27 +44,27 @@
          <children>
             <ImageView fx:id="search" fitHeight="37.0" fitWidth="31.0" layoutX="16.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" scaleX="-1">
                <image>
-                  <Image url="@../ISD.ICT.20201-08-EcoBike-master/FinalProject/Construction/EcoBike/assets/images/search.png" />
+                  <Image url="@image/search.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <ScrollPane layoutX="24.0" layoutY="112.0" prefHeight="580.0" prefWidth="1318.0">
+      <ScrollPane layoutX="24.0" layoutY="112.0" prefHeight="658.0" prefWidth="1318.0">
          <content>
-            <GridPane prefHeight="533.0" prefWidth="1306.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
+            <GridPane prefHeight="654.0" prefWidth="1305.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="shape1" stylesheets="@../../../../Programing/Capstone%20Source%20Code/src/myshape.css">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="24.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="42.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/image0.jpg" />
                            </image>
@@ -82,11 +82,12 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
+                        <Button layoutX="526.0" layoutY="97.0" mnemonicParsing="false" text="View dock" />
                      </children>
                   </Pane>
-                  <Pane prefHeight="172.0" prefWidth="654.0" styleClass="shape1" stylesheets="@../../../../Programing/Capstone%20Source%20Code/src/myshape.css" GridPane.columnIndex="1">
+                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="shape1" stylesheets="@../../../../Programing/Capstone%20Source%20Code/src/myshape.css" GridPane.columnIndex="1">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="42.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/image0.jpg" />
                            </image>
@@ -108,7 +109,7 @@
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="shape1" stylesheets="@../../../../Programing/Capstone%20Source%20Code/src/myshape.css" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="20.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="42.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/image0.jpg" />
                            </image>
@@ -126,11 +127,12 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
+                        <Button layoutX="527.0" layoutY="92.0" mnemonicParsing="false" text="View dock" />
                      </children>
                   </Pane>
                   <Pane prefHeight="218.0" prefWidth="780.0" styleClass="shape1" stylesheets="@../../../../Programing/Capstone%20Source%20Code/src/myshape.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="20.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="42.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/image0.jpg" />
                            </image>
@@ -152,7 +154,7 @@
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="shape1" stylesheets="@../../../../Programing/Capstone%20Source%20Code/src/myshape.css" GridPane.rowIndex="2">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="24.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="42.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/image0.jpg" />
                            </image>
@@ -170,11 +172,12 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
+                        <Button layoutX="523.0" layoutY="97.0" mnemonicParsing="false" text="View dock" />
                      </children>
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" styleClass="shape1" stylesheets="@../../../../Programing/Capstone%20Source%20Code/src/myshape.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="22.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="150.0" fitWidth="228.0" layoutX="42.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@image/image0.jpg" />
                            </image>
@@ -198,19 +201,7 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Pane layoutX="1222.0" layoutY="22.0" prefHeight="64.0" prefWidth="96.0">
-         <children>
-            <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/back.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
-      <Button alignment="CENTER" layoutX="595.0" layoutY="711.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe" wrapText="true">
-         <font>
-            <Font name="Arial" size="24.0" />
-         </font>
-      </Button>
+      <Button layoutX="1221.0" layoutY="15.0" mnemonicParsing="false" text="RentBike" />
+      <Button onMouseClicked="#returnBikeHandler" layoutX="1221.0" layoutY="53.0" mnemonicParsing="false" text="Return bike" />
    </children>
 </AnchorPane>

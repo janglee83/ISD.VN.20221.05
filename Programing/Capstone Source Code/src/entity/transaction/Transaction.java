@@ -1,6 +1,9 @@
 package entity.transaction;
 
 import entity.card.Card;
+
+import java.time.LocalDate;
+
 import InterbankSubsystem.String;
 
 public class Transaction {
