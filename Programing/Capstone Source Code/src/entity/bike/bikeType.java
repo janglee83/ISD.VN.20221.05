@@ -1,5 +1,5 @@
 package entity.bike;
 
-public class bikeType {
+public class BikeType {
 
 }

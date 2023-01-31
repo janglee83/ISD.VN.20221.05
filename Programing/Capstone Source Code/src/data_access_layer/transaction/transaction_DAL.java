@@ -1,5 +1,5 @@
 package Class.data_access_layer.transaction;
 
-public class transaction_DAL {
+public class Transaction_DAL {
 
 }

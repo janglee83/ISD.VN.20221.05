@@ -5,12 +5,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import data_access_layer.database.database;
+import data_access_layer.database.Database;
 import entity.dock.Dock;
 
-public class dock_DAL {
+public class Dock_DAL {
     public ArrayList<Dock> getListDock() throws SQLException {
-        Statement statement = database.getConnection().createStatement();
+        Statement statement = Database.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery("select * from dock");
         ArrayList<Dock> docksList = new ArrayList<Dock>();
 

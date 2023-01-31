@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
-import data_access_layer.dock.dock_DAL;
+import data_access_layer.dock.Dock_DAL;
 import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.fxml.FXML;
@@ -33,7 +33,7 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // gennerate list dock
-        final dock_DAL dock_DAL = new dock_DAL();
+        final Dock_DAL dock_DAL = new Dock_DAL();
         final DockList dockList = new DockList();
 
         try {
