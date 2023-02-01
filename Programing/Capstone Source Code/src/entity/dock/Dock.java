@@ -60,4 +60,18 @@ public class Dock {
 		this.dockImageUrl = dockImageUrl;
 	}
 
+	public HashMap<String, Integer> getNumberOfEmptyDockPoint() {
+		return numberOfEmptyDockPoint;
+	}
+
+	public void setNumberOfEmptyDockPoint(String typeBike, int number) {
+		if (numberOfEmptyDockPoint == null)
+			numberOfEmptyDockPoint = new HashMap<>();
+		this.numberOfEmptyDockPoint.put(typeBike, number);
+	}
+
+	public void setNumberOfEmptyDockPoint(HashMap<String, Integer> numberOfEmptyDockPoint) {
+		this.numberOfEmptyDockPoint = numberOfEmptyDockPoint;
+	}
+
 }

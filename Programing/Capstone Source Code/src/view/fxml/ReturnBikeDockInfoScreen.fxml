@@ -49,7 +49,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="122.0" text="ABC station">
+      <Label fx:id="dockName" layoutX="279.0" layoutY="122.0" text="ABC station">
          <font>
             <Font size="24.0" />
          </font>
@@ -59,7 +59,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="211.0" text="15 ABC, EcoPark">
+      <Label fx:id="dockAddress" layoutX="275.0" layoutY="211.0" text="15 ABC, EcoPark">
          <font>
             <Font size="24.0" />
          </font>
@@ -79,12 +79,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="304.0" layoutY="296.0" text="123 m2">
+      <Label fx:id="dockArea" layoutX="304.0" layoutY="296.0" text="123 m2">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe " wrapText="true">
+      <Button onMouseClicked="#confirmToReturn" alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
@@ -104,37 +104,17 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="644.0" text="Khoảng cách: ">
+      <Label fx:id="availableStandardEBikePoint" layoutX="336.0" layoutY="499.0" text="3">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="46.0" layoutY="703.0" text="Thời gian: ">
+      <Label fx:id="availableStandardBikePoint" layoutX="339.0" layoutY="437.0" text="3">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="336.0" layoutY="499.0" text="3">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="339.0" layoutY="437.0" text="3">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="337.0" layoutY="575.0" text="2">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="330.0" layoutY="646.0" text="3 km">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="330.0" layoutY="702.0" text="0,3h">
+      <Label fx:id="availableTwinBikePoint" layoutX="337.0" layoutY="575.0" text="2">
          <font>
             <Font size="24.0" />
          </font>

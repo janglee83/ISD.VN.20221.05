@@ -4,8 +4,6 @@ import entity.card.Card;
 
 import java.time.LocalDate;
 
-import InterbankSubsystem.String;
-
 public class Transaction {
 
 	private String transactionCode;
@@ -20,9 +18,7 @@ public class Transaction {
 
 	private int transactionId;
 
-	private InterbankSubsystem.String contents;
-
-	private CreditCard creditCard;
+	private String contents;
 
 	public void Transaction() {
 

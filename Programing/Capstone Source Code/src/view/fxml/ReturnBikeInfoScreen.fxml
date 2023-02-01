@@ -84,7 +84,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thanh toán " wrapText="true">
+      <Button onMouseClicked="#confirmToPayment" alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thanh toán " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>

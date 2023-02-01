@@ -1,4 +1,4 @@
-package view.handler;
+package view.handler.returnbike;
 
 import java.io.IOException;
 import java.net.URL;
@@ -13,7 +13,6 @@ import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utlis.Configs;
@@ -45,6 +44,9 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
 
             // display each dock data
             for (Dock dock : dockList.getDocksList()) {
+                 // get number empty dock point
+                dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));;
+
                 // display attr
                 ReturnBikeDockCompHandler returnBikeDockHandler = new ReturnBikeDockCompHandler(Configs.RETURN_BIKE_DOCK_COMP_SCREEN_PATH, this);
                 returnBikeDockHandler.setDock(dock);
