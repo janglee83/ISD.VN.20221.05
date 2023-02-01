@@ -44,10 +44,10 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
 
             // display each dock data
             for (Dock dock : dockList.getDocksList()) {
-                 // get number empty dock point
+                // get number empty dock point
                 dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));;
 
-                // display attr
+                // display each dock
                 ReturnBikeDockCompHandler returnBikeDockHandler = new ReturnBikeDockCompHandler(Configs.RETURN_BIKE_DOCK_COMP_SCREEN_PATH, this);
                 returnBikeDockHandler.setDock(dock);
                 returnBikeDockHandler.setDockInfo();

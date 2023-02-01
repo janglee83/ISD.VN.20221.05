@@ -51,7 +51,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Button alignment="CENTER" layoutX="595.0" layoutY="711.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe" wrapText="true">
+      <Button alignment="CENTER" layoutX="595.0" layoutY="711.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Re" wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>

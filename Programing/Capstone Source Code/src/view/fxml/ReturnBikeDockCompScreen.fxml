@@ -54,7 +54,7 @@
                   <Insets left="10.0" />
                </HBox.margin>
             </VBox>
-             <VBox alignment="CENTER" prefHeight="161.0" prefWidth="268.0">
+             <VBox alignment="CENTER" prefHeight="161.0" prefWidth="337.0">
                <children>
                   <Label fx:id="emptyDockPoint1" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="222.0" text="Số lượng xe đạp trống: 1" textAlignment="CENTER" textFill="#5091e6">
                      <font>
