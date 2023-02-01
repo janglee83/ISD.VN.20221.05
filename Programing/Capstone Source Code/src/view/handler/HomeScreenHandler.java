@@ -34,5 +34,16 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         returnBikeHandler.setScreenTitle("Return bike");
         returnBikeHandler.show();
     }
+    @FXML
+    void dockDetailHandler(MouseEvent event) throws IOException {
+        // display dock detail screen
+        DockDetailHandler dockDetailHandler = new DockDetailHandler(Configs.DOCK_DETAIL_SCREEN_PATH, this.stage);
+        // configs
+        dockDetailHandler.setPreviousScreen(this);
+        dockDetailHandler.setHomeScreenHandler(homeScreenHandler);
+        dockDetailHandler.setScreenTitle("Dock detail");
+        dockDetailHandler.show();
+    }
+
 
 }
