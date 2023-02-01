@@ -12,12 +12,36 @@ public class Card {
 
 	private String securityCode;
 
-	public void Card() {
-
+	// getter setter method
+	public String getCardHolderName() {
+		return cardHolderName;
 	}
 
-	public String toString() {
-		return null;
+	public void setCardHolderName(String cardHolderName) {
+		this.cardHolderName = cardHolderName;
 	}
 
+	public int getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(int cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public LocalDate getExpirationDate() {
+		return expirationDate;
+	}
+
+	public void setExpirationDate(LocalDate expirationDate) {
+		this.expirationDate = expirationDate;
+	}
+
+	public String getSecurityCode() {
+		return securityCode;
+	}
+
+	public void setSecurityCode(String securityCode) {
+		this.securityCode = securityCode;
+	}
 }

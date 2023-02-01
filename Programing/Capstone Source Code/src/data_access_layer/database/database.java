@@ -12,6 +12,8 @@ public class Database {
     //connection
     private static Connection connect = null;
 
+    private static final String className = "com.mysql.cj.jdbc.Driver";
+
     //logger
     private static Logger LOGGER = utlis.Helper.getLogger(Connection.class.getName());
 
@@ -20,7 +22,7 @@ public class Database {
             return connect;
         try {
             // This will load the MySQL driver, each DB has its own driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(className);
 
             // Setup the connection with the DB
             connect = DriverManager.getConnection("jdbc:mysql://localhost/" + Configs.DATABASE_NAME + "?" + "user=" + Configs.DATABASE_USER +"&password=" + Configs.DATABASE_PASSWORD);

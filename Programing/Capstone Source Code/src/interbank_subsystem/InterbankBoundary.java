@@ -1,4 +1,4 @@
-package InterbankSubsystem;
+package interbank_subsystem;
 
 public class InterbankBoundary {
 

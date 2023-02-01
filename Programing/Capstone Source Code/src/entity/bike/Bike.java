@@ -6,6 +6,8 @@ import entity.dock.Dock;
 
 public class Bike extends Dock {
 
+	private int bikeId;
+
 	private int bikeType;
 
 	private String rentalCode;
@@ -37,16 +39,79 @@ public class Bike extends Dock {
 
 	public static final String TWIN_BIKE_STRING = "twin bike";
 
-	public void getBikeByBarCode() {
-
+	// getter setter operation
+	public int getBikeId() {
+		return bikeId;
 	}
 
-	public void getBike() {
-
+	public void setBikeId(int bikeId) {
+		this.bikeId = bikeId;
 	}
 
-	public void getAvailableBike() {
-
+	public int getBikeType() {
+		return bikeType;
 	}
+
+	public void setBikeType(int bikeType) {
+		this.bikeType = bikeType;
+	}
+
+	public String getRentalCode() {
+		return rentalCode;
+	}
+
+	public void setRentalCode(String rentalCode) {
+		this.rentalCode = rentalCode;
+	}
+
+	public String getBikeName() {
+		return bikeName;
+	}
+
+	public void setBikeName(String bikeName) {
+		this.bikeName = bikeName;
+	}
+
+	public int getBikeValue() {
+		return bikeValue;
+	}
+
+	public void setBikeValue(int bikeValue) {
+		this.bikeValue = bikeValue;
+	}
+
+	public Boolean getIsBeingUsed() {
+		return isBeingUsed;
+	}
+
+	public void setIsBeingUsed(Boolean isBeingUsed) {
+		this.isBeingUsed = isBeingUsed;
+	}
+
+	public String getLicensePlate() {
+		return licensePlate;
+	}
+
+	public void setLicensePlate(String licensePlate) {
+		this.licensePlate = licensePlate;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getBikeImageUrl() {
+		return bikeImageUrl;
+	}
+
+	public void setBikeImageUrl(String bikeImageUrl) {
+		this.bikeImageUrl = bikeImageUrl;
+	}
+
+
 
 }

@@ -1,4 +1,4 @@
-package InterbankSubsystem;
+package interbank_subsystem;
 
 import java.util.HashMap;
 
@@ -6,9 +6,7 @@ import entity.transaction.Transaction;
 
 public class InterbankSubsystemController implements InterbankInterface {
 
-	private InterbankSubsystem.String API_PATH;
-
-	private InterbankSubsystem.InterbankBoundary interbankBoundary;
+	private interbank_subsystem.InterbankBoundary interbankBoundary;
 
 	public Transaction refund(HashMap<String, Object> paymentInfo, int refundValue, String transactionContent) {
 		return null;
@@ -18,7 +16,7 @@ public class InterbankSubsystemController implements InterbankInterface {
 		return null;
 	}
 
-	private Transaction handleResponse(MyMap response) {
+	private Transaction handleResponse(String response) {
 		return null;
 	}
 

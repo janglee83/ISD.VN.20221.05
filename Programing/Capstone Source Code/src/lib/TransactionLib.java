@@ -14,6 +14,13 @@ import java.util.logging.Logger;
 
 public class TransactionLib {
 
+	// connect
+	private static final String PATCH = "PATCH";
+
+	private static final String GET = "GET";
+
+	private static final String POST = "POST";
+
 	private static Logger LOGGER = utlis.Helper.getLogger(utlis.Helper.class.getName());
 
 	public static String processTransaction(HashMap<String, Object> body) throws IOException {
@@ -21,7 +28,7 @@ public class TransactionLib {
 		final String payload = utlis.Helper.convertHashmapWithIteration(body);
 
 		//Start connect
-		HttpURLConnection connection = generateConnection(utlis.Configs.URL, "PATCH", null);
+		HttpURLConnection connection = generateConnection(utlis.Configs.URL, PATCH, null);
 		Writer writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));
 		writer.write(payload);
 		writer.close();
@@ -54,7 +61,7 @@ public class TransactionLib {
 		connection.setRequestMethod(requestMethod);
 		connection.setRequestProperty("Content-Type", "application/json");
 
-		if (requestMethod.equals("GET") && token != null) {
+		if (requestMethod.equals(GET) && token != null) {
 			connection.setRequestProperty("Authorization", "Bearer " + token);
 		}
 
