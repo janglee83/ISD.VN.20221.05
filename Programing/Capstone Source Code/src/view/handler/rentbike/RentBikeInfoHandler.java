@@ -5,11 +5,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import entity.bike.Bike;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import utlis.Configs;
 import view.BaseScreenHandler;
 
 public class RentBikeInfoHandler extends BaseScreenHandler implements Initializable {
