@@ -17,15 +17,11 @@ public class InsertCardScreenHandler extends BaseScreenHandler {
 
     @FXML
     public void handlePayment(MouseEvent event) throws IOException {
-        // initialize controller
-        ReturnBikeController returnBikeController = new ReturnBikeController();
-
         //display return bike dock info screen
         PaymentTransactionHandler paymentTransactionHandler = new PaymentTransactionHandler(Configs.PAYMENT_TRANSACTION_SCREEN_PATH, this.stage);
 
         //configs
         paymentTransactionHandler.setPreviousScreen(this);
-        paymentTransactionHandler.setBaseController(returnBikeController);
         paymentTransactionHandler.setHomeScreenHandler(homeScreenHandler);
         paymentTransactionHandler.setScreenTitle("Payment - Payment transaction");
         paymentTransactionHandler.show();

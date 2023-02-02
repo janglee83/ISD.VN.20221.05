@@ -1,7 +1,5 @@
 package view;
 
-import controller.BaseController;
-
 import java.io.IOException;
 import java.util.Hashtable;
 import javafx.scene.Scene;
@@ -13,8 +11,6 @@ import java.util.Objects;
 public class BaseScreenHandler extends FXMLScreenHandler {
 
 	private BaseScreenHandler prevScreenHandler;
-
-	private BaseController baseController;
 
 	private Scene scene;
 
@@ -57,14 +53,6 @@ public class BaseScreenHandler extends FXMLScreenHandler {
 
 	public void setScreenTitle(String title) {
 		this.stage.setTitle(title);
-	}
-
-	public void setBaseController(BaseController baseController) {
-		this.baseController = baseController;
-	}
-
-	public BaseController getBaseController() {
-		return this.baseController;
 	}
 
 	public void setHomeScreenHandler(HomeScreenHandler homeScreenHandler) {

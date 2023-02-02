@@ -56,17 +56,17 @@
             </VBox>
              <VBox alignment="CENTER" prefHeight="161.0" prefWidth="337.0">
                <children>
-                  <Label fx:id="emptyDockPoint1" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="222.0" text="Số lượng xe đạp trống: 1" textAlignment="CENTER" textFill="#5091e6">
+                  <Label fx:id="emptyDockPoint1" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="Số lượng xe đạp trống: 1dasdasdsadasdsa" textFill="#5091e6">
                      <font>
                         <Font name="Segoe UI Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="emptyDockPoint2" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="222.0" text="Số lượng xe đạp trống: 2" textAlignment="CENTER" textFill="#5091e6">
+                  <Label fx:id="emptyDockPoint2" alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="asdsadsadSố lượng xe đạp trống: 2" textFill="#5091e6">
                      <font>
                         <Font name="Segoe UI Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="emptyDockPoint3" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="222.0" text="Số lượng xe đạp trống: 3" textAlignment="CENTER" textFill="#5091e6">
+                  <Label fx:id="emptyDockPoint3" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="330.0" text="Số lượng xe đạp trống: 3" textFill="#5091e6">
                      <font>
                         <Font name="Segoe UI Bold" size="18.0" />
                      </font>

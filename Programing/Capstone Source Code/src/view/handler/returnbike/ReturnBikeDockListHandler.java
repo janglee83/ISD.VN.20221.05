@@ -2,17 +2,16 @@ package view.handler.returnbike;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
-import data_access_layer.dock.Dock_DAL;
 import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utlis.Configs;
@@ -22,8 +21,13 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
 
     private static Logger LOGGER = utlis.Helper.getLogger(ReturnBikeDockListHandler.class.getName());
 
+    private static final ReturnBikeController returnBikeController = new ReturnBikeController();
+
     @FXML
     private VBox listDockVBox;
+
+    @FXML
+    private TextField searchTextField;
 
     public ReturnBikeDockListHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
@@ -32,48 +36,69 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // gennerate list dock
-        final Dock_DAL dock_DAL = new Dock_DAL();
         final DockList dockList = new DockList();
 
+        // get list dock from controller
+        returnBikeController.getListDock(dockList);
+
+        // clear all old data
+        listDockVBox.getChildren().clear();
+
+        // display each dock data
         try {
-            // get docklist
-            dockList.setDocksList(dock_DAL.getListDock());
-
-            // clear all old data
-            listDockVBox.getChildren().clear();
-
-            // display each dock data
-            for (Dock dock : dockList.getDocksList()) {
-                // get number empty dock point
-                dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));;
-
-                // display each dock
-                ReturnBikeDockCompHandler returnBikeDockHandler = new ReturnBikeDockCompHandler(Configs.RETURN_BIKE_DOCK_COMP_SCREEN_PATH, this);
-                returnBikeDockHandler.setDock(dock);
-                returnBikeDockHandler.setDockInfo();
-
-                // add spinner
-                listDockVBox.getChildren().add(returnBikeDockHandler.getContent());
-            }
-
-        } catch (SQLException | IOException exception) {
+            displayDocks(dockList);
+        } catch (IOException exception) {
             throw new CapstoneException(exception.getMessage());
         }
+
+        // add listener to text field
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            // display dock by it's name
+            try {
+                for (Dock dock : dockList.getDocksList()) {
+                    if (dock.getDockName().equals(newValue)) {
+                        // clear all old data
+                        listDockVBox.getChildren().clear();
+                        displayDock(dock);
+                        break;
+                    }
+                }
+
+                if (newValue.equals("")) {
+                    // clear all old data
+                    listDockVBox.getChildren().clear();
+                    displayDocks(dockList);
+                }
+            } catch (IOException exception) {
+                throw new CapstoneException(exception.getMessage());
+            }
+        });
     }
 
     public void returnBikeDockInfoHandler(Dock dock) throws IOException {
-        // initialize controller
-        ReturnBikeController returnBikeController = new ReturnBikeController();
-
         //display return bike dock info screen
         ReturnBikeDockInfoHandler returnBikeDockInfoHandler = new ReturnBikeDockInfoHandler(Configs.RETURN_BIKE_DOCK_INFO_SCREEN_PATH, this.stage, dock);
         //configs
         returnBikeDockInfoHandler.setPreviousScreen(this);
-        returnBikeDockInfoHandler.setBaseController(returnBikeController);
         returnBikeDockInfoHandler.setHomeScreenHandler(homeScreenHandler);
         returnBikeDockInfoHandler.setScreenTitle("Return bike - Dock info");
         returnBikeDockInfoHandler.show();
     }
 
+    private void displayDock(Dock dock) throws IOException {
+        // display each dock
+        ReturnBikeDockCompHandler returnBikeDockHandler = new ReturnBikeDockCompHandler(Configs.RETURN_BIKE_DOCK_COMP_SCREEN_PATH, this);
+        returnBikeDockHandler.setDock(dock);
+        returnBikeDockHandler.setDockInfo();
+
+        // add spinner
+        listDockVBox.getChildren().add(returnBikeDockHandler.getContent());
+    }
+
+    private void displayDocks(DockList dockList) throws IOException {
+        for (Dock dock : dockList.getDocksList()) {
+            displayDock(dock);
+        }
+    }
 
 }

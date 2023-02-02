@@ -32,7 +32,7 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="226.0" layoutY="23.0" prefHeight="43.0" prefWidth="869.0" promptText="Search" style="-fx-background-color: #ffffff; -fx-border-color: #111111;">
+      <TextField fx:id="searchTextField" layoutX="226.0" layoutY="23.0" prefHeight="43.0" prefWidth="869.0" promptText="Search" style="-fx-background-color: #ffffff; -fx-border-color: #111111;">
          <font>
             <Font name="Arial" size="18.0" />
          </font>

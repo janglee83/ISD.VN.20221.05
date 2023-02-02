@@ -2,7 +2,6 @@ package view.handler.returnbike;
 
 import java.io.IOException;
 
-import controller.ReturnBikeController;
 import entity.bike.Bike;
 import entity.dock.Dock;
 import javafx.fxml.FXML;
@@ -37,14 +36,10 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
 
     @FXML
     public void confirmToReturn(MouseEvent event) throws IOException {
-        // initialize controller
-        ReturnBikeController returnBikeController = new ReturnBikeController();
-
         //display return bike dock info screen
         ReturnBikeInfoHandler returnBikeDockInfoHandler = new ReturnBikeInfoHandler(Configs.RETURN_BIKE_INFO_SCREEN_PATH, this.stage);
         //configs
         returnBikeDockInfoHandler.setPreviousScreen(this);
-        returnBikeDockInfoHandler.setBaseController(returnBikeController);
         returnBikeDockInfoHandler.setHomeScreenHandler(homeScreenHandler);
         returnBikeDockInfoHandler.setScreenTitle("Return bike - Bike Info");
         returnBikeDockInfoHandler.show();
