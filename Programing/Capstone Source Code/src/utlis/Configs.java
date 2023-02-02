@@ -33,11 +33,11 @@ public class Configs {
 	public static final String NOT_ENOUGH_AMOUNT_PATH = "/view/fxml/NotEnoughAmount.fxml";
 
 	// from this attributes, you have to config with your computer
-	public static final String DATABASE_NAME = "testcap";
+	public static final String DATABASE_NAME = "itss";
 
 	public static final String DATABASE_USER = "root";
 
-	public static final String DATABASE_PASSWORD = "123456";
+	public static final String DATABASE_PASSWORD = "duyproxy1";
 
 	// url for subsystem
 	public static final String URL = "url";

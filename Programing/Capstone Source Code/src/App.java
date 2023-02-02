@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import utlis.Configs;
-import view.handler.HomeScreenHandler;
+import view.handler.viewdock.HomeScreenHandler;
 
 public class App extends Application {
 
