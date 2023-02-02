@@ -29,13 +29,17 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0">
+      <Pane layoutX="1104.0" layoutY="12.0" prefHeight="64.0" prefWidth="204.0">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/back.png" />
-               </image>
-            </ImageView>
+            <Button layoutX="68.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <Line endX="28.492828369140625" endY="621.300048828125" layoutX="450.0" layoutY="169.0" startX="28.492828369140625" startY="-74.7928695678711" />
@@ -44,77 +48,67 @@
             <Font size="48.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="124.0" text="Tên bãi xe:">
+      <Label layoutX="17.0" layoutY="122.0" text="Tên bãi xe:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="dockName" layoutX="279.0" layoutY="122.0" text="ABC station">
+      <Label fx:id="dockName" layoutX="200.0" layoutY="122.0" text="ABC station">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="213.0" text="Địa chỉ ">
+      <Label layoutX="17.0" layoutY="176.0" text="Địa chỉ:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="dockAddress" layoutX="275.0" layoutY="211.0" text="15 ABC, EcoPark">
+      <Label fx:id="dockAddress" layoutX="198.0" layoutY="176.0" text="15 ABC, EcoPark">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="373.0" text="Số xe khả dụng:">
+      <Label layoutX="17.0" layoutY="226.0" text="Diện tích:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="338.0" layoutY="374.0" text="5">
+      <Label fx:id="dockArea" layoutX="202.0" layoutY="226.0" text="123 m2">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="297.0" text="Diện tích:">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="dockArea" layoutX="304.0" layoutY="296.0" text="123 m2">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button onMouseClicked="#confirmToReturn" alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe " wrapText="true">
+      <Button alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" onMouseClicked="#confirmToReturn" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="21.0" layoutY="437.0" text="Vị trí trống xe đạp: ">
+      <Label layoutX="14.0" layoutY="272.0" text="Vị trí trống xe đạp: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="501.0" text="Vị trí trống xe điện: ">
+      <Label layoutX="13.0" layoutY="316.0" text="Vị trí trống xe điện: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="573.0" text="Vị trí trống xe đôi:">
+      <Label layoutX="14.0" layoutY="368.0" text="Vị trí trống xe đôi:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="availableStandardEBikePoint" layoutX="336.0" layoutY="499.0" text="3">
+      <Label fx:id="availableStandardEBikePoint" layoutX="301.0" layoutY="316.0" text="3">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="availableStandardBikePoint" layoutX="339.0" layoutY="437.0" text="3">
+      <Label fx:id="availableStandardBikePoint" layoutX="301.0" layoutY="272.0" text="3">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="availableTwinBikePoint" layoutX="337.0" layoutY="575.0" text="2">
+      <Label fx:id="availableTwinBikePoint" layoutX="301.0" layoutY="368.0" text="2">
          <font>
             <Font size="24.0" />
          </font>

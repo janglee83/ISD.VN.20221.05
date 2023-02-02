@@ -31,13 +31,17 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0">
+      <Pane layoutX="1152.0" layoutY="12.0" prefHeight="64.0" prefWidth="156.0">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/back.png" />
-               </image>
-            </ImageView>
+            <Button layoutX="34.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" onMouseClicked="#handleReturn" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <Label layoutX="640.0" layoutY="6.0" text="Payment">
@@ -65,7 +69,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button onMouseClicked="#handlePayment" alignment="CENTER" layoutX="572.0" layoutY="651.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
+      <Button alignment="CENTER" layoutX="572.0" layoutY="651.0" mnemonicParsing="false" onMouseClicked="#handlePayment" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>

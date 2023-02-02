@@ -2,7 +2,6 @@ package view.handler.payment;
 
 import java.io.IOException;
 
-import controller.ReturnBikeController;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -25,6 +24,11 @@ public class InsertCardScreenHandler extends BaseScreenHandler {
         paymentTransactionHandler.setHomeScreenHandler(homeScreenHandler);
         paymentTransactionHandler.setScreenTitle("Payment - Payment transaction");
         paymentTransactionHandler.show();
+    }
+
+    @FXML
+    public void handleReturn(MouseEvent event) {
+        getPreviousScreen().show();
     }
 
 }

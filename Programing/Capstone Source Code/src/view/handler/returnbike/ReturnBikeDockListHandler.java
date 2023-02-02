@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
+import business_layer.ReturnBike_BL;
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
 import entity.dock.Dock;
@@ -12,6 +13,7 @@ import entity.dock.DockList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import utlis.Configs;
@@ -21,7 +23,9 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
 
     private static Logger LOGGER = utlis.Helper.getLogger(ReturnBikeDockListHandler.class.getName());
 
-    private static final ReturnBikeController returnBikeController = new ReturnBikeController();
+    private static ReturnBikeController returnBikeController = new ReturnBikeController();
+
+    private static ReturnBike_BL returnBike_BL = new ReturnBike_BL();
 
     @FXML
     private VBox listDockVBox;
@@ -38,8 +42,8 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
         // gennerate list dock
         final DockList dockList = new DockList();
 
-        // get list dock from controller
-        returnBikeController.getListDock(dockList);
+        // get list dock from bussiness layer
+        returnBike_BL.getListDock(dockList);
 
         // clear all old data
         listDockVBox.getChildren().clear();
@@ -99,6 +103,12 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
         for (Dock dock : dockList.getDocksList()) {
             displayDock(dock);
         }
+    }
+
+    // return to previous screen
+    @FXML
+    public void handleReturn(MouseEvent event) {
+        getPreviousScreen().show();
     }
 
 }

@@ -29,13 +29,17 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0">
+      <Pane layoutX="1099.0" layoutY="12.0" prefHeight="64.0" prefWidth="209.0">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/back.png" />
-               </image>
-            </ImageView>
+            <Button layoutX="105.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
       <Line endX="28.492828369140625" endY="621.300048828125" layoutX="450.0" layoutY="169.0" startX="28.492828369140625" startY="-74.7928695678711" />
@@ -84,7 +88,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button onMouseClicked="#confirmToPayment" alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thanh toán " wrapText="true">
+      <Button alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" onMouseClicked="#confirmToPayment" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thanh toán " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>

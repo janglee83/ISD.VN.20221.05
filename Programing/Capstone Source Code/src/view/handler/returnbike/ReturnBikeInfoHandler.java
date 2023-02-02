@@ -26,4 +26,9 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
         insertCardScreenHandler.setScreenTitle("Payment - Confirm to pay");
         insertCardScreenHandler.show();
     }
+
+    @FXML
+    public void handleReturn(MouseEvent event) {
+        getPreviousScreen().show();
+    }
 }

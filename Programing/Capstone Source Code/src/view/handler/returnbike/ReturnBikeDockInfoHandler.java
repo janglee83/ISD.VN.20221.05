@@ -45,5 +45,8 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
         returnBikeDockInfoHandler.show();
     }
 
-
+    @FXML
+    public void handleReturn(MouseEvent event) {
+        getPreviousScreen().show();
+    }
 }

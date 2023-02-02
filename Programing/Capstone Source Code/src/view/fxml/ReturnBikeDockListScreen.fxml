@@ -42,19 +42,18 @@
             <VBox fx:id="listDockVBox" prefHeight="580.0" prefWidth="1189.0" />
          </content>
       </ScrollPane>
-      <Pane layoutX="1222.0" layoutY="22.0" prefHeight="64.0" prefWidth="96.0">
+      <Pane layoutX="1126.0" layoutY="22.0" prefHeight="64.0" prefWidth="192.0">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/back.png" />
-               </image>
-            </ImageView>
+            <Button layoutX="62.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn" prefWidth="51.0">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </Pane>
-      <Button alignment="CENTER" layoutX="595.0" layoutY="711.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Re" wrapText="true">
-         <font>
-            <Font name="Arial" size="24.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

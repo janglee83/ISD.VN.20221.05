@@ -50,7 +50,7 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
         // set title data
         title.setText(dock.getDockName());
         title1.setText(dock.getDockAddress());
-        title2.setText(Integer.toString(dock.getDockArea()));
+        title2.setText(new String(Integer.toString(dock.getDockArea()) + "m2"));
 
         // set image
         // File file = new File(dock.getDockImageUrl());
