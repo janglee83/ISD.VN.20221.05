@@ -105,7 +105,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="272.0" layoutY="528.0" text="500,000VND">
+      <Label fx:id="deposit" layoutX="272.0" layoutY="528.0" text="500,000VND">
          <font>
             <Font size="24.0" />
          </font>
@@ -115,7 +115,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="285.0" layoutY="595.0" text="123456">
+      <Label fx:id="barcodelb" layoutX="285.0" layoutY="595.0" text="123456">
          <font>
             <Font size="24.0" />
          </font>

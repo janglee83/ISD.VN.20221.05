@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import data_access_layer.database.Database;
+import entity.bike.Bike;
 
 public class RentBike_BL {
 
@@ -14,5 +15,17 @@ public class RentBike_BL {
 		ResultSet result = statement.executeQuery(query);
 		result.next();
 		return result.getInt("bike_id");
+	}
+
+	public int caculateDeposit (Bike bike){
+		if(bike.getBikeType() == 1){
+			return 100000;
+		}
+		else if(bike.getBikeType()==2){
+			return 200000;
+		}
+		else{
+			return 300000;
+		}
 	}
 }
