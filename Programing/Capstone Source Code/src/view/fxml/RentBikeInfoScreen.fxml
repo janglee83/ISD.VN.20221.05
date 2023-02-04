@@ -55,67 +55,67 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="bikeType" layoutX="298.0" layoutY="123.0" text="Xe điện ">
+      <Label fx:id="bikeType" layoutX="267.0" layoutY="124.0" text="Xe điện ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="213.0" text="Hãng: ">
+      <Label layoutX="33.0" layoutY="201.0" text="Hãng: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="brand" layoutX="306.0" layoutY="212.0" text="Ninja">
+      <Label fx:id="brand" layoutX="267.0" layoutY="201.0" text="Ninja">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="45.0" layoutY="374.0" text="Pin: ">
+      <Label layoutX="34.0" layoutY="342.0" text="Pin: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="310.0" layoutY="377.0" text="60%">
+      <Label layoutX="266.0" layoutY="342.0" text="60%">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="297.0" text="Biển số: ">
+      <Label layoutX="32.0" layoutY="277.0" text="Biển số: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="licensePlate" layoutX="286.0" layoutY="294.0" text="12AA456">
+      <Label fx:id="licensePlate" layoutX="264.0" layoutY="277.0" text="12AA456">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="447.0" text="Thời gian khả dụng: ">
+      <Label layoutX="30.0" layoutY="412.0" text="Thời gian khả dụng: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="310.0" layoutY="448.0" text="1,5h">
+      <Label layoutX="266.0" layoutY="412.0" text="1,5h">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="527.0" text="Tiền cọc:  ">
+      <Label layoutX="32.0" layoutY="493.0" text="Tiền cọc:  ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="deposit" layoutX="272.0" layoutY="528.0" text="500,000VND">
+      <Label fx:id="deposit" layoutX="267.0" layoutY="486.0" text="500,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="597.0" text="Barcode:">
+      <Label layoutX="33.0" layoutY="578.0" text="Barcode:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="barcodelb" layoutX="285.0" layoutY="595.0" text="123456">
+      <Label fx:id="barcodelb" layoutX="267.0" layoutY="569.0" text="123456">
          <font>
             <Font size="24.0" />
          </font>
@@ -125,7 +125,7 @@
             <Image url="@image/xdd.jpg" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" layoutX="115.0" layoutY="686.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
+      <Button alignment="CENTER" layoutX="115.0" layoutY="686.0" mnemonicParsing="false" onMouseClicked="#confirmToRentBike" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>

@@ -32,12 +32,14 @@ public class Configs {
 
 	public static final String NOT_ENOUGH_AMOUNT_PATH = "/view/fxml/NotEnoughAmount.fxml";
 
+	public static final String POPUP_PATH = "/view/fxml/PopupScreen.fxml";
+
 	// from this attributes, you have to config with your computer
-	public static final String DATABASE_NAME = "capstone";
+	public static final String DATABASE_NAME = "testcap";
 
 	public static final String DATABASE_USER = "root";
 
-	public static final String DATABASE_PASSWORD = "Giao1234";
+	public static final String DATABASE_PASSWORD = "123456";
 
 	// url for subsystem
 	public static final String URL = "url";

@@ -2,6 +2,7 @@ package data_access_layer.bike;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import data_access_layer.database.Database;
 import entity.bike.Bike;
@@ -23,4 +24,12 @@ public class Bike_DAL {
         bike.setLicensePlate(result.getString("licence_plate"));
         return bike;
     }
+    public void updateRentBike(Bike bike) throws SQLException{
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
+        statement.execute(query);
+        String query1 = String.format("update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where id = %d and bike_type_id = %d", bike.getDockId(),bike.getBikeType(), bike.getDockId(),bike.getBikeType());
+        statement.execute(query1);
+    }
+
 }

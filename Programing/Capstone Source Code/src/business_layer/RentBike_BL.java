@@ -17,15 +17,15 @@ public class RentBike_BL {
 		return result.getInt("bike_id");
 	}
 
-	public int caculateDeposit (Bike bike){
+	public int Deposit (Bike bike){
 		if(bike.getBikeType() == 1){
-			return 100000;
+			return 400000;
 		}
 		else if(bike.getBikeType()==2){
-			return 200000;
+			return 700000;
 		}
 		else{
-			return 300000;
+			return 550000;
 		}
 	}
 }
