@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import entity.dock.Dock;
 
-public class Bike extends Dock {
+public class Bike {
 
 	private int bikeId;
 
@@ -16,7 +16,7 @@ public class Bike extends Dock {
 
 	private int bikeValue;
 
-	private HashMap<String, Object> bikeAttribute;
+	private HashMap<String, Object> bikeAttribute; // rèactorrrrrrrrrrrrrrrrrrrrrr
 
 	private boolean isBeingUsed;
 
@@ -26,7 +26,7 @@ public class Bike extends Dock {
 
 	private String bikeImageUrl;
 
-	// type bike
+	// type bike rèactorrrrrrrrrrrrrrrrrrrrrrr
 	public static final int STANDARD_BICYCLE_VALUE = 0;
 
 	public static final int STANDARD_E_BIKE_VALUE = 1;
