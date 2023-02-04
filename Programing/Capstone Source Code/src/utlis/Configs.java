@@ -32,8 +32,6 @@ public class Configs {
 
 	public static final String NOT_ENOUGH_AMOUNT_PATH = "/view/fxml/NotEnoughAmount.fxml";
 
-	public static final String POPUP_PATH = "/view/fxml/PopupScreen.fxml";
-
 	// from this attributes, you have to config with your computer
 	public static final String DATABASE_NAME = "testcap";
 
