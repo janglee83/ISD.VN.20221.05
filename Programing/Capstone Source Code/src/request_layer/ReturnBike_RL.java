@@ -6,9 +6,6 @@ public class ReturnBike_RL {
         // Check name is not null
         if (name == null)
             throw new Exception();
-        // Check if contain leter space only
-        if (name.trim().length() == 0)
-            throw new Exception();
         // Check if contain only leter and space
         if (name.matches("^[a-zA-Z ]*$") == false)
             throw new Exception();
