@@ -46,7 +46,7 @@
       <Button layoutX="1221.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#returnBikeHandler" text="Return bike" />
       <Pane layoutX="1039.0" layoutY="17.0" prefHeight="64.0" prefWidth="192.0">
          <children>
-            <Button layoutX="62.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn" prefWidth="51.0">
+            <Button fx:id="searchButton" layoutX="62.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn" prefWidth="51.0">
                <graphic>
                   <ImageView fitHeight="70.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
                      <image>
