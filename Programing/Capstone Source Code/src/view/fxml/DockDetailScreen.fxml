@@ -30,15 +30,6 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0">
-         <children>
-            <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/back.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
       <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="450.0" layoutY="169.0" startX="-30.17376708984375" startY="-74.79287719726562" />
       <Label layoutX="465.0" layoutY="7.0" text="Station Infomation">
          <font>
@@ -50,7 +41,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="202.0" layoutY="125.0" text="ABC Station">
+      <Label fx:id="dockName" layoutX="202.0" layoutY="125.0" text="ABC Station">
          <font>
             <Font size="24.0" />
          </font>
@@ -60,7 +51,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="182.0" layoutY="212.0" text="15 ABC, EcoPark">
+      <Label fx:id="dockAddress" layoutX="182.0" layoutY="212.0" text="15 ABC, EcoPark">
          <font>
             <Font size="24.0" />
          </font>
@@ -70,7 +61,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="249.0" layoutY="376.0" text="5">
+      <Label fx:id="availableBike" layoutX="249.0" layoutY="376.0" text="5">
          <font>
             <Font size="24.0" />
          </font>
@@ -80,7 +71,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="206.0" layoutY="297.0" text="123 m2">
+      <Label fx:id="dockArea" layoutX="206.0" layoutY="297.0" text="123 m2">
          <font>
             <Font size="24.0" />
          </font>
@@ -165,5 +156,18 @@
             <Font name="Arial" size="24.0" />
          </font>
       </Button>
+      <Pane layoutX="1128.0" layoutY="15.0" prefHeight="64.0" prefWidth="204.0">
+         <children>
+            <Button layoutX="68.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

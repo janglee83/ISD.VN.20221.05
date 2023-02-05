@@ -32,6 +32,9 @@ public class Configs {
 
 	public static final String NOT_ENOUGH_AMOUNT_PATH = "/view/fxml/NotEnoughAmount.fxml";
 
+	public static final String VIEW_DOCK_COMP_PATH = "/view/fxml/ViewDockCompHandler.fxml";
+
+	public static final String VIEW_DOCK_BIKE_COMP_PATH = "/view/fxml/ViewDockBikeCompHandler.fxml";
 	// from this attributes, you have to config with your computer
 	public static final String DATABASE_NAME = "itss";
 

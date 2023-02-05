@@ -32,26 +32,30 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="searchInput" layoutX="226.0" layoutY="23.0" prefHeight="43.0" prefWidth="869.0" promptText="Search" style="-fx-background-color: #ffffff; -fx-border-color: #111111;">
+      <TextField fx:id="searchTextField" layoutX="226.0" layoutY="23.0" prefHeight="43.0" prefWidth="869.0" promptText="Search" style="-fx-background-color: #ffffff; -fx-border-color: #111111;">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
-      <Pane layoutX="1097.0" layoutY="23.0" prefHeight="43.0" prefWidth="62.0" style="-fx-background-color: #ffffff; -fx-border-color: #111111;">
-         <children>
-            <ImageView fx:id="search" fitHeight="37.0" fitWidth="31.0" layoutX="16.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" scaleX="-1">
-               <image>
-                  <Image url="@image/search.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
       <ScrollPane layoutX="24.0" layoutY="112.0" prefHeight="658.0" prefWidth="1318.0">
          <content>
-            <VBox prefHeight="656.0" prefWidth="1313.0" />
+            <VBox fx:id="listDockVbox" prefHeight="656.0" prefWidth="1313.0" />
          </content>
       </ScrollPane>
       <Button layoutX="1221.0" layoutY="15.0" mnemonicParsing="false" text="RentBike" />
       <Button layoutX="1221.0" layoutY="53.0" mnemonicParsing="false" onMouseClicked="#returnBikeHandler" text="Return bike" />
+      <Pane layoutX="1039.0" layoutY="17.0" prefHeight="64.0" prefWidth="192.0">
+         <children>
+            <Button layoutX="62.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn" prefWidth="51.0">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
