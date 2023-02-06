@@ -109,7 +109,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     }
 
     @FXML
-    void dockDetailHandler(MouseEvent event) throws SQLException {
+    void enterBarcodeHandler(MouseEvent event) throws SQLException {
         try {
             TextInputDialog td = new TextInputDialog();
             td.setTitle("Enter bar code");
@@ -118,9 +118,9 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
             Optional<String> result = td.showAndWait();
             if (result.isPresent()) {
-                System.out.println(result.get());
+                // System.out.println(result.get());
                 RentBikeInfoHandler rentBikeInfoHandler = new RentBikeInfoHandler(Configs.RENT_BIKE_INFO_SCREEN_PATH,
-                        this.stage, bike_DAL.getBikeInDock(rentBike_BL.convertToRentalCode(result.get()), 3),
+                        this.stage, bike_DAL.getBikeInDock(rentBike_BL.convertToRentalCode(result.get())),
                         result.get());
                 rentBikeInfoHandler.setPreviousScreen(this);
                 rentBikeInfoHandler.setHomeScreenHandler(homeScreenHandler);

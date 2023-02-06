@@ -4,10 +4,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import data_access_layer.bike.Bike_DAL;
 import data_access_layer.database.Database;
 import entity.bike.Bike;
 
 public class RentBike_BL {
+	private static Bike_DAL bike_DAL = new Bike_DAL();
 
 	public int convertToRentalCode(String barcode) throws SQLException {
 		Statement statement = Database.getConnection().createStatement();
@@ -17,15 +19,18 @@ public class RentBike_BL {
 		return result.getInt("bike_id");
 	}
 
-	public int Deposit (Bike bike){
-		if(bike.getBikeType() == 1){
+	public int deposit(Bike bike) {
+		if (bike.getBikeType() == 1) {
 			return 400000;
-		}
-		else if(bike.getBikeType()==2){
+		} else if (bike.getBikeType() == 2) {
 			return 700000;
-		}
-		else{
+		} else {
 			return 550000;
 		}
 	}
+
+	public void updateAfterRentBike(Bike bike) throws SQLException {
+		bike_DAL.updateRentBike(bike);
+	}
+
 }
