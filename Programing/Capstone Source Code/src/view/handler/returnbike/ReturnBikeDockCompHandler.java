@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import view.FXMLScreenHandler;
-import view.handler.HomeScreenHandler;
 
 public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
 
@@ -37,7 +36,8 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
     private ReturnBikeDockListHandler returnBikeChooseDockHandler;
     private Dock dock; // selected dock
 
-    public ReturnBikeDockCompHandler(String screenPath, ReturnBikeDockListHandler returnBikeChooseDockHandler) throws IOException {
+    public ReturnBikeDockCompHandler(String screenPath, ReturnBikeDockListHandler returnBikeChooseDockHandler)
+            throws IOException {
         super(screenPath);
         this.returnBikeChooseDockHandler = returnBikeChooseDockHandler;
         hboxDock.setAlignment(Pos.CENTER);
@@ -59,17 +59,20 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
         // image.setImage(imageLink);
         // image.setPreserveRatio(false);
         // image.setFitHeight(110);
-		// image.setFitWidth(92);
+        // image.setFitWidth(92);
 
         // set number empty dock point REFACTOR
-        String text1 = new String("Number of " + Bike.STANDARD_BICYCLE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_BICYCLE_STRING));
+        String text1 = new String("Number of " + Bike.STANDARD_BICYCLE_STRING + "is: "
+                + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_BICYCLE_STRING));
         emptyDockPoint1.setText(text1);
-        String text2 = new String("Number of " + Bike.STANDARD_E_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_E_BIKE_STRING));
+        String text2 = new String("Number of " + Bike.STANDARD_E_BIKE_STRING + "is: "
+                + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_E_BIKE_STRING));
         emptyDockPoint2.setText(text2);
-        String text3 = new String("Number of " + Bike.TWIN_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING));
+        String text3 = new String("Number of " + Bike.TWIN_BIKE_STRING + "is: "
+                + dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING));
         emptyDockPoint3.setText(text3);
 
-        //handler button event
+        // handler button event
         returnBikeButton.setOnMouseClicked(event -> {
             // Display return dock info screen
             LOGGER.info("Confirm to return bike");

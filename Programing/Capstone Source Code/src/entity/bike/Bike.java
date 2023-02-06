@@ -2,8 +2,6 @@ package entity.bike;
 
 import java.util.HashMap;
 
-import entity.dock.Dock;
-
 public class Bike {
 
 	private int bikeId;

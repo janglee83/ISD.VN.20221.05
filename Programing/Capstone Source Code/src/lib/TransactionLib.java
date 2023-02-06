@@ -3,7 +3,6 @@ package lib;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.net.HttpURLConnection;
@@ -23,9 +22,9 @@ public class TransactionLib {
 
 	private static Logger LOGGER = utlis.Helper.getLogger(utlis.Helper.class.getName());
 
-	public static String processTransaction(HashMap<String, Object> body) throws IOException {
-		// get payload
-		final String payload = utlis.Helper.convertHashmapWithIteration(body);
+	public static String processTransaction(String payload) throws IOException {
+		// // get payload
+		// final String payload = utlis.Helper.convertHashmapWithIteration(body);
 
 		//Start connect
 		HttpURLConnection connection = generateConnection(utlis.Configs.URL, PATCH, null);

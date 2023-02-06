@@ -20,53 +20,53 @@
          </image>
       </ImageView>
       <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0" />
-      <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="450.0" layoutY="169.0" startX="-30.17376708984375" startY="-74.79287719726562" />
-      <Label layoutX="33.0" layoutY="124.0" text="Loại xe: ">
+      <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="536.0" layoutY="167.0" startX="-30.17376708984375" startY="-74.79287719726562" />
+      <Label layoutX="50.0" layoutY="150.0" text="Loại xe: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="298.0" layoutY="123.0" text="Xe điện ">
+      <Label layoutX="325.0" layoutY="150.0" text="Xe điện ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="213.0" text="Hãng: ">
+      <Label layoutX="50.0" layoutY="200.0" text="Hãng: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="306.0" layoutY="212.0" text="Ninja">
+      <Label layoutX="325.0" layoutY="200.0" text="Ninja">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="45.0" layoutY="374.0" text="Pin: ">
+      <Label layoutX="50.0" layoutY="300.0" text="Pin: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="310.0" layoutY="377.0" text="60%">
+      <Label layoutX="325.0" layoutY="300.0" text="60%">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="297.0" text="Biển số: ">
+      <Label layoutX="50.0" layoutY="250.0" text="Biển số: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="286.0" layoutY="294.0" text="12AA456">
+      <Label layoutX="325.0" layoutY="250.0" text="12AA456">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="447.0" text="Thời gian khả dụng: ">
+      <Label layoutX="50.0" layoutY="350.0" text="Thời gian khả dụng: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="310.0" layoutY="448.0" text="1,5h">
+      <Label layoutX="325.0" layoutY="350.0" text="1,5h">
          <font>
             <Font size="24.0" />
          </font>
@@ -76,45 +76,40 @@
             <Image url="@image/xdd.jpg" />
          </image>
       </ImageView>
-      <Button onMouseClicked="#returnBikeChooseDockHandler" alignment="CENTER" layoutX="115.0" layoutY="708.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe" wrapText="true">
+      <Button alignment="CENTER" layoutX="181.0" layoutY="583.0" mnemonicParsing="false" onMouseClicked="#handleReturnBike" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe" wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="23.0" layoutY="511.0" text="Barcode: ">
+      <Label layoutX="50.0" layoutY="400.0" text="Barcode: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="288.0" layoutY="511.0" text="1234567">
+      <Label layoutX="325.0" layoutY="400.0" text="1234567">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="572.0" text="Thời gian đã sử dụng :">
+      <Label layoutX="50.0" layoutY="450.0" text="Thời gian đã sử dụng :">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="310.0" layoutY="572.0" text="1,5h">
+      <Label fx:id="timeLabel" layoutX="325.0" layoutY="450.0" text="00 : 00 : 00">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="288.0" layoutY="624.0" text="70,000VND">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="17.0" layoutY="624.0" prefHeight="35.0" prefWidth="267.0" text="Chi phí tính tới hiện tại: ">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="556.0" layoutY="17.0" text="Return Bike">
+      <Label layoutX="556.0" layoutY="17.0" text="Bike Rent">
          <font>
             <Font name="Arial" size="48.0" />
          </font>
       </Label>
+      <Button fx:id="stopButton" alignment="CENTER" layoutX="337.0" layoutY="512.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Stop" wrapText="true">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
