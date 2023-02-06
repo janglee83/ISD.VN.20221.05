@@ -2,6 +2,8 @@ package view.handler.returnbike;
 
 import java.io.IOException;
 
+import entity.bike.BikeRentInfo;
+import entity.transaction.Transaction;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -11,16 +13,20 @@ import view.handler.payment.InsertCardScreenHandler;
 
 public class ReturnBikeInfoHandler extends BaseScreenHandler {
 
-    public ReturnBikeInfoHandler(String screenPath, Stage stage) throws IOException {
+    private BikeRentInfo bikeRentInfo;
+
+    public ReturnBikeInfoHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
+        this.bikeRentInfo = bikeRentInfo;
     }
 
     @FXML
     public void confirmToPayment(MouseEvent event) throws IOException {
-        //display return bike dock info screen
-        InsertCardScreenHandler insertCardScreenHandler = new InsertCardScreenHandler(Configs.INSERT_CARD_SCREEN_PATH, this.stage);
+        // display return bike dock info screen
+        InsertCardScreenHandler insertCardScreenHandler = new InsertCardScreenHandler(Configs.INSERT_CARD_SCREEN_PATH,
+                this.stage, Transaction.RETURN, bikeRentInfo);
 
-        //configs
+        // configs
         insertCardScreenHandler.setPreviousScreen(this);
         insertCardScreenHandler.setHomeScreenHandler(homeScreenHandler);
         insertCardScreenHandler.setScreenTitle("Payment - Confirm to pay");

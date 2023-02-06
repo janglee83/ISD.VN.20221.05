@@ -29,7 +29,6 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
 import view.handler.returnbike.ReturnBikeDockCompHandler;
-import view.handler.returnbike.ReturnBikeHandler;
 import view.handler.view.ViewDockCompHandler;
 
 
@@ -50,11 +49,13 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     private Button searchButton;
 
     private static RentBike_BL rentBike_BL = new RentBike_BL();
+
     private static Bike_DAL bike_DAL = new Bike_DAL();
 
     public HomeScreenHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
     }
+
     @Override
     public void initialize(URL location, ResourceBundle resource)
     {
@@ -89,6 +90,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             }
         });
     }
+
     private void displayDock(Dock dock) throws IOException
     {
         // display each dock
@@ -99,20 +101,11 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         // add spinner
         VBoxListDock.getChildren().add(viewDockCompHandler.getContent());
     }
+
     private void displayDocks(DockList dockList) throws IOException {
         for (Dock dock: dockList.getDocksList()){
             displayDock(dock);
         }
-    }
-    @FXML
-    void returnBikeHandler(MouseEvent event) throws IOException {
-        // display Return bike screen
-        ReturnBikeHandler returnBikeHandler = new ReturnBikeHandler(Configs.BIKE_RENT_DATA_SCREEN_PATH, this.stage);
-        // configs
-        returnBikeHandler.setPreviousScreen(this);
-        returnBikeHandler.setHomeScreenHandler(homeScreenHandler);
-        returnBikeHandler.setScreenTitle("Return bike");
-        returnBikeHandler.show();
     }
 
     @FXML

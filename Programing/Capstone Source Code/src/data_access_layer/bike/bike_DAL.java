@@ -9,7 +9,7 @@ import entity.bike.Bike;
 
 public class Bike_DAL {
     public Bike getBikeInDock(int bike_id, int dock_id) throws SQLException {
-        java.sql.Statement statement = Database.getConnection().createStatement();
+        Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where id =  %d and dock_id = %d and isBeingUsed = 0", bike_id,
                 dock_id);
         ResultSet result = statement.executeQuery(query);
@@ -28,7 +28,7 @@ public class Bike_DAL {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
         statement.execute(query);
-        String query1 = String.format("update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where id = %d and bike_type_id = %d", bike.getDockId(),bike.getBikeType(), bike.getDockId(),bike.getBikeType());
+        String query1 = String.format("update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where id = %d and bike_type_id = %d", bike.getbikeId(),bike.getBikeType(), bike.getDockId(),bike.getBikeType());
         statement.execute(query1);
     }
 

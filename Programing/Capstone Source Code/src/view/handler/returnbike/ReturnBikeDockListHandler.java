@@ -5,9 +5,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-import business_layer.ReturnBike_BL;
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
+import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.fxml.FXML;
@@ -17,7 +17,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import request_layer.ReturnBike_RL;
 import utlis.Configs;
 import view.BaseScreenHandler;
 
@@ -26,10 +25,6 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
     private static Logger LOGGER = utlis.Helper.getLogger(ReturnBikeDockListHandler.class.getName());
 
     private static ReturnBikeController returnBikeController = new ReturnBikeController();
-
-    private ReturnBike_RL returnBike_RL = new ReturnBike_RL();
-
-    private static ReturnBike_BL returnBike_BL = new ReturnBike_BL();
 
     @FXML
     private VBox listDockVBox;
@@ -40,8 +35,11 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
     @FXML
     private Label invalidText;
 
-    public ReturnBikeDockListHandler(String screenPath, Stage stage) throws IOException {
+    private BikeRentInfo bikeRentInfo;
+
+    public ReturnBikeDockListHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
+        this.bikeRentInfo = bikeRentInfo;
     }
 
     @Override
@@ -53,7 +51,7 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
         final DockList dockList = new DockList();
 
         // get list dock from bussiness layer
-        returnBike_BL.getListDock(dockList);
+        returnBikeController.getListDock(dockList);
 
         // clear all old data
         listDockVBox.getChildren().clear();
@@ -71,7 +69,7 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
             try {
                 for (Dock dock : dockList.getDocksList()) {
                     invalidText.setVisible(false);
-                    returnBike_RL.validateName(newValue);
+                    returnBikeController.validateName(newValue);
                     if (dock.getDockName().equals(newValue)) {
                         // clear all old data
                         listDockVBox.getChildren().clear();
@@ -93,9 +91,10 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
     }
 
     public void returnBikeDockInfoHandler(Dock dock) throws IOException {
-        //display return bike dock info screen
-        ReturnBikeDockInfoHandler returnBikeDockInfoHandler = new ReturnBikeDockInfoHandler(Configs.RETURN_BIKE_DOCK_INFO_SCREEN_PATH, this.stage, dock);
-        //configs
+        // display return bike dock info screen
+        ReturnBikeDockInfoHandler returnBikeDockInfoHandler = new ReturnBikeDockInfoHandler(
+                Configs.RETURN_BIKE_DOCK_INFO_SCREEN_PATH, this.stage, dock, bikeRentInfo);
+        // configs
         returnBikeDockInfoHandler.setPreviousScreen(this);
         returnBikeDockInfoHandler.setHomeScreenHandler(homeScreenHandler);
         returnBikeDockInfoHandler.setScreenTitle("Return bike - Dock info");
@@ -104,7 +103,8 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
 
     private void displayDock(Dock dock) throws IOException {
         // display each dock
-        ReturnBikeDockCompHandler returnBikeDockHandler = new ReturnBikeDockCompHandler(Configs.RETURN_BIKE_DOCK_COMP_SCREEN_PATH, this);
+        ReturnBikeDockCompHandler returnBikeDockHandler = new ReturnBikeDockCompHandler(
+                Configs.RETURN_BIKE_DOCK_COMP_SCREEN_PATH, this);
         returnBikeDockHandler.setDock(dock);
         returnBikeDockHandler.setDockInfo();
 

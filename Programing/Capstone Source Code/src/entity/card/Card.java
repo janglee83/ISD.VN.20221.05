@@ -4,14 +4,24 @@ public class Card {
 
 	private String cardHolderName;
 
-	private int cardNumber;
-
-	private String expirationDate;
+	private String cardNumber;
 
 	private String securityCode;
 
+	private String expirationDate;
+
+	// for test purpose
+
+	public static final String ownerTest = "Group5";
+
+	public static final String cardCodeTest = "123456";
+
+	public static final String ccvCodeTest = "101";
+
+	public static final String dateExpiredTest = "1125";
+
 	// construtor
-	public Card(String cardHolderName, int cardNumber, String expirationDate, String securityCode) {
+	public Card(String cardHolderName, String cardNumber, String securityCode, String expirationDate) {
 		this.cardHolderName = cardHolderName;
 		this.cardNumber = cardNumber;
 		this.expirationDate = expirationDate;
@@ -27,11 +37,11 @@ public class Card {
 		this.cardHolderName = cardHolderName;
 	}
 
-	public int getCardNumber() {
+	public String getCardNumber() {
 		return cardNumber;
 	}
 
-	public void setCardNumber(int cardNumber) {
+	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
 	}
 
