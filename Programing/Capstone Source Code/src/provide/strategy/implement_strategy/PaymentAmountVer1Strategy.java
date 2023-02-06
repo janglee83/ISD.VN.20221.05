@@ -1,6 +1,7 @@
-package provide.strategy;
+package provide.strategy.implement_strategy;
 
 import entity.bike.BikeRentInfo;
+import provide.strategy.PaymentAmountStrategy;
 
 public class PaymentAmountVer1Strategy implements PaymentAmountStrategy {
 

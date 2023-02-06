@@ -11,7 +11,7 @@ public class ReturnBike_BL {
 
 	public void getListDock(DockList dockList) {
 		// gennerate Dock_DAL
-        final Dock_DAL dock_DAL = new Dock_DAL();
+        Dock_DAL dock_DAL = new Dock_DAL();
 
 		try {
             // get docklist

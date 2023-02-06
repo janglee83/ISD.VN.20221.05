@@ -1,16 +1,22 @@
 package entity.card;
 
-import java.time.LocalDate;
-
 public class Card {
 
 	private String cardHolderName;
 
 	private int cardNumber;
 
-	private LocalDate expirationDate;
+	private String expirationDate;
 
 	private String securityCode;
+
+	// construtor
+	public Card(String cardHolderName, int cardNumber, String expirationDate, String securityCode) {
+		this.cardHolderName = cardHolderName;
+		this.cardNumber = cardNumber;
+		this.expirationDate = expirationDate;
+		this.securityCode = securityCode;
+	}
 
 	// getter setter method
 	public String getCardHolderName() {
@@ -29,11 +35,11 @@ public class Card {
 		this.cardNumber = cardNumber;
 	}
 
-	public LocalDate getExpirationDate() {
+	public String getExpirationDate() {
 		return expirationDate;
 	}
 
-	public void setExpirationDate(LocalDate expirationDate) {
+	public void setExpirationDate(String expirationDate) {
 		this.expirationDate = expirationDate;
 	}
 
