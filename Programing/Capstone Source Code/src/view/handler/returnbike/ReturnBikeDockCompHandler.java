@@ -61,7 +61,7 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
         // image.setFitHeight(110);
 		// image.setFitWidth(92);
 
-        // set number empty dock point REFACTORRRRRRRRRRRRRRRRR
+        // set number empty dock point REFACTOR
         String text1 = new String("Number of " + Bike.STANDARD_BICYCLE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_BICYCLE_STRING));
         emptyDockPoint1.setText(text1);
         String text2 = new String("Number of " + Bike.STANDARD_E_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_E_BIKE_STRING));
