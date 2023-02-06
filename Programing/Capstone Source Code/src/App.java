@@ -53,6 +53,7 @@ public class App extends Application {
         try {
           HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_SCREEN_PATH, primaryStage);
           homeScreenHandler.setScreenTitle("Home Screen");
+          homeScreenHandler.setHomeScreenHandler(homeScreenHandler);
           // homeScreenHandler.setImage();
           homeScreenHandler.show();
         } catch (IOException exception) {

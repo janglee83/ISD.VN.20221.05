@@ -12,10 +12,12 @@ import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import request_layer.ReturnBike_RL;
 import utlis.Configs;
 import view.BaseScreenHandler;
 
@@ -25,6 +27,8 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
 
     private static ReturnBikeController returnBikeController = new ReturnBikeController();
 
+    private ReturnBike_RL returnBike_RL = new ReturnBike_RL();
+
     private static ReturnBike_BL returnBike_BL = new ReturnBike_BL();
 
     @FXML
@@ -33,12 +37,18 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
     @FXML
     private TextField searchTextField;
 
+    @FXML
+    private Label invalidText;
+
     public ReturnBikeDockListHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // set error invisible
+        invalidText.setVisible(false);
+
         // gennerate list dock
         final DockList dockList = new DockList();
 
@@ -60,6 +70,8 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
             // display dock by it's name
             try {
                 for (Dock dock : dockList.getDocksList()) {
+                    invalidText.setVisible(false);
+                    returnBike_RL.validateName(newValue);
                     if (dock.getDockName().equals(newValue)) {
                         // clear all old data
                         listDockVBox.getChildren().clear();
@@ -67,13 +79,14 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
                         break;
                     }
                 }
-
                 if (newValue.equals("")) {
                     // clear all old data
                     listDockVBox.getChildren().clear();
                     displayDocks(dockList);
                 }
-            } catch (IOException exception) {
+            } catch (Exception exception) {
+                System.out.println("BUG");
+                invalidText.setVisible(true);
                 throw new CapstoneException(exception.getMessage());
             }
         });

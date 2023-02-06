@@ -38,72 +38,72 @@
       </Button>
       <Pane layoutX="338.0" layoutY="146.0" prefHeight="538.0" prefWidth="724.0" style="-fx-border-color: #000000;">
          <children>
-            <Label layoutX="60.0" layoutY="35.0" prefHeight="70.0" prefWidth="186.0" text="Mã giao dịch:">
+            <Label layoutX="100.0" layoutY="25.0" prefHeight="12.0" prefWidth="186.0" text="Mã giao dịch:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="55.0" layoutY="131.0" text="Địa chỉ bãi xe: ">
+            <Label layoutX="100.0" layoutY="100.0" text="Địa chỉ bãi xe: ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="31.0" layoutY="356.0" text="Số tiền đã thanh toán:">
+            <Label layoutX="100.0" layoutY="325.0" text="Số tiền đã thanh toán:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="97.0" layoutY="216.0" text="Loại xe: ">
+            <Label layoutX="100.0" layoutY="175.0" text="Loại xe: ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="25.0" layoutY="485.0" text="Nội dung giao dịch:">
+            <Label layoutX="100.0" layoutY="475.0" text="Nội dung giao dịch:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="72.0" layoutY="405.0" prefHeight="47.0" prefWidth="146.0" text="Thời gian:">
+            <Label layoutX="100.0" layoutY="400.0" prefHeight="11.0" prefWidth="146.0" text="Thời gian:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="469.0" layoutY="32.0" prefHeight="70.0" prefWidth="186.0" text="12345454">
+            <Label layoutX="400.0" layoutY="25.0" prefHeight="21.0" prefWidth="186.0" text="12345454">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="450.0" layoutY="112.0" prefHeight="70.0" prefWidth="186.0" text="15 ABC,Ecoparrk">
+            <Label layoutX="400.0" layoutY="100.0" prefHeight="1.0" prefWidth="186.0" text="15 ABC,Ecoparrk">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="471.0" layoutY="195.0" prefHeight="70.0" prefWidth="186.0" text="Xe điện ">
+            <Label layoutX="400.0" layoutY="175.0" prefHeight="1.0" prefWidth="186.0" text="Xe điện ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="97.0" layoutY="288.0" text="Biển số:">
+            <Label layoutX="100.0" layoutY="250.0" text="Biển số:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="471.0" layoutY="288.0" text="12AA456">
+            <Label layoutX="400.0" layoutY="250.0" text="12AA456">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="469.0" layoutY="351.0" text="400,000VND">
+            <Label layoutX="400.0" layoutY="325.0" text="400,000VND">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="457.0" layoutY="419.0" text="20/12/2022  14h ">
+            <Label layoutX="400.0" layoutY="400.0" text="20/12/2022  14h ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="495.0" layoutY="483.0" text="Tien coc">
+            <Label layoutX="400.0" layoutY="475.0" text="Tien coc">
                <font>
                   <Font size="24.0" />
                </font>

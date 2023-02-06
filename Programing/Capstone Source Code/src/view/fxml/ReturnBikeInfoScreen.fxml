@@ -42,103 +42,93 @@
             </Button>
          </children>
       </Pane>
-      <Line endX="28.492828369140625" endY="621.300048828125" layoutX="450.0" layoutY="169.0" startX="28.492828369140625" startY="-74.7928695678711" />
+      <Line endX="28.492828369140625" endY="621.300048828125" layoutX="526.0" layoutY="168.0" startX="28.492828369140625" startY="-74.7928695678711" />
       <Label layoutX="544.0" layoutY="15.0" text="Return Bike ">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="124.0" text="Tên xe:">
+      <Label layoutX="20.0" layoutY="100.0" text="Loại xe: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="279.0" layoutY="122.0" text="Xe hồng xinh sắn">
+      <Label layoutX="350.0" layoutY="100.0" text="Xe điện ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="213.0" text="Loại xe: ">
+      <Label layoutX="20.0" layoutY="200.0" text="Hãng xe:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="346.0" layoutY="221.0" text="Xe điện ">
+      <Label layoutX="350.0" layoutY="200.0" text="Yamaha">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="373.0" text="Hãng xe:">
+      <Label layoutX="20.0" layoutY="150.0" text="Biển số:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="349.0" layoutY="379.0" text="Yamaha">
+      <Label layoutX="350.0" layoutY="150.0" text="123AA45">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="297.0" text="Biển số:">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="345.0" layoutY="297.0" text="123AA45">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button alignment="CENTER" layoutX="846.0" layoutY="713.0" mnemonicParsing="false" onMouseClicked="#confirmToPayment" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thanh toán " wrapText="true">
+      <Button alignment="CENTER" layoutX="183.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#confirmToPayment" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thanh toán " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="47.0" layoutY="435.0" text="Pin: ">
+      <Label layoutX="20.0" layoutY="250.0" text="Pin: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="501.0" text="Thời gian thuê: ">
+      <Label layoutX="20.0" layoutY="300.0" text="Thời gian thuê: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="573.0" text="Số tiền phải thanh toán: ">
+      <Label layoutX="20.0" layoutY="350.0" text="Số tiền phải thanh toán: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="644.0" text="Số tiền trả trước : ">
+      <Label layoutX="20.0" layoutY="400.0" text="Số tiền trả trước : ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="13.0" layoutY="726.0" text="Tổng tiền phải thanh toán:">
+      <Label layoutX="20.0" layoutY="450.0" text="Tổng tiền phải thanh toán:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="345.0" layoutY="507.0" text="00:30:00">
+      <Label layoutX="350.0" layoutY="300.0" text="00:30:00">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="359.0" layoutY="433.0" text="60%">
+      <Label layoutX="350.0" layoutY="250.0" text="60%">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="340.0" layoutY="578.0" text="50,000VND">
+      <Label layoutX="350.0" layoutY="350.0" text="50,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="330.0" layoutY="646.0" text="500,000VND">
+      <Label layoutX="350.0" layoutY="400.0" text="500,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="318.0" layoutY="723.0" text="-450,000VND">
+      <Label layoutX="350.0" layoutY="450.0" text="-450,000VND">
          <font>
             <Font size="24.0" />
          </font>
