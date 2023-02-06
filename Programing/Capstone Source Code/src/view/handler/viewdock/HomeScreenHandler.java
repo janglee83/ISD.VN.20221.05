@@ -30,21 +30,25 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     private static ViewController viewController = new ViewController();
 
     private static View_BL view_BL = new View_BL();
-    @FXML 
-    private VBox listDockVBox;
+
+    @FXML
+    private VBox VBoxListDock;
+
     @FXML
     private TextField searchTextField;
+
     @FXML
     private Button searchButton;
+
     public HomeScreenHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
     }
-    @Override 
+    @Override
     public void initialize(URL location, ResourceBundle resource)
     {
         final DockList dockList = new DockList();
         view_BL.getListDock(dockList);
-        listDockVBox.getChildren().clear();
+        VBoxListDock.getChildren().clear();;
         try{
             displayDocks(dockList);
         } catch (IOException exception)
@@ -57,15 +61,15 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
                 for (Dock dock : dockList.getDocksList()) {
                     if (dock.getDockName().equals(newValue)) {
                         // clear all old data
-                        listDockVBox.getChildren().clear();
+                        VBoxListDock.getChildren().clear();
                         displayDock(dock);
                         break;
-                    }   
+                    }
                 }
 
                 if (newValue.equals("")) {
                     // clear all old data
-                    listDockVBox.getChildren().clear();
+                    VBoxListDock.getChildren().clear();
                     displayDocks(dockList);
                 }
             } catch (IOException exception) {
@@ -81,7 +85,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         viewDockCompHandler.setDockInfo();
 
         // add spinner
-        listDockVBox.getChildren().add(viewDockCompHandler.getContent());
+        VBoxListDock.getChildren().add(viewDockCompHandler.getContent());
     }
     private void displayDocks(DockList dockList) throws IOException {
         for (Dock dock: dockList.getDocksList()){
