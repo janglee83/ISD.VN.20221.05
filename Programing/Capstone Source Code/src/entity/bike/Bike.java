@@ -111,7 +111,4 @@ public class Bike {
 	public void setBikeImageUrl(String bikeImageUrl) {
 		this.bikeImageUrl = bikeImageUrl;
 	}
-
-
-
 }

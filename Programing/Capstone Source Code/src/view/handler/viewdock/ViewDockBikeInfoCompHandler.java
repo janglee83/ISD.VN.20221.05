@@ -16,29 +16,35 @@ import javafx.scene.layout.HBox;
 import view.FXMLScreenHandler;
 
 public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
-
+    private static Logger LOGGER = utlis.Helper.getLogger(ViewDockBikeInfoCompHandler.class.getName());
     @FXML
     private HBox hboxBike;
     @FXML
     private ImageView image;
     @FXML
     private Button displayBikeInfoButton;
-    private ViewDockInfoHandler viewDockBikeListHandler;
+    private ViewDockInfoHandler viewDockChooseBikeHandler;
     private Bike bike;
-    public ViewDockBikeInfoCompHandler(String screenPath, ViewDockInfoHandler viewDockBikeListHandler) throws IOException {
+    public ViewDockBikeInfoCompHandler(String screenPath, ViewDockInfoHandler viewDockChooseBikeHandler) throws IOException {
         super(screenPath);
-        this.viewDockBikeListHandler = viewDockBikeListHandler;
+        this.viewDockChooseBikeHandler = viewDockChooseBikeHandler;
         hboxBike.setAlignment(Pos.CENTER);
     }
     public void setBike(Bike bike)
     {
         this.bike = bike;
     }
-    public void setBikeInfo()
-    {
-        displayBikeInfoButton.setOnMouseClicked(event ->
-        {
-
-        });
-    }
+    // public void setBikeInfo()
+    // {
+    //     displayBikeInfoButton.setOnMouseClicked(event ->
+    //     {
+    //         LOGGER.info("Comfirm to view Bike info");
+    //         try{
+    //             viewDockChooseBikeHandler.viewDockBikeInfoHandler(bike);
+    //         } catch (IOException exception)
+    //         {
+    //             throw new CapstoneException(exception.getMessage());
+    //         }
+    //     });
+    // }
 }

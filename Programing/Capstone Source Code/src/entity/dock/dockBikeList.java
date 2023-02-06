@@ -11,4 +11,8 @@ public class DockBikeList {
     public void setDockBikeList(ArrayList<Bike> dockBikeList) {
         this.dockBikeList = dockBikeList;
     }
+    public ArrayList<Bike> getBikesList()
+    {
+        return dockBikeList;
+    }
 }

@@ -77,6 +77,14 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             }
         });
     }
+    public void viewDockInfoHandler(Dock dock) throws IOException
+    {
+        ViewDockInfoHandler viewDockInfoHandler = new ViewDockInfoHandler(Configs.DOCK_DETAIL_SCREEN_PATH, this.stage, dock);
+        viewDockInfoHandler.setPreviousScreen(this);
+        viewDockInfoHandler.setHomeScreenHandler(homeScreenHandler);
+        viewDockInfoHandler.setScreenTitle("Home - Dock info");
+        viewDockInfoHandler.show();
+    }
     private void displayDock(Dock dock) throws IOException
     {
         // display each dock

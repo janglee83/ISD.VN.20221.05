@@ -30,7 +30,7 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
     private ImageView image;
 
     @FXML
-    private Button watchDockInfoButton;
+    private Button viewDockDetailButton;
 
     private HomeScreenHandler homeScreenChooseDockHandler;
     private Dock dock;
@@ -54,8 +54,15 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         emptyDockPoint2.setText(text2);
         String text3 = new String("Number of " + Bike.TWIN_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING));
         emptyDockPoint3.setText(text3);
-        watchDockInfoButton.setOnMouseClicked(event -> {
+        viewDockDetailButton.setOnMouseClicked(event -> {
             // todo 
+            LOGGER.info("Confirm to view dock");
+            try {
+                homeScreenChooseDockHandler.viewDockInfoHandler(dock);
+            } catch (IOException exception)
+            {
+                throw new CapstoneException(exception.getMessage());
+            }
         });
     }
 }
