@@ -35,17 +35,17 @@ public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
     {
         this.bike = bike;
     }
-    // public void setBikeInfo()
-    // {
-    //     displayBikeInfoButton.setOnMouseClicked(event ->
-    //     {
-    //         LOGGER.info("Comfirm to view Bike info");
-    //         try{
-    //             viewDockChooseBikeHandler.viewDockBikeInfoHandler(bike);
-    //         } catch (IOException exception)
-    //         {
-    //             throw new CapstoneException(exception.getMessage());
-    //         }
-    //     });
-    // }
+    public void setBikeInfo()
+    {
+        displayBikeInfoButton.setOnMouseClicked(event ->
+        {
+            LOGGER.info("Comfirm to view Bike info");
+            try{
+                viewDockChooseBikeHandler.viewDockBikeInfoHandler(bike);
+            } catch (IOException exception)
+            {
+                throw new CapstoneException(exception.getMessage());
+            }
+        });
+    }
 }
