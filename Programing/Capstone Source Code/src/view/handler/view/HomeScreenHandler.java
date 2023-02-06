@@ -1,4 +1,4 @@
-package view.handler;
+package view.handler.view;
 
 import java.io.IOException;
 import java.io.ObjectInputFilter.Config;
@@ -29,7 +29,6 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
 import view.handler.returnbike.ReturnBikeDockCompHandler;
-import view.handler.view.ViewDockCompHandler;
 
 
 public class HomeScreenHandler extends BaseScreenHandler implements Initializable {
@@ -90,7 +89,14 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             }
         });
     }
-
+    public void viewDockInfoHandler(Dock dock) throws IOException
+    {
+        ViewDockInfoHandler viewDockInfoHandler = new ViewDockInfoHandler(Configs.DOCK_DETAIL_SCREEN_PATH, this.stage, dock);
+        viewDockInfoHandler.setPreviousScreen(this);
+        viewDockInfoHandler.setHomeScreenHandler(homeScreenHandler);
+        viewDockInfoHandler.setScreenTitle("Home - Dock info");
+        viewDockInfoHandler.show();
+    }
     private void displayDock(Dock dock) throws IOException
     {
         // display each dock
@@ -107,7 +113,6 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             displayDock(dock);
         }
     }
-
     @FXML
     void dockDetailHandler(MouseEvent event) throws SQLException {
         try {

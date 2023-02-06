@@ -7,13 +7,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import view.BaseScreenHandler;
 
 public class ViewDockBikeInfoHandler extends BaseScreenHandler {
 
     @FXML
-    private Label typeBike, companyBike, licensePlates, battery, availableTime, deposit;
+    private Label typeBike, brandBike, licensePlates, battery, availableTime, deposit;
 
     @FXML
     private Image image;
@@ -31,8 +32,12 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
     public void initialize()
     {
         typeBike.setText(Integer.toString(bike.getBikeType()));
-        companyBike.setText(bike.getBrand());
-        licensePlates.setText(Integer.toString(bike.getBikeId()));
+        brandBike.setText(bike.getBrand());
+        licensePlates.setText(bike.getLicensePlate());
+        deposit.setText(Integer.toString(bike.getBikeValue()));
     }
-
+    @FXML
+    public void handleReturn(MouseEvent event) {
+        getPreviousScreen().show();
+    }
 }
