@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import utlis.Configs;
-import view.handler.HomeScreenHandler;
+import view.handler.viewdock.HomeScreenHandler;
 
 public class App extends Application {
 
@@ -53,6 +53,7 @@ public class App extends Application {
         try {
           HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_SCREEN_PATH, primaryStage);
           homeScreenHandler.setScreenTitle("Home Screen");
+          homeScreenHandler.setHomeScreenHandler(homeScreenHandler);
           // homeScreenHandler.setImage();
           homeScreenHandler.show();
         } catch (IOException exception) {
