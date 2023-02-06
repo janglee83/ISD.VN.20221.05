@@ -1,4 +1,4 @@
-package view.handler.viewdock;
+package view.handler.view;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -15,7 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import view.FXMLScreenHandler;
-import view.handler.viewdock.HomeScreenHandler;
+import view.handler.HomeScreenHandler;
 public class ViewDockCompHandler extends FXMLScreenHandler{
     private static Logger LOGGER = utlis.Helper.getLogger(ViewDockCompHandler.class.getName());
     @FXML
@@ -55,7 +55,7 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         String text3 = new String("Number of " + Bike.TWIN_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING));
         emptyDockPoint3.setText(text3);
         watchDockInfoButton.setOnMouseClicked(event -> {
-            // todo 
+            // todo
         });
     }
 }

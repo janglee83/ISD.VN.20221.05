@@ -1,4 +1,4 @@
-package view.handler.viewdock;
+package view.handler.view;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class ViewDockInfoHandler extends BaseScreenHandler{
     private VBox bikeListVBox;
     @FXML
     private Button returnButton;
-    
+
     private Dock dock;
     public ViewDockInfoHandler(String screenPath, Stage stage, Dock dock) throws IOException {
         super(screenPath, stage);
@@ -34,7 +34,7 @@ public class ViewDockInfoHandler extends BaseScreenHandler{
         dockArea.setText(Integer.toString(dock.getDockArea()));
         //todo
     }
-    @FXML 
+    @FXML
     public void barcodeInsert(MouseEvent event) throws IOException
     {
 

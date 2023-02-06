@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import view.FXMLScreenHandler;
-import view.handler.viewdock.HomeScreenHandler;
+import view.handler.HomeScreenHandler;
 
 public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
 

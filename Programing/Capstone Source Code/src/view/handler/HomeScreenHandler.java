@@ -1,4 +1,4 @@
-package view.handler.viewdock;
+package view.handler;
 
 import java.io.IOException;
 import java.io.ObjectInputFilter.Config;
@@ -22,6 +22,7 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.returnbike.ReturnBikeDockCompHandler;
 import view.handler.returnbike.ReturnBikeHandler;
+import view.handler.view.ViewDockCompHandler;
 
 
 public class HomeScreenHandler extends BaseScreenHandler implements Initializable {

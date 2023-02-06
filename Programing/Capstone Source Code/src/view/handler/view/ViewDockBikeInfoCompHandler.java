@@ -1,4 +1,4 @@
-package view.handler.viewdock;
+package view.handler.view;
 
 import java.io.IOException;
 import java.util.logging.Logger;

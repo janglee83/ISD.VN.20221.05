@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Hashtable;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import view.handler.viewdock.HomeScreenHandler;
+import view.handler.HomeScreenHandler;
 
 import java.util.Objects;
 

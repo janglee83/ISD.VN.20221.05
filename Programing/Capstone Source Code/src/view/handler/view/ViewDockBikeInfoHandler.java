@@ -1,4 +1,4 @@
-package view.handler.viewdock;
+package view.handler.view;
 
 import java.io.IOException;
 
@@ -20,7 +20,7 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
 
     @FXML
     private Button returnButton;
-    
+
     private Bike bike;
     public ViewDockBikeInfoHandler(String screenPath, Stage stage, Bike bike) throws IOException {
         super(screenPath, stage);
@@ -30,9 +30,9 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
     }
     public void initialize()
     {
-        typeBike.setText(bike.getBikeType());
+        typeBike.setText(Integer.toString(bike.getBikeType()));
         companyBike.setText(bike.getBrand());
-        licensePlates.setText(bike.getBikeId());
+        licensePlates.setText(Integer.toString(bike.getBikeId()));
     }
-    
+
 }
