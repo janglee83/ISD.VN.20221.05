@@ -1,23 +1,30 @@
 package view.handler.view;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Optional;
 import java.util.logging.Logger;
 
+import business_layer.RentBike_BL;
 import business_layer.View_BL;
 import common.exception.CapstoneException;
 import controller.ViewController;
+import data_access_layer.bike.Bike_DAL;
 import entity.bike.Bike;
+import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
 import entity.dock.DockBikeList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import request_layer.View_RL;
 import utlis.Configs;
 import view.BaseScreenHandler;
+import view.handler.rentbike.RentBikeInfoHandler;
 
 public class ViewDockInfoHandler extends BaseScreenHandler{
 
@@ -25,13 +32,19 @@ public class ViewDockInfoHandler extends BaseScreenHandler{
     private static ViewController viewController = new ViewController();
     private View_RL view_RL = new View_RL();
     private View_BL view_BL = new View_BL();
+    private static RentBike_BL rentBike_BL = new RentBike_BL();
+
+    private static Bike_DAL bike_DAL = new Bike_DAL();
+    private BikeRentInfo bikeRentInfo;
+
     @FXML
     private Label dockName, dockAddress, dockArea, availableBike;
     @FXML
     private VBox listBikeVBox;
     @FXML
     private Button returnButton;
-
+    // @FXML
+    // private Button rentBikeButton;
     private Dock dock;
     private Bike bike;
     public ViewDockInfoHandler(String screenPath, Stage stage, Dock dock) throws IOException {
@@ -75,11 +88,6 @@ public class ViewDockInfoHandler extends BaseScreenHandler{
         {
             displayBike(bike);
         }
-    }
-    @FXML
-    public void barcodeInsert(MouseEvent event) throws IOException
-    {
-
     }
     @FXML
     public void handleReturn(MouseEvent event) {

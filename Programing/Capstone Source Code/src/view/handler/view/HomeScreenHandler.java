@@ -29,8 +29,6 @@ import javafx.stage.Stage;
 import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
-import view.handler.returnbike.ReturnBikeDockCompHandler;
-import view.handler.returnbike.ReturnBikeInfoHandler;
 
 
 public class HomeScreenHandler extends BaseScreenHandler implements Initializable {
@@ -52,7 +50,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     private static RentBike_BL rentBike_BL = new RentBike_BL();
 
     private static Bike_DAL bike_DAL = new Bike_DAL();
-    private BikeRentInfo bikeRentInfo;
+    //private BikeRentInfo bikeRentInfo;
     
     public HomeScreenHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
@@ -115,16 +113,6 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         for (Dock dock: dockList.getDocksList()){
             displayDock(dock);
         }
-    }
-    @FXML
-    void returnBikeHandler(MouseEvent event) throws IOException {
-        // display Return bike screen
-        ReturnBikeInfoHandler returnBikeInfoHandler = new ReturnBikeInfoHandler(Configs.BIKE_RENT_DATA_SCREEN_PATH, this.stage, bikeRentInfo);
-        // configs
-        returnBikeInfoHandler.setPreviousScreen(this);
-        returnBikeInfoHandler.setHomeScreenHandler(homeScreenHandler);
-        returnBikeInfoHandler.setScreenTitle("Return bike");
-        returnBikeInfoHandler.show();
     }
     @FXML
     void dockDetailHandler(MouseEvent event) throws SQLException {
