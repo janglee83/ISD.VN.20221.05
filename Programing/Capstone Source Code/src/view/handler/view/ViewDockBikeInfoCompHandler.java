@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import view.FXMLScreenHandler;
 
 public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
@@ -21,9 +22,14 @@ public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
     @FXML
     private HBox hboxBike;
     @FXML
+    private VBox imageLogoVbox;
+    @FXML
     private ImageView image;
     @FXML
     private Button displayBikeInfoButton;
+    @FXML
+    private VBox spinnerFX;
+    
     private ViewDockInfoHandler viewDockChooseBikeHandler;
     private Bike bike;
     public ViewDockBikeInfoCompHandler(String screenPath, ViewDockInfoHandler viewDockChooseBikeHandler) throws IOException {
