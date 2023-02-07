@@ -25,7 +25,7 @@
             <Image url="@image/bike.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="home" fitHeight="53.0" fitWidth="61.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="53.0" fitWidth="61.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/home.png" />
          </image>
@@ -120,7 +120,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="647.0" fitWidth="701.0" layoutX="575.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="647.0" fitWidth="701.0" layoutX="575.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/xdd.jpg" />
          </image>

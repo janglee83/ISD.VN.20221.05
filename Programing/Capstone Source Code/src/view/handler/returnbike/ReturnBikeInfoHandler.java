@@ -2,15 +2,16 @@ package view.handler.returnbike;
 
 import java.io.IOException;
 
-import entity.bike.Bike;
+import controller.PaymentController;
+import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
 import entity.transaction.Transaction;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import provide.strategy.PaymentMethod;
-import provide.strategy.implement_strategy.PaymentAmountVer1Strategy;
 import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.payment.InsertCardScreenHandler;
@@ -19,9 +20,14 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
 
     private BikeRentInfo bikeRentInfo;
 
+    private PaymentController paymentController = new PaymentController();
+
     @FXML
     private Label bikeTypeLabel, brandLabel, licensePlateLabel, timeRentLabel, payAmountLabel, payDepositeLabel,
             totalAmount;
+
+    @FXML
+    private ImageView image;
 
     public ReturnBikeInfoHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
@@ -42,11 +48,13 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
         payAmountLabel.setText(timeRentString);
 
         // caculate amount
-        PaymentMethod paymentMethod = new PaymentMethod();
-        paymentMethod.setBikeRentInfo(bikeRentInfo);
-        paymentMethod.setPaymentMethod(new PaymentAmountVer1Strategy());
-        int amount = paymentMethod.caculateAmount();
+        int amount = paymentController.caculateAmount(bikeRentInfo);
         payAmountLabel.setText(Integer.toString(amount));
+
+        // set image
+        Image imageLink = new Image(bikeRentInfo.getBike().getBikeImageUrl());
+        image.setImage(imageLink);
+        image.setPreserveRatio(false);
     }
 
     @FXML
