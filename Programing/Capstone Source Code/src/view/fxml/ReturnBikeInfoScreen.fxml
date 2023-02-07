@@ -53,7 +53,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="100.0" text="Xe điện ">
+      <Label fx:id="bikeTypeLabel" layoutX="350.0" layoutY="100.0" text="Xe điện ">
          <font>
             <Font size="24.0" />
          </font>
@@ -63,7 +63,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="200.0" text="Yamaha">
+      <Label fx:id="brandLabel" layoutX="350.0" layoutY="200.0" text="Yamaha">
          <font>
             <Font size="24.0" />
          </font>
@@ -73,7 +73,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="150.0" text="123AA45">
+      <Label fx:id="licensePlateLabel" layoutX="350.0" layoutY="150.0" text="123AA45">
          <font>
             <Font size="24.0" />
          </font>
@@ -108,7 +108,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="300.0" text="00:30:00">
+      <Label fx:id="timeRentLabel" layoutX="350.0" layoutY="300.0" text="00:30:00">
          <font>
             <Font size="24.0" />
          </font>
@@ -118,17 +118,17 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="350.0" text="50,000VND">
+      <Label fx:id="payAmountLabel" layoutX="350.0" layoutY="350.0" text="50,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="400.0" text="500,000VND">
+      <Label fx:id="payDepositeLabel" layoutX="350.0" layoutY="400.0" text="500,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="450.0" text="-450,000VND">
+      <Label fx:id="totalAmount" layoutX="350.0" layoutY="450.0" text="-450,000VND">
          <font>
             <Font size="24.0" />
          </font>

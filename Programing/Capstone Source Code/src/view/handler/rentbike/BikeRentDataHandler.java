@@ -43,11 +43,6 @@ public class BikeRentDataHandler extends BaseScreenHandler implements Initializa
     public BikeRentDataHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
         this.bikeRentInfo = bikeRentInfo;
-
-        // init a bike rent info entity
-        bikeRentInfo.setHours(hours);
-        bikeRentInfo.setMinutes(minutes);
-        bikeRentInfo.setSeconds(seconds);
     }
 
     @Override
@@ -109,6 +104,10 @@ public class BikeRentDataHandler extends BaseScreenHandler implements Initializa
         KeyFrame keyFrame = new KeyFrame(Duration.millis(1000), e -> {
             seconds++;
             setTime();
+            // init a bike rent info entity
+            bikeRentInfo.setHours(hours);
+            bikeRentInfo.setMinutes(minutes);
+            bikeRentInfo.setSeconds(seconds);
         });
 
         timeline = new Timeline(keyFrame);
