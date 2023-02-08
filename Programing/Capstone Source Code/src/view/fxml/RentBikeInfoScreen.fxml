@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="-1.220703143189894E-5" endY="104.50000762939453" layoutY="-11.0" startX="1365.9998779296875" startY="104.4999771118164" />
+      <Line endX="101.49998474121094" endY="-1.5258789289873675E-6" startX="101.49998474121094" startY="93.00000762939453" />
+      <Line endX="193.49998474121094" endY="-3.43322744811303E-6" layoutX="8.0" startX="193.49998474121094" startY="92.79290008544922" />
+      <ImageView fx:id="logo" fitHeight="43.0" fitWidth="69.0" layoutX="16.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/bike.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="61.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/home.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="homeLabel" layoutX="128.0" layoutY="61.0" prefHeight="17.0" prefWidth="51.0" text="Home" textAlignment="CENTER">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0">
+         <children>
+            <Button layoutX="-39.0" layoutY="4.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="78.0" />
+            <ImageView fitHeight="53.0" fitWidth="69.0" layoutX="-26.0" layoutY="10.0" onMouseClicked="#handleReturn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/back.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="492.0" layoutY="169.0" startX="-30.17376708984375" startY="-74.79287719726562" />
+      <Label layoutX="502.0" layoutY="7.0" text="Bike's Infomation">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="124.0" text="Loại xe: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="bikeType" layoutX="157.0" layoutY="124.0" text="Xe điện ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="201.0" text="Hãng: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="brand" layoutX="161.0" layoutY="201.0" text="Ninja">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="277.0" text="Biển số: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="licensePlate" layoutX="152.0" layoutY="277.0" text="12AA456">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="359.0" text="Tiền cọc:  ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="deposit" layoutX="151.0" layoutY="359.0" text="500,000VND">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="441.0" text="Barcode:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="barcodelb" layoutX="150.0" layoutY="441.0" text="123456">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="image" fitHeight="647.0" fitWidth="701.0" layoutX="578.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/xdd.jpg" />
+         </image>
+      </ImageView>
+      <Button alignment="CENTER" layoutX="130.0" layoutY="542.0" mnemonicParsing="false" onMouseClicked="#confirmToRentBike" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

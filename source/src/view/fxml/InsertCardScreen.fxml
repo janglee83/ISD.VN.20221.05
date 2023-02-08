@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="-1.220703143189894E-5" endY="104.50000762939453" layoutY="-11.0" startX="1365.9998779296875" startY="104.4999771118164" />
+      <Line endX="101.49998474121094" endY="-1.5258789289873675E-6" startX="101.49998474121094" startY="93.00000762939453" />
+      <Line endX="193.49998474121094" endY="-3.43322744811303E-6" layoutX="8.0" startX="193.49998474121094" startY="92.79290008544922" />
+      <ImageView fx:id="logo" fitHeight="43.0" fitWidth="69.0" layoutX="16.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/bike.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="home" fitHeight="53.0" fitWidth="61.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/home.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="homeLabel" layoutX="128.0" layoutY="61.0" prefHeight="17.0" prefWidth="51.0" text="Home" textAlignment="CENTER">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1152.0" layoutY="12.0" prefHeight="64.0" prefWidth="156.0">
+         <children>
+            <Button layoutX="34.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" onMouseClicked="#handleReturn" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Label layoutX="640.0" layoutY="6.0" text="Payment">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="330.0" layoutY="180.0" text="Tên chủ thẻ: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="330.0" layoutY="260.0" text="Mã số thẻ: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="330.0" layoutY="420.0" text="Ngày hết hạn: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="330.0" layoutY="340.0" text="Private Token: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="597.0" layoutY="519.0" mnemonicParsing="false" onMouseClicked="#handlePayment" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nameTextField" layoutX="625.0" layoutY="180.0" prefHeight="47.0" prefWidth="307.0" />
+      <TextField fx:id="numberTextField" layoutX="625.0" layoutY="260.0" prefHeight="47.0" prefWidth="310.0" />
+      <TextField fx:id="codeTextField" layoutX="625.0" layoutY="340.0" prefHeight="47.0" prefWidth="316.0" />
+      <TextField fx:id="dateTextField" layoutX="625.0" layoutY="420.0" prefHeight="47.0" prefWidth="316.0" />
+      <Label fx:id="invalidNameLabel" layoutX="625.0" layoutY="235.0" text="Invalid name" textFill="#d03636" />
+      <Label fx:id="invalidCardNumberLabel" layoutX="625.0" layoutY="315.0" text="Invalid card number" textFill="#d03636" />
+      <Label fx:id="invalidTokenLabel" layoutX="625.0" layoutY="395.0" text="Invalid token" textFill="#d03636" />
+      <Label fx:id="invalidDateLabel" layoutX="625.0" layoutY="475.0" text="Invalid date" textFill="#d03636" />
+      <Label fx:id="invalidField" layoutX="609.0" layoutY="582.0" text="Please enter all the missing field" textFill="#d03636" />
+   </children>
+</AnchorPane>

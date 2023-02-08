@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="-1.220703143189894E-5" endY="104.50000762939453" layoutY="-11.0" startX="1365.9998779296875" startY="104.4999771118164" />
+      <Line endX="101.49998474121094" endY="-1.5258789289873675E-6" startX="101.49998474121094" startY="93.00000762939453" />
+      <Line endX="193.49998474121094" endY="-3.43322744811303E-6" layoutX="8.0" startX="193.49998474121094" startY="92.79290008544922" />
+      <ImageView fx:id="logo" fitHeight="43.0" fitWidth="69.0" layoutX="16.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/bike.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="home" fitHeight="53.0" fitWidth="61.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/home.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="homeLabel" layoutX="128.0" layoutY="61.0" prefHeight="17.0" prefWidth="51.0" text="Home" textAlignment="CENTER">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="1104.0" layoutY="12.0" prefHeight="64.0" prefWidth="204.0">
+         <children>
+            <Button layoutX="68.0" layoutY="2.0" mnemonicParsing="false" onMouseClicked="#handleReturn">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Line endX="28.492828369140625" endY="621.300048828125" layoutX="450.0" layoutY="169.0" startX="28.492828369140625" startY="-74.7928695678711" />
+      <Label layoutX="544.0" layoutY="15.0" text="Return Bike ">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="150.0" text="Tên bãi xe:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="dockName" layoutX="250.0" layoutY="150.0" text="ABC station">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="200.0" text="Địa chỉ:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="dockAddress" layoutX="250.0" layoutY="200.0" text="15 ABC, EcoPark">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="250.0" text="Diện tích:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="dockArea" layoutX="250.0" layoutY="250.0" text="123 m2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" layoutX="133.0" layoutY="513.0" mnemonicParsing="false" onMouseClicked="#confirmToReturn" prefHeight="46.0" prefWidth="193.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Trả xe " wrapText="true">
+         <font>
+            <Font name="Arial" size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="20.0" layoutY="300.0" text="Vị trí trống xe đạp: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="350.0" text="Vị trí trống xe điện: ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="400.0" text="Vị trí trống xe đôi:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="availableStandardEBikePoint" layoutX="250.0" layoutY="350.0" text="3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="availableStandardBikePoint" layoutX="250.0" layoutY="300.0" text="3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="availableTwinBikePoint" layoutX="250.0" layoutY="400.0" text="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="image" fitHeight="502.0" fitWidth="738.0" layoutX="567.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/station.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="195.0" prefWidth="1188.0" style="-fx-padding: 10 5 5 5;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox fx:id="hboxDock" layoutX="17.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="976.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <VBox fx:id="imageLogoVbox" alignment="CENTER" prefHeight="78.0" prefWidth="185.0">
+               <children>
+                  <ImageView fx:id="image" fitHeight="103.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/xdd.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox prefHeight="99.0" prefWidth="348.0">
+               <children>
+                  <Label fx:id="title" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="title1" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media2" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="title2" contentDisplay="CENTER" layoutX="10.0" layoutY="56.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media3" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+             <VBox prefHeight="161.0" prefWidth="337.0">
+               <children>
+                  <Label fx:id="emptyDockPoint1" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="Số lượng xe đạp trống: 1dasdasdsadasdsa" textFill="#5091e6">
+                     <font>
+                        <Font name="Segoe UI Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emptyDockPoint2" layoutX="10.0" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="asdsadsadSố lượng xe đạp trống: 2" textFill="#5091e6">
+                     <font>
+                        <Font name="Segoe UI Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emptyDockPoint3" contentDisplay="CENTER" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="330.0" text="Số lượng xe đạp trống: 3" textFill="#5091e6">
+                     <font>
+                        <Font name="Segoe UI Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox fx:id="spinnerFX" alignment="CENTER_LEFT" prefHeight="78.0" prefWidth="140.0">
+               <children>
+                  <Button fx:id="returnBikeButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="45.0" prefWidth="159.0" text="Return bike">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children></VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
