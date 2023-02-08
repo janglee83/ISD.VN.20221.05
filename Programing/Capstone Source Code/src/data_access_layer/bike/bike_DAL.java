@@ -8,7 +8,7 @@ import data_access_layer.database.Database;
 import entity.bike.Bike;
 
 public class Bike_DAL {
-    public Bike getBikeInDock(int bike_id) throws SQLException {
+    public Bike getBike(int bike_id) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
         ResultSet result = statement.executeQuery(query);
@@ -40,7 +40,18 @@ public class Bike_DAL {
         ResultSet result = statement.executeQuery(query);
         result.next();
         return result.getInt("dock_id");
-
     }
 
+    public Bike createBike(ResultSet res) throws SQLException{
+        Bike bike = new Bike();
+        bike.setBikeId(res.getInt("id"));
+        bike.setBikeImageUrl(res.getString("bike_image_url"));
+        bike.setBikeName(res.getString("name"));
+        bike.setBikeType(res.getInt("bike_type_id"));
+        bike.setBikeValue(res.getInt("bikeValue"));
+        bike.setBrand(res.getString("brand"));
+        bike.setLicensePlate(res.getString("licence_plate"));
+        bike.setIsBeingUsed(res.getBoolean("isBeingUsed"));
+        return bike;
+    }
 }
