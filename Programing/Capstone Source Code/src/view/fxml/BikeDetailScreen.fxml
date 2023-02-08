@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="image" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line endX="-1.220703143189894E-5" endY="104.50000762939453" layoutY="-11.0" startX="1365.9998779296875" startY="104.4999771118164" />
       <Line endX="101.49998474121094" endY="-1.5258789289873675E-6" startX="101.49998474121094" startY="93.00000762939453" />
@@ -50,7 +50,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="companyBike" layoutX="306.0" layoutY="212.0" text="Ninja">
+      <Label fx:id="brandBike" layoutX="306.0" layoutY="212.0" text="Ninja">
          <font>
             <Font size="24.0" />
          </font>
@@ -90,12 +90,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="deposit" layoutX="272.0" layoutY="528.0" text="500,000VND">
+      <Label fx:id="deposit" layoutX="272.0" layoutY="528.0" text="400,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="647.0" fitWidth="701.0" layoutX="575.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="647.0" fitWidth="701.0" layoutX="575.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/xdd.jpg" />
          </image>

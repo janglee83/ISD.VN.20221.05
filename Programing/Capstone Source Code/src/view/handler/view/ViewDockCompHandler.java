@@ -3,6 +3,7 @@ package view.handler.view;
 import java.io.IOException;
 import java.util.logging.Logger;
 
+import common.exception.CapstoneException;
 import entity.bike.Bike;
 import entity.dock.Dock;
 import javafx.fxml.FXML;
@@ -13,7 +14,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import view.FXMLScreenHandler;
-import view.handler.HomeScreenHandler;
 public class ViewDockCompHandler extends FXMLScreenHandler{
     private static Logger LOGGER = utlis.Helper.getLogger(ViewDockCompHandler.class.getName());
     @FXML
@@ -28,7 +28,7 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
     private ImageView image;
 
     @FXML
-    private Button watchDockInfoButton;
+    private Button viewDockDetailButton;
 
     private HomeScreenHandler homeScreenChooseDockHandler;
     private Dock dock;
@@ -58,8 +58,16 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         emptyDockPoint2.setText(text2);
         String text3 = new String("Number of " + Bike.TWIN_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING));
         emptyDockPoint3.setText(text3);
-        watchDockInfoButton.setOnMouseClicked(event -> {
+
+        viewDockDetailButton.setOnMouseClicked(event -> {
             // todo
+            LOGGER.info("Confirm to view dock");
+            try {
+                homeScreenChooseDockHandler.viewDockInfoHandler(dock);
+            } catch (IOException exception)
+            {
+                throw new CapstoneException(exception.getMessage());
+            }
         });
     }
 }

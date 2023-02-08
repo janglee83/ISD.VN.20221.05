@@ -1,4 +1,4 @@
-package view.handler;
+package view.handler.view;
 
 import java.io.IOException;
 import java.io.ObjectInputFilter.Config;
@@ -17,6 +17,7 @@ import javafx.scene.control.Alert.AlertType;
 import business_layer.View_BL;
 import common.exception.CapstoneException;
 import controller.ViewController;
+import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.fxml.FXML;
@@ -31,8 +32,6 @@ import javafx.stage.Stage;
 import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
-import view.handler.returnbike.ReturnBikeDockCompHandler;
-import view.handler.view.ViewDockCompHandler;
 
 public class HomeScreenHandler extends BaseScreenHandler implements Initializable {
     private static Logger LOGGER = utlis.Helper.getLogger(HomeScreenHandler.class.getName());
@@ -53,6 +52,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     private static RentBike_BL rentBike_BL = new RentBike_BL();
 
     private static Bike_DAL bike_DAL = new Bike_DAL();
+    //private BikeRentInfo bikeRentInfo;
 
     public HomeScreenHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
@@ -91,8 +91,16 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             }
         });
     }
-
-    private void displayDock(Dock dock) throws IOException {
+    public void viewDockInfoHandler(Dock dock) throws IOException
+    {
+        ViewDockInfoHandler viewDockInfoHandler = new ViewDockInfoHandler(Configs.DOCK_DETAIL_SCREEN_PATH, this.stage, dock);
+        viewDockInfoHandler.setPreviousScreen(this);
+        viewDockInfoHandler.setHomeScreenHandler(homeScreenHandler);
+        viewDockInfoHandler.setScreenTitle("Home - Dock info");
+        viewDockInfoHandler.show();
+    }
+    private void displayDock(Dock dock) throws IOException
+    {
         // display each dock
         ViewDockCompHandler viewDockCompHandler = new ViewDockCompHandler(Configs.VIEW_DOCK_COMP_PATH, this);
         viewDockCompHandler.setDock(dock);
@@ -107,7 +115,6 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             displayDock(dock);
         }
     }
-
     @FXML
     void enterBarcodeHandler(MouseEvent event) throws SQLException {
         try {
@@ -134,7 +141,6 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             alert.setContentText("Barcode không hợp lệ");
             alert.showAndWait();
         }
-
     }
 
 }
