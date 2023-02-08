@@ -1,5 +1,6 @@
 package view.handler.view;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Logger;
 
@@ -11,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -48,6 +50,12 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         title.setText(dock.getDockName());
         title1.setText(dock.getDockAddress());
         title2.setText(new String(Integer.toString(dock.getDockArea()) + "m2"));
+
+        // set image
+        Image imageLink = new Image(dock.getDockImageUrl());
+        image.setImage(imageLink);
+        image.setPreserveRatio(false);
+
         String text1 = new String("Number of " + Bike.STANDARD_BICYCLE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_BICYCLE_STRING));
         emptyDockPoint1.setText(text1);
         String text2 = new String("Number of " + Bike.STANDARD_E_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_E_BIKE_STRING));

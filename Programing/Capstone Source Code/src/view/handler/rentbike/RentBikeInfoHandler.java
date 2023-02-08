@@ -10,6 +10,8 @@ import entity.bike.BikeRentInfo;
 import entity.transaction.Transaction;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import utlis.Configs;
@@ -23,6 +25,9 @@ public class RentBikeInfoHandler extends BaseScreenHandler {
     private String barcode;
 
     private BikeRentInfo bikeRentInfo = new BikeRentInfo();
+
+    @FXML
+    private ImageView image;
 
     @FXML
     private Label bikeType, brand, licensePlate, deposit, barcodelb;
@@ -45,6 +50,11 @@ public class RentBikeInfoHandler extends BaseScreenHandler {
         licensePlate.setText(bike.getLicensePlate());
         deposit.setText(Integer.toString(rentBike_BL.deposit(bike)));
         barcodelb.setText(this.barcode);
+
+        // set image
+        Image imageLink = new Image(bike.getBikeImageUrl());
+        image.setImage(imageLink);
+        image.setPreserveRatio(false);
     }
 
     @FXML

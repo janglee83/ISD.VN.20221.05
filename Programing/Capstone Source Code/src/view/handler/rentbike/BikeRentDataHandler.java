@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -18,7 +20,7 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.returnbike.ReturnBikeDockListHandler;
 
-public class BikeRentDataHandler extends BaseScreenHandler implements Initializable {
+public class BikeRentDataHandler extends BaseScreenHandler {
 
     @FXML
     private Label timeLabel;
@@ -34,6 +36,9 @@ public class BikeRentDataHandler extends BaseScreenHandler implements Initializa
 
     private Timeline timeline;
 
+    @FXML
+    private ImageView image;
+
     private static final String STOP = "Stop";
 
     private static final String RUN = "Run";
@@ -43,15 +48,15 @@ public class BikeRentDataHandler extends BaseScreenHandler implements Initializa
     public BikeRentDataHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
         this.bikeRentInfo = bikeRentInfo;
-
-        // init a bike rent info entity
-        bikeRentInfo.setHours(hours);
-        bikeRentInfo.setMinutes(minutes);
-        bikeRentInfo.setSeconds(seconds);
+        this.initialize();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    private void initialize() {
+        // set image
+        Image imageLink = new Image(bikeRentInfo.getBike().getBikeImageUrl());
+        image.setImage(imageLink);
+        image.setPreserveRatio(false);
+
         this.stopWatchInitialize();
     }
 
@@ -109,6 +114,10 @@ public class BikeRentDataHandler extends BaseScreenHandler implements Initializa
         KeyFrame keyFrame = new KeyFrame(Duration.millis(1000), e -> {
             seconds++;
             setTime();
+            // init a bike rent info entity
+            bikeRentInfo.setHours(hours);
+            bikeRentInfo.setMinutes(minutes);
+            bikeRentInfo.setSeconds(seconds);
         });
 
         timeline = new Timeline(keyFrame);

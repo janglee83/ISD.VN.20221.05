@@ -134,6 +134,11 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
         int depositeAmount = bikeRentInfo.getBike().getBikeValue() * utlis.Constants.DEPOSITE_VALUE / 100;
         String transactionContent = new String("Process to payment");
 
+        if (typePayment.equals(Transaction.RETURN)) {
+            depositeAmount = depositeAmount - paymentController.caculateAmount(bikeRentInfo);
+            depositeAmount = depositeAmount * (-1);
+        }
+
         try {
             transaction = interbankSubsystem.payDeposite(card, depositeAmount, transactionContent);
         } catch(Exception exception) {

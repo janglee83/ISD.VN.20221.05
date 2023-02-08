@@ -7,6 +7,8 @@ import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import utlis.Configs;
@@ -21,6 +23,9 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
     private Dock dock; // selected dock
 
     private BikeRentInfo bikeRentInfo;
+
+    @FXML
+    private ImageView image;
 
     public ReturnBikeDockInfoHandler(String screenPath, Stage stage, Dock dock, BikeRentInfo bikeRentInfo)
             throws IOException {
@@ -40,6 +45,11 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
         availableStandardEBikePoint
                 .setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_E_BIKE_STRING)));
         availableTwinBikePoint.setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING)));
+
+        // set image
+        Image imageLink = new Image(dock.getDockImageUrl());
+        image.setImage(imageLink);
+        image.setPreserveRatio(false);
     }
 
     @FXML

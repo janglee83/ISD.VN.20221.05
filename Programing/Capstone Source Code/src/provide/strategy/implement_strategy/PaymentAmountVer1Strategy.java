@@ -7,7 +7,7 @@ public class PaymentAmountVer1Strategy implements PaymentAmountStrategy {
 
     // first caculate amount
     @Override
-    public int caculateAmount(int depositeAmount, BikeRentInfo bikeRentInfo) {
+    public int caculateAmount(BikeRentInfo bikeRentInfo) {
         int amount = 0;
 
         int totalMinus = bikeRentInfo.getMinutes();
