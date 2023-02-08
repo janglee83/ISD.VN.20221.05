@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1371.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="796.0" prefWidth="1368.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <Line endX="-1.220703143189894E-5" endY="104.50000762939453" layoutY="-11.0" startX="1365.9998779296875" startY="104.4999771118164" />
+            <Line endX="101.49998474121094" endY="-1.5258789289873675E-6" startX="101.49998474121094" startY="93.00000762939453" />
+            <Line endX="193.49998474121094" endY="-3.43322744811303E-6" layoutX="8.0" startX="193.49998474121094" startY="92.79290008544922" />
+            <ImageView fx:id="logo" fitHeight="43.0" fitWidth="69.0" layoutX="16.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/bike.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="home" fitHeight="53.0" fitWidth="61.0" layoutX="124.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/home.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="homeLabel" layoutX="128.0" layoutY="61.0" prefHeight="17.0" prefWidth="51.0" text="Home" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="1212.0" layoutY="12.0" prefHeight="64.0" prefWidth="96.0">
+               <children>
+                  <ImageView fitHeight="70.0" fitWidth="52.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/back.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="450.0" layoutY="169.0" startX="-30.17376708984375" startY="-74.79287719726562" />
+            <Label layoutX="465.0" layoutY="7.0" text="Station Infomation">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="124.0" text="Tên bãi xe: ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="125.0" text="ABC Station">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="213.0" text="Địa chỉ: ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="182.0" layoutY="212.0" text="15 ABC, EcoPark">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="373.0" text="Số xe khả dụng: ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="249.0" layoutY="376.0" text="5">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="297.0" text="Diện tích:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="206.0" layoutY="297.0" text="123 m2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="793.0" layoutY="107.0" text="Xe khả dụng ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ScrollBar layoutX="633.0" layoutY="744.0" prefHeight="29.0" prefWidth="559.0" />
+            <AnchorPane layoutX="479.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="194.0" style="-fx-border-color: #222222;">
+               <children>
+                  <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image\xd.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="CENTER" layoutX="62.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xem " wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="782.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="194.0" style="-fx-border-color: #222222;">
+               <children>
+                  <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/xdd.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="CENTER" layoutX="62.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xem " wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="1081.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="194.0" style="-fx-border-color: #222222;">
+               <children>
+                  <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/xd.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="CENTER" layoutX="62.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xem " wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="479.0" layoutY="452.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="194.0" style="-fx-border-color: #222222;">
+               <children>
+                  <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/xd.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="CENTER" layoutX="62.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xem " wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="782.0" layoutY="452.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="194.0" style="-fx-border-color: #222222;">
+               <children>
+                  <ImageView fitHeight="192.0" fitWidth="188.0" layoutX="3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/xddoi.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="CENTER" layoutX="62.0" layoutY="229.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="81.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xem " wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button alignment="CENTER" layoutX="140.0" layoutY="675.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="141.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thuê xe" wrapText="true">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Button>
+         </children>
+         <effect>
+            <BoxBlur />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="437.0" layoutY="164.0" prefHeight="479.0" prefWidth="532.0" style="-fx-background-color: #EEEEEE;">
+         <children>
+            <Label layoutX="43.0" layoutY="196.0" prefHeight="47.0" prefWidth="170.0" text="Barcode:">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="barcode" layoutX="215.0" layoutY="192.0" prefHeight="66.0" prefWidth="241.0" />
+            <Button layoutX="130.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#submitBarcode" text="Xác nhận">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button layoutX="349.0" layoutY="382.0" mnemonicParsing="false" onMouseClicked="#exitEnterBarcode" text="Hủy ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="71.0" layoutY="78.0" text="Nhập Barcode để thuê xe ">
+               <font>
+                  <Font name="Arial" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
