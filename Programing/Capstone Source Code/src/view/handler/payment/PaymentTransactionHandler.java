@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.BikeRentDataHandler;
+import view.handler.view.HomeScreenHandler;
 
 public class PaymentTransactionHandler extends BaseScreenHandler {
 
@@ -44,7 +45,11 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
     @FXML
     public void handleReturnPayment(MouseEvent event) throws IOException, SQLException {
         if (typePayment.equals(Transaction.RETURN)) {
+            HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_SCREEN_PATH, this.stage);
+            homeScreenHandler.setScreenTitle("Home Screen");
+            homeScreenHandler.setHomeScreenHandler(homeScreenHandler);
             homeScreenHandler.show();
+
         } else {
             BikeRentDataHandler bikeRentDataHandler = new BikeRentDataHandler(Configs.BIKE_RENT_DATA_SCREEN_PATH,
                     this.stage, bikeRentInfo);

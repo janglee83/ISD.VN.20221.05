@@ -33,7 +33,7 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
 
-public class HomeScreenHandler extends BaseScreenHandler implements Initializable {
+public class HomeScreenHandler extends BaseScreenHandler {
     private static Logger LOGGER = utlis.Helper.getLogger(HomeScreenHandler.class.getName());
 
     private static ViewController viewController = new ViewController();
@@ -56,14 +56,14 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
     public HomeScreenHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
+        this.initialize();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resource) {
+    private void initialize() {
         final DockList dockList = new DockList();
         view_BL.getListDock(dockList);
         VBoxListDock.getChildren().clear();
-        ;
+
         try {
             displayDocks(dockList);
         } catch (IOException exception) {
