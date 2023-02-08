@@ -14,7 +14,12 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import utlis.Configs;
 import view.FXMLScreenHandler;
+import view.BaseScreenHandler;
+
+
 
 public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
 
@@ -26,12 +31,13 @@ public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
     @FXML
     private ImageView image;
     @FXML
-    private Button displayBikeInfoButton;
+    private Button viewBikeInfoButton;
     @FXML
     private VBox spinnerFX;
     
     private ViewDockInfoHandler viewDockChooseBikeHandler;
     private Bike bike;
+    private Stage stage;
     public ViewDockBikeInfoCompHandler(String screenPath, ViewDockInfoHandler viewDockChooseBikeHandler) throws IOException {
         super(screenPath);
         this.viewDockChooseBikeHandler = viewDockChooseBikeHandler;
@@ -43,12 +49,13 @@ public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
     }
     public void setBikeInfo()
     {
-        displayBikeInfoButton.setOnMouseClicked(event ->
+        viewBikeInfoButton.setOnMouseClicked(event ->
         {
             LOGGER.info("Comfirm to view Bike info");
             try{
                 viewDockChooseBikeHandler.viewDockBikeInfoHandler(bike);
-            } catch (IOException exception)
+            } 
+            catch (IOException exception)
             {
                 throw new CapstoneException(exception.getMessage());
             }

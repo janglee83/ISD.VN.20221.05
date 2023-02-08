@@ -19,7 +19,7 @@ public class ReturnBike_BL {
 
             for (Dock dock : dockList.getDocksList()) {
                 // get number empty dock point
-                dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));;
+                dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));
             }
 
         } catch (SQLException exception) {

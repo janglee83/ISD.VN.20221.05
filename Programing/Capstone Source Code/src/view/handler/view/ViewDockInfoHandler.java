@@ -1,9 +1,11 @@
 package view.handler.view;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
 import java.util.logging.Logger;
+import java.util.ResourceBundle;
 
 import business_layer.RentBike_BL;
 import business_layer.View_BL;
@@ -15,6 +17,7 @@ import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
 import entity.dock.DockBikeList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
@@ -26,7 +29,7 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
 
-public class ViewDockInfoHandler extends BaseScreenHandler{
+public class ViewDockInfoHandler extends BaseScreenHandler {
 
     private static Logger LOGGER = utlis.Helper.getLogger(ViewDockInfoHandler.class.getName());
     private static ViewController viewController = new ViewController();
@@ -39,56 +42,61 @@ public class ViewDockInfoHandler extends BaseScreenHandler{
 
     @FXML
     private Label dockName, dockAddress, dockArea, availableBike;
+
     @FXML
-    private VBox listBikeVBox;
+    private VBox bikeListVbox;
+
     @FXML
     private Button returnButton;
-    // @FXML
-    // private Button rentBikeButton;
+    
     private Dock dock;
     private Bike bike;
+
     public ViewDockInfoHandler(String screenPath, Stage stage, Dock dock) throws IOException {
         super(screenPath, stage);
         this.dock = dock;
         this.initialize();
-        //TODO Auto-generated constructor stub
     }
-    private void initialize()
-    {
+
+    private void initialize() {
         dockName.setText(dock.getDockName());
         dockAddress.setText(dock.getDockAddress());
         dockArea.setText(Integer.toString(dock.getDockArea()));
-        //todo
+        // todo
         final DockBikeList bikeList = new DockBikeList();
         view_BL.getListBike(bikeList, dock);
-        listBikeVBox.getChildren().clear();
+        bikeListVbox.getChildren().clear();
         try {
             displayBikes(bikeList);
-        } catch (IOException exception)
-        {
+        } catch (IOException exception) {
             throw new CapstoneException(exception.getMessage());
         }
     }
-    public void viewDockBikeInfoHandler(Bike bike) throws IOException
-    {
-        ViewDockBikeInfoHandler viewDockBikeInfoHandler = new ViewDockBikeInfoHandler(Configs.BIKE_DETAIL_SCREEN_PATH, this.stage, bike);
+
+
+    public void viewDockBikeInfoHandler(Bike bike) throws IOException {
+        ViewDockBikeInfoHandler viewDockBikeInfoHandler = new ViewDockBikeInfoHandler(Configs.BIKE_DETAIL_SCREEN_PATH,
+                this.stage, bike);
         viewDockBikeInfoHandler.setPreviousScreen(this);
         viewDockBikeInfoHandler.setHomeScreenHandler(homeScreenHandler);
         viewDockBikeInfoHandler.setScreenTitle("Bike Info");
         viewDockBikeInfoHandler.show();
     }
-    public void displayBike(Bike bike) throws IOException {
-        ViewDockBikeInfoCompHandler viewDockBikeInfoCompHandler = new ViewDockBikeInfoCompHandler(Configs.VIEW_DOCK_BIKE_COMP_PATH, this);
+
+    private void displayBike(Bike bike) throws IOException {
+        ViewDockBikeInfoCompHandler viewDockBikeInfoCompHandler = new ViewDockBikeInfoCompHandler(
+                Configs.VIEW_DOCK_BIKE_COMP_PATH, this);
         viewDockBikeInfoCompHandler.setBike(bike);
         viewDockBikeInfoCompHandler.setBikeInfo();
-        listBikeVBox.getChildren().add(viewDockBikeInfoCompHandler.getContent());
+        bikeListVbox.getChildren().add(viewDockBikeInfoCompHandler.getContent());
     }
-    public void displayBikes(DockBikeList bikeList) throws IOException {
-        for(Bike bike : bikeList.getBikesList())
-        {
+
+    private void displayBikes(DockBikeList bikeList) throws IOException {
+        for (Bike bike : bikeList.getBikesList()) {
             displayBike(bike);
         }
     }
+
     @FXML
     public void handleReturn(MouseEvent event) {
         getPreviousScreen().show();

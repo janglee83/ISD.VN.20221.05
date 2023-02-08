@@ -100,14 +100,5 @@
             <VBox fx:id="bikeListVbox" prefHeight="571.0" prefWidth="890.0" />
          </content>
       </ScrollPane>
-      <Pane layoutX="137.0" layoutY="679.0" prefHeight="47.0" prefWidth="146.0">
-         <children>
-            <Button fx:id="rentBikeButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#rentBikeHandler" prefHeight="45.0" prefWidth="141.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Thuê xe" wrapText="true">
-               <font>
-                  <Font name="Arial" size="24.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
    </children>
 </AnchorPane>

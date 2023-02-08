@@ -53,6 +53,7 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         emptyDockPoint2.setText(text2);
         String text3 = new String("Number of " + Bike.TWIN_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING));
         emptyDockPoint3.setText(text3);
+        
         viewDockDetailButton.setOnMouseClicked(event -> {
             // todo
             LOGGER.info("Confirm to view dock");
