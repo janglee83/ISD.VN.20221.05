@@ -113,7 +113,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="502.0" fitWidth="738.0" layoutX="567.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="502.0" fitWidth="738.0" layoutX="567.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/station.jpg" />
          </image>

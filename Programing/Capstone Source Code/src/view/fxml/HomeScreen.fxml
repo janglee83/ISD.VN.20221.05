@@ -48,7 +48,7 @@
             <VBox fx:id="VBoxListDock" prefHeight="656.0" prefWidth="1313.0" />
          </content>
       </ScrollPane>
-      <Button layoutX="1221.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#dockDetailHandler" text="RentBike" />
+      <Button layoutX="1220.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#enterBarcodeHandler" text="RentBike" />
       <Pane layoutX="1039.0" layoutY="17.0" prefHeight="64.0" prefWidth="192.0">
          <children>
             <Button fx:id="searchButton" layoutX="62.0" layoutY="2.0" mnemonicParsing="false" prefWidth="51.0">

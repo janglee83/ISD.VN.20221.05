@@ -37,6 +37,11 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
         brandBike.setText(bike.getBrand());
         licensePlates.setText(bike.getLicensePlate());
         deposit.setText(Integer.toString(bike.getBikeValue()));
+
+        // set image
+        Image imageLink = new Image(bike.getBikeImageUrl());
+        image.setImage(imageLink);
+        image.setPreserveRatio(false);
     }
 
     @FXML

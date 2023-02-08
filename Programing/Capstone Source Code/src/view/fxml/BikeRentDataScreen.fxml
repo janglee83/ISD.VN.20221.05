@@ -71,7 +71,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <ImageView fitHeight="647.0" fitWidth="701.0" layoutX="575.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="647.0" fitWidth="701.0" layoutX="575.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/xdd.jpg" />
          </image>

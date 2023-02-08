@@ -28,7 +28,7 @@
             </VBox>
             <VBox prefHeight="99.0" prefWidth="348.0">
                <children>
-                  <Label fx:id="title" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Xe đạp điện " textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                  <Label fx:id="bikeTypeString" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Xe đạp điện " textAlignment="CENTER" textFill="#5091e6" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="25.0" />
                      </font>
@@ -36,12 +36,12 @@
                         <Insets />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="title1" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Hãng: HEDSPI" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                  <Label fx:id="brandLabel" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Hãng: HEDSPI" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="title2" contentDisplay="CENTER" layoutX="10.0" layoutY="56.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Giá cọc: 400.000 đ" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                  <Label fx:id="depositeAmountLabel" contentDisplay="CENTER" layoutX="10.0" layoutY="56.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Giá cọc: 400.000 đ" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="25.0" />
                      </font>

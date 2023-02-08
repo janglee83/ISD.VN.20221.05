@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import entity.bike.Bike;
 import entity.card.Card;
 
 public class Helper {
@@ -42,6 +43,28 @@ public class Helper {
 			buffer = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
 		}
 		return buffer;
+	}
+
+	public static String convertToStringBikeType(int bikeType) {
+		switch (bikeType) {
+			case Bike.STANDARD_BICYCLE_VALUE:
+				return Bike.STANDARD_BICYCLE_STRING;
+			case Bike.STANDARD_E_BIKE_VALUE:
+				return Bike.STANDARD_E_BIKE_STRING;
+			default:
+				return Bike.TWIN_BIKE_STRING;
+		}
+	}
+
+	public static int getDepositeAmount(int bikeType) {
+		switch (bikeType) {
+			case Bike.STANDARD_BICYCLE_VALUE:
+				return 400000;
+			case Bike.STANDARD_E_BIKE_VALUE:
+				return 700000;
+			default:
+				return 550000;
+		}
 	}
 
 }

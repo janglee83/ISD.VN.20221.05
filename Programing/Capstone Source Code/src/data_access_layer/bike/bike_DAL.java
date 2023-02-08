@@ -10,10 +10,9 @@ import entity.bike.Bike;
 import entity.dock.DockBikeList;
 
 public class Bike_DAL {
-    public Bike getBikeInDock(int bike_id, int dock_id) throws SQLException {
+    public Bike getBikeInDock(int bike_id) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
-        String query = String.format("select * from(bike) where id =  %d and dock_id = %d and isBeingUsed = 0", bike_id,
-                dock_id);
+        String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
         ResultSet result = statement.executeQuery(query);
         Bike bike = new Bike();
         result.next();
@@ -50,8 +49,24 @@ public class Bike_DAL {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
         statement.execute(query);
-        String query1 = String.format("update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where id = %d and bike_type_id = %d", bike.getbikeId(),bike.getBikeType(), bike.getDockId(),bike.getBikeType());
+        String query1 = String.format(
+                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where dock_id = %d and bike_type_id = %d",
+                getDockIdOfBike(bike), bike.getBikeType(), getDockIdOfBike(bike), bike.getBikeType());
         statement.execute(query1);
+    }
+
+    public void returnBikeUpdateBikeIsUsed(Bike bike) throws SQLException {
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("update bike set isBeingUsed = 0 where id = %d", bike.getBikeId());
+        statement.execute(query);
+    }
+
+    public int getDockIdOfBike(Bike bike) throws SQLException {
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("select dock_id from(bike) where id = %d", bike.getBikeId());
+        ResultSet result = statement.executeQuery(query);
+        result.next();
+        return result.getInt("dock_id");
     }
 
 }

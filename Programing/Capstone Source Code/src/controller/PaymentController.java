@@ -1,5 +1,7 @@
 package controller;
 
+import business_layer.PayDeposite_BL;
+import entity.bike.BikeRentInfo;
 import entity.card.Card;
 import entity.transaction.Transaction;
 import request_layer.Card_RL;
@@ -8,6 +10,8 @@ import subsystem.InterbankInterface;
 public class PaymentController extends BaseController {
 
     private Card_RL card_RL = new Card_RL();
+
+    private PayDeposite_BL payDeposite_BL = new PayDeposite_BL();
 
     private InterbankInterface interbankInterface;
 
@@ -31,5 +35,8 @@ public class PaymentController extends BaseController {
         return transaction;
     }
 
-
+    public int caculateAmount(BikeRentInfo bikeRentInfo) {
+        int amount = payDeposite_BL.caculateAmount(bikeRentInfo);
+        return amount;
+    }
 }

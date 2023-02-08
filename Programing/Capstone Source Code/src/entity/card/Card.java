@@ -20,6 +20,9 @@ public class Card {
 
 	public static final String dateExpiredTest = "1125";
 
+
+	
+
 	// construtor
 	public Card(String cardHolderName, String cardNumber, String securityCode, String expirationDate) {
 		this.cardHolderName = cardHolderName;

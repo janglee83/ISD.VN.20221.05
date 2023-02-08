@@ -6,7 +6,7 @@ import provide.strategy.PaymentAmountStrategy;
 public class PaymentAmountVer2Strategy implements PaymentAmountStrategy {
 
     @Override
-    public int caculateAmount(int depositeAmount, BikeRentInfo bikeRentInfo) {
+    public int caculateAmount(BikeRentInfo bikeRentInfo) {
         return 0;
     }
 

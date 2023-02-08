@@ -37,27 +37,22 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="100.0" text="Địa chỉ bãi xe: ">
+            <Label layoutX="100.0" layoutY="250.0" text="Số tiền đã thanh toán:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="325.0" text="Số tiền đã thanh toán:">
+            <Label layoutX="100.0" layoutY="100.0" text="Loại xe: ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="175.0" text="Loại xe: ">
+            <Label layoutX="100.0" layoutY="400.0" text="Nội dung giao dịch:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="475.0" text="Nội dung giao dịch:">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="100.0" layoutY="400.0" prefHeight="11.0" prefWidth="146.0" text="Thời gian:">
+            <Label layoutX="100.0" layoutY="325.0" prefHeight="11.0" prefWidth="146.0" text="Thời gian:">
                <font>
                   <Font size="24.0" />
                </font>
@@ -67,37 +62,32 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="dockAddressLabel" layoutX="400.0" layoutY="100.0" prefHeight="1.0" prefWidth="186.0" text="15 ABC,Ecoparrk">
+            <Label fx:id="bikeTypeLabel" layoutX="400.0" layoutY="100.0" prefHeight="1.0" prefWidth="186.0" text="Xe điện ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="bikeTypeLabel" layoutX="400.0" layoutY="175.0" prefHeight="1.0" prefWidth="186.0" text="Xe điện ">
+            <Label layoutX="100.0" layoutY="175.0" text="Biển số:">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label layoutX="100.0" layoutY="250.0" text="Biển số:">
+            <Label fx:id="amountLabel" layoutX="400.0" layoutY="250.0" text="400,000VND">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="amountLabel" layoutX="400.0" layoutY="325.0" text="400,000VND">
+            <Label fx:id="timeLabel" layoutX="400.0" layoutY="325.0" text="20/12/2022  14h ">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="timeLabel" layoutX="400.0" layoutY="400.0" text="20/12/2022  14h ">
+            <Label fx:id="contentLabel" layoutX="400.0" layoutY="400.0" text="Tien coc">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="contentLabel" layoutX="400.0" layoutY="475.0" text="Tien coc">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="licensePlateLabel" layoutX="400.0" layoutY="250.0" text="12AA456">
+            <Label fx:id="licensePlateLabel" layoutX="400.0" layoutY="175.0" text="12AA456">
                <font>
                   <Font size="24.0" />
                </font>
