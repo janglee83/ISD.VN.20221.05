@@ -3,7 +3,6 @@ package view.handler.returnbike;
 import java.io.IOException;
 
 import controller.PaymentController;
-import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
 import entity.transaction.Transaction;
 import javafx.fxml.FXML;
@@ -45,11 +44,18 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
         String timeRentString = new String(Integer.toString(bikeRentInfo.getHours()) + ":"
                 + Integer.toString(bikeRentInfo.getMinutes()) + ":" + Integer.toString(bikeRentInfo.getSeconds()));
         timeRentLabel.setText(timeRentString);
-        payAmountLabel.setText(timeRentString);
 
         // caculate amount
         int amount = paymentController.caculateAmount(bikeRentInfo);
         payAmountLabel.setText(Integer.toString(amount));
+
+        // paydeposite amount
+        int depositeAmount = utlis.Helper.getDepositeAmount(bikeRentInfo.getBike().getBikeType());
+        payDepositeLabel.setText(Integer.toString(depositeAmount));
+
+        // total amount
+        int totalAmount = amount - depositeAmount;
+        this.totalAmount.setText(Integer.toString(totalAmount));
 
         // set image
         Image imageLink = new Image(bikeRentInfo.getBike().getBikeImageUrl());

@@ -1,14 +1,11 @@
 package view.handler.rentbike;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import entity.bike.BikeRentInfo;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;

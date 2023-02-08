@@ -20,13 +20,7 @@ public class RentBike_BL {
 	}
 
 	public int deposit(Bike bike) {
-		if (bike.getBikeType() == 1) {
-			return 400000;
-		} else if (bike.getBikeType() == 2) {
-			return 700000;
-		} else {
-			return 550000;
-		}
+		return utlis.Helper.getDepositeAmount(bike.getBikeType());
 	}
 
 	public void updateAfterRentBike(Bike bike) throws SQLException {

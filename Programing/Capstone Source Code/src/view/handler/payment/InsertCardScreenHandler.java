@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import common.exception.CapstoneException;
 import controller.PaymentController;
+import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
 import entity.card.Card;
 import entity.transaction.Transaction;
@@ -40,9 +41,12 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
 
     private InterbankSubsystem interbankSubsystem = new InterbankSubsystem();
 
+    private ReturnBikeController returnBikeController = new ReturnBikeController();
+
     private Transaction transaction;
 
-    public InsertCardScreenHandler(String screenPath, Stage stage, String typePayment, BikeRentInfo bikeRentInfo) throws IOException {
+    public InsertCardScreenHandler(String screenPath, Stage stage, String typePayment, BikeRentInfo bikeRentInfo)
+            throws IOException {
         super(screenPath, stage);
         this.typePayment = typePayment;
         this.bikeRentInfo = bikeRentInfo;
@@ -51,7 +55,8 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
     @FXML
     public void handlePayment(MouseEvent event) throws IOException {
         // create card object
-        card = new Card(nameTextField.getText(), numberTextField.getText(), codeTextField.getText(), dateTextField.getText());
+        card = new Card(nameTextField.getText(), numberTextField.getText(), codeTextField.getText(),
+                dateTextField.getText());
 
         handleValidatepaymentButton();
 
@@ -131,7 +136,7 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
     }
 
     private void handlePayment() {
-        int depositeAmount = bikeRentInfo.getBike().getBikeValue() * utlis.Constants.DEPOSITE_VALUE / 100;
+        int depositeAmount = utlis.Helper.getDepositeAmount(bikeRentInfo.getBike().getBikeType());
         String transactionContent = new String("Process to payment");
 
         if (typePayment.equals(Transaction.RETURN)) {
@@ -141,7 +146,10 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
 
         try {
             transaction = interbankSubsystem.payDeposite(card, depositeAmount, transactionContent);
-        } catch(Exception exception) {
+
+            // update point
+            returnBikeController.returnBikeUpdateDatabase(bikeRentInfo.getBike());
+        } catch (Exception exception) {
             throw new CapstoneException(exception.getMessage());
         }
     }

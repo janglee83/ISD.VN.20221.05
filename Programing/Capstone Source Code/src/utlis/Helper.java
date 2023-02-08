@@ -56,4 +56,15 @@ public class Helper {
 		}
 	}
 
+	public static int getDepositeAmount(int bikeType) {
+		switch (bikeType) {
+			case Bike.STANDARD_BICYCLE_VALUE:
+				return 400000;
+			case Bike.STANDARD_E_BIKE_VALUE:
+				return 700000;
+			default:
+				return 550000;
+		}
+	}
+
 }

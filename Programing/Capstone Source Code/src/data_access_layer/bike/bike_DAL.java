@@ -34,13 +34,18 @@ public class Bike_DAL {
         statement.execute(query1);
     }
 
+    public void returnBikeUpdateBikeIsUsed(Bike bike) throws SQLException {
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("update bike set isBeingUsed = 0 where id = %d", bike.getBikeId());
+        statement.execute(query);
+    }
+
     public int getDockIdOfBike(Bike bike) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select dock_id from(bike) where id = %d", bike.getBikeId());
         ResultSet result = statement.executeQuery(query);
         result.next();
         return result.getInt("dock_id");
-
     }
 
 }

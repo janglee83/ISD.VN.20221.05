@@ -29,7 +29,7 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
     private Button returnButton;
 
     @FXML
-    private Label transactionCodeLabel, dockAddressLabel, bikeTypeLabel, amountLabel, timeLabel, contentLabel,
+    private Label transactionCodeLabel, bikeTypeLabel, amountLabel, timeLabel, contentLabel,
             licensePlateLabel;
 
     public PaymentTransactionHandler(String screenPath, Stage stage, String typePayment, Transaction transaction,
@@ -61,6 +61,13 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
         if (typePayment.equals(Transaction.RENT)) {
             returnButton.setText(Transaction.RENT);
         }
+
+        transactionCodeLabel.setText(typePayment);
+        bikeTypeLabel.setText(utlis.Helper.convertToStringBikeType(bikeRentInfo.getBike().getBikeType()));
+        amountLabel.setText(new String(transaction.getAmount() + " VND"));
+        timeLabel.setText(transaction.getTime());
+        contentLabel.setText(transaction.getContent());
+        licensePlateLabel.setText(bikeRentInfo.getBike().getLicensePlate());
     }
 
 }
