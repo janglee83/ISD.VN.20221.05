@@ -26,8 +26,8 @@ public class Bike_DAL {
         bike.setLicensePlate(result.getString("licence_plate"));
         return bike;
     }
-    public ArrayList<Bike> getBikeListInDock(int dock_id) throws SQLException 
-    {   
+    public ArrayList<Bike> getBikeListInDock(int dock_id) throws SQLException
+    {
         ArrayList<Bike> bikeList = new ArrayList<Bike>();
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where dock_id = %d and isBeingUsed = 0", dock_id);
@@ -46,12 +46,12 @@ public class Bike_DAL {
         }
         return bikeList;
     }
-    // public void updateRentBike(Bike bike) throws SQLException{
-    //     Statement statement = Database.getConnection().createStatement();
-    //     String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
-    //     statement.execute(query);
-    //     String query1 = String.format("update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where id = %d and bike_type_id = %d", bike.getbikeId(),bike.getBikeType(), bike.getDockId(),bike.getBikeType());
-    //     statement.execute(query1);
-    // }
+    public void updateRentBike(Bike bike) throws SQLException{
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
+        statement.execute(query);
+        String query1 = String.format("update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where id = %d and bike_type_id = %d", bike.getbikeId(),bike.getBikeType(), bike.getDockId(),bike.getBikeType());
+        statement.execute(query1);
+    }
 
 }
