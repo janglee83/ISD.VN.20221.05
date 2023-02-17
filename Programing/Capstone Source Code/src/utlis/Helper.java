@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import entity.bike.Bike;
 import entity.card.Card;
+import provide.factory.BikeFactory;
 
 public class Helper {
 
@@ -64,6 +65,15 @@ public class Helper {
 				return 700000;
 			default:
 				return 550000;
+		}
+	}
+
+	public static Bike createBike(int bikeType) {
+		BikeFactory bikeFactory = new BikeFactory();
+
+		switch (bikeType) {
+			case 1:
+				return bikeFactory.createBike();
 		}
 	}
 

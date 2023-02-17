@@ -1,5 +1,8 @@
 package provide.factory;
 
-public class BikeFactory {
-    
+import entity.bike.Bike;
+
+public interface BikeFactory {
+
+    public Bike createBike();
 }

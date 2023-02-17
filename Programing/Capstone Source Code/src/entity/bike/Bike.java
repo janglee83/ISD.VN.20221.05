@@ -1,8 +1,6 @@
 package entity.bike;
 
-import java.util.HashMap;
-
-public class Bike {
+public abstract class Bike {
 
 	private int bikeId;
 
@@ -13,8 +11,6 @@ public class Bike {
 	private String bikeName;
 
 	private int bikeValue;
-
-	private HashMap<String, Object> bikeAttribute; // rèactorrrrrrrrrrrrrrrrrrrrrr
 
 	private boolean isBeingUsed;
 
