@@ -16,6 +16,7 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.Alert.AlertType;
 import business_layer.View_BL;
 import common.exception.CapstoneException;
+import controller.RentBikeController;
 import controller.ViewController;
 import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
@@ -49,9 +50,7 @@ public class HomeScreenHandler extends BaseScreenHandler {
     @FXML
     private Button searchButton;
 
-    private static RentBike_BL rentBike_BL = new RentBike_BL();
-
-    private static Bike_DAL bike_DAL = new Bike_DAL();
+    private static RentBikeController rentBikeController = new RentBikeController();
     //private BikeRentInfo bikeRentInfo;
 
     public HomeScreenHandler(String screenPath, Stage stage) throws IOException {
@@ -127,7 +126,7 @@ public class HomeScreenHandler extends BaseScreenHandler {
             if (result.isPresent()) {
                 // System.out.println(result.get());
                 RentBikeInfoHandler rentBikeInfoHandler = new RentBikeInfoHandler(Configs.RENT_BIKE_INFO_SCREEN_PATH,
-                        this.stage, bike_DAL.getBikeInDock(rentBike_BL.convertToRentalCode(result.get())),
+                        this.stage, rentBikeController.getBikeByBikeId(rentBikeController.convertBarcodeToBikeId(result.get())),
                         result.get());
                 rentBikeInfoHandler.setPreviousScreen(this);
                 rentBikeInfoHandler.setHomeScreenHandler(homeScreenHandler);

@@ -10,7 +10,7 @@ import entity.bike.Bike;
 import entity.dock.DockBikeList;
 
 public class Bike_DAL {
-    public Bike getBike(int bike_id) throws SQLException {
+    public Bike getBikeByBikeId(int bike_id) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
         ResultSet result = statement.executeQuery(query);
@@ -25,6 +25,7 @@ public class Bike_DAL {
         bike.setLicensePlate(result.getString("licence_plate"));
         return bike;
     }
+
     public ArrayList<Bike> getBikeListInDock(int dock_id) throws SQLException
     {
         ArrayList<Bike> bikeList = new ArrayList<Bike>();
@@ -45,7 +46,16 @@ public class Bike_DAL {
         }
         return bikeList;
     }
-    public void updateRentBike(Bike bike) throws SQLException{
+
+    public int convertBarcodeToBikeId(String barcode) throws SQLException {
+		Statement statement = Database.getConnection().createStatement();
+		String query = String.format("select bike_id from(rental_bike_code) where bar_code = '%s' ;", barcode);
+		ResultSet result = statement.executeQuery(query);
+		result.next();
+		return result.getInt("bike_id");
+	}
+
+    public void updateAfterRentBike(Bike bike) throws SQLException{
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
         statement.execute(query);

@@ -15,23 +15,18 @@ public class ReturnBike_BL {
 
     private Dock_DAL dock_DAL = new Dock_DAL();
 
-	public void getListDock(DockList dockList) {
-		// gennerate Dock_DAL
+    public void getListDock(DockList dockList) throws Exception {
+        // gennerate Dock_DAL
         Dock_DAL dock_DAL = new Dock_DAL();
+        // get docklist
+        dockList.setDocksList(dock_DAL.getListDock());
 
-		try {
-            // get docklist
-            dockList.setDocksList(dock_DAL.getListDock());
-
-            for (Dock dock : dockList.getDocksList()) {
-                // get number empty dock point
-                dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));
-            }
-
-        } catch (SQLException exception) {
-            throw new CapstoneException(exception.getMessage());
+        for (Dock dock : dockList.getDocksList()) {
+            // get number empty dock point
+            dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));
         }
-	}
+
+    }
 
     public void returnBikeUpdateDatabase(Bike bike) throws SQLException {
         bike_DAL.returnBikeUpdateBikeIsUsed(bike);

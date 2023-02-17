@@ -39,10 +39,10 @@ public class Dock_DAL {
             if (dockId == resultSet.getInt("dock.id")) {
                 int emptyPoint = resultSet.getInt("dock_empty_point.empty_points");
                 switch (resultSet.getInt("dock_empty_point.bike_type_id")) {
-                    case Bike.STANDARD_BICYCLE_VALUE + 1:
+                    case Bike.STANDARD_BICYCLE_VALUE:
                         numberOfEmptyDockEach.put(Bike.STANDARD_BICYCLE_STRING, emptyPoint);
                         break;
-                    case Bike.STANDARD_E_BIKE_VALUE + 1:
+                    case Bike.STANDARD_E_BIKE_VALUE:
                         numberOfEmptyDockEach.put(Bike.STANDARD_E_BIKE_STRING, emptyPoint);
                         break;
                     default:
@@ -54,5 +54,21 @@ public class Dock_DAL {
         }
 
         return numberOfEmptyDockEach;
+    }
+
+    public void updateReturnBikeDockPoint(Bike bike) throws SQLException{
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format(
+                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where dock_id = %d and bike_type_id = %d",
+                getDockIdOfBike(bike), bike.getBikeType(), getDockIdOfBike(bike), bike.getBikeType());
+        statement.execute(query);
+    }
+
+    private int getDockIdOfBike(Bike bike) throws SQLException {
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("select dock_id from(bike) where id = %d", bike.getBikeId());
+        ResultSet result = statement.executeQuery(query);
+        result.next();
+        return result.getInt("dock_id");
     }
 }

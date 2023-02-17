@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import entity.bike.Bike;
 import entity.card.Card;
+import provide.factory.BikeFactory;
 
 public class Helper {
 
@@ -30,7 +31,7 @@ public class Helper {
 		for (String key : data.keySet()) {
 			mapAsString.append(key + "=" + data.get(key) + ", ");
 		}
-		mapAsString.delete(mapAsString.length()-2, mapAsString.length()).append("}");
+		mapAsString.delete(mapAsString.length() - 2, mapAsString.length()).append("}");
 		return mapAsString.toString();
 	}
 
@@ -62,9 +63,24 @@ public class Helper {
 				return 400000;
 			case Bike.STANDARD_E_BIKE_VALUE:
 				return 700000;
-			default:
+			case Bike.TWIN_BIKE_VALUE:
 				return 550000;
+			default:
+				return 0;
 		}
 	}
+
+	// public static Bike createBike(int bikeType) {
+	// 	BikeFactory bikeFactory = new BikeFactory();
+
+	// 	switch (bikeType) {
+	// 		case 1:
+	// 			return bikeFactory.createBike();
+	// 		case 2:
+	// 			return bikeFactory.createBike();
+	// 		case 3:
+	// 			return bikeFactory.createBike();
+	// 	}
+	// }
 
 }

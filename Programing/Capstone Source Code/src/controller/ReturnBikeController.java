@@ -9,15 +9,17 @@ import request_layer.ReturnBike_RL;
 
 public class ReturnBikeController extends BaseController {
 
+    // request layer = chua ham xu ly validate du lieu
     private ReturnBike_RL returnBike_RL = new ReturnBike_RL();
 
+    // bl = chua ham xu ly
     private ReturnBike_BL returnBike_BL = new ReturnBike_BL();
 
     public void validateName(String name) throws Exception {
         returnBike_RL.validateName(name);
     }
 
-    public void getListDock(DockList dockList) {
+    public void getListDock(DockList dockList) throws Exception {
         returnBike_BL.getListDock(dockList);
     }
 

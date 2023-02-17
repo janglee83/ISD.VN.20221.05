@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import business_layer.RentBike_BL;
+import controller.RentBikeController;
 import data_access_layer.bikeType.BikeType_DAL;
 import entity.bike.Bike;
 import entity.bike.BikeRentInfo;
@@ -32,8 +33,7 @@ public class RentBikeInfoHandler extends BaseScreenHandler {
     @FXML
     private Label bikeType, brand, licensePlate, deposit, barcodelb;
 
-    private static RentBike_BL rentBike_BL = new RentBike_BL();
-    private static BikeType_DAL bikeType_DAL = new BikeType_DAL();
+    private static RentBikeController rentBikeController = new RentBikeController();
 
     public RentBikeInfoHandler(String screenPath, Stage stage, Bike bike, String Barcode)
             throws IOException, SQLException {
@@ -45,10 +45,10 @@ public class RentBikeInfoHandler extends BaseScreenHandler {
     }
 
     private void initialize() throws SQLException {
-        bikeType.setText(bikeType_DAL.getNameBikeType(bike));
+        // bikeType.setText(bikeType_DAL.getNameBikeType(bike));
         brand.setText(bike.getBrand());
         licensePlate.setText(bike.getLicensePlate());
-        deposit.setText(Integer.toString(rentBike_BL.deposit(bike)));
+        deposit.setText(Integer.toString(rentBikeController.getDeposit(bike.getBikeType())));
         barcodelb.setText(this.barcode);
 
         // set image

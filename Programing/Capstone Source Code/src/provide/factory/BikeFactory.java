@@ -1,24 +1,24 @@
 package provide.factory;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import data_access_layer.bike.Bike_DAL;
 import entity.bike.Bike;
+import entity.bike.BikeType;
+import entity.bike.StandardBike;
+import entity.bike.TwinBike;
 
 public class BikeFactory {
-    public static Bike_DAL bike_DAL = new Bike_DAL();
 
-    public static final Bike getBike(ResultSet res) throws SQLException {
-        switch (res.getInt("bike_type_id")) {
+    private BikeFactory(){
+
+    }
+    public static final Bike getBike(int bikeType){
+        switch(bikeType){
             case 1:
-            case 3:
-                return bike_DAL.createBike(res);
+                return new StandardBike();
             case 2:
-                // return new Bike();
+                return new StandardBike();
+            case 3:
+                return new TwinBike();
             default:
                 throw new IllegalArgumentException("This bike type is unsupported");
         }
     }
-
 }
