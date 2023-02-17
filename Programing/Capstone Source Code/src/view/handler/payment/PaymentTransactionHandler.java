@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.BikeRentDataHandler;
+import view.handler.view.HomeScreenHandler;
 
 public class PaymentTransactionHandler extends BaseScreenHandler {
 
@@ -29,7 +30,7 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
     private Button returnButton;
 
     @FXML
-    private Label transactionCodeLabel, dockAddressLabel, bikeTypeLabel, amountLabel, timeLabel, contentLabel,
+    private Label transactionCodeLabel, bikeTypeLabel, amountLabel, timeLabel, contentLabel,
             licensePlateLabel;
 
     public PaymentTransactionHandler(String screenPath, Stage stage, String typePayment, Transaction transaction,
@@ -44,7 +45,11 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
     @FXML
     public void handleReturnPayment(MouseEvent event) throws IOException, SQLException {
         if (typePayment.equals(Transaction.RETURN)) {
+            HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_SCREEN_PATH, this.stage);
+            homeScreenHandler.setScreenTitle("Home Screen");
+            homeScreenHandler.setHomeScreenHandler(homeScreenHandler);
             homeScreenHandler.show();
+
         } else {
             BikeRentDataHandler bikeRentDataHandler = new BikeRentDataHandler(Configs.BIKE_RENT_DATA_SCREEN_PATH,
                     this.stage, bikeRentInfo);
@@ -61,6 +66,13 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
         if (typePayment.equals(Transaction.RENT)) {
             returnButton.setText(Transaction.RENT);
         }
+
+        transactionCodeLabel.setText(typePayment);
+        bikeTypeLabel.setText(utlis.Helper.convertToStringBikeType(bikeRentInfo.getBike().getBikeType()));
+        amountLabel.setText(new String(transaction.getAmount() + " VND"));
+        timeLabel.setText(transaction.getTime());
+        contentLabel.setText(transaction.getContent());
+        licensePlateLabel.setText(bikeRentInfo.getBike().getLicensePlate());
     }
 
 }

@@ -1,0 +1,10 @@
+*{
+	-fx-base: #CCFFFF;
+}
+.shape1{
+	-fx-shape: "M 100 300 L 100 200 Q 100 150 150 150 L 550 150 Q 600 150 600 200 L 600 300 L 600 400 Q 600 450 550 450 L 150 450 Q 100 450 100 400 L 100 300 ";
+	-fx-background-color: #EEEEEE;
+	-fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0) ;
+  	-fx-border-color: black black black black;
+  	-fx-border-width: 2;
+}
