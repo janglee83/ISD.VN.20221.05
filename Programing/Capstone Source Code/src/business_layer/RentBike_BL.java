@@ -9,7 +9,8 @@ import data_access_layer.database.Database;
 import entity.bike.Bike;
 
 public class RentBike_BL {
-	private static Bike_DAL bike_DAL = new Bike_DAL();
+
+	private  Bike_DAL bike_DAL = new Bike_DAL();
 
 	public int convertToRentalCode(String barcode) throws SQLException {
 		Statement statement = Database.getConnection().createStatement();

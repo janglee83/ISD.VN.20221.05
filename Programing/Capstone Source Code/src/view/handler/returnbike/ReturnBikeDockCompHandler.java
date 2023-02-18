@@ -35,6 +35,7 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
     private Button returnBikeButton;
 
     private ReturnBikeDockListHandler returnBikeChooseDockHandler;
+    
     private Dock dock; // selected dock
 
     public ReturnBikeDockCompHandler(String screenPath, ReturnBikeDockListHandler returnBikeChooseDockHandler)

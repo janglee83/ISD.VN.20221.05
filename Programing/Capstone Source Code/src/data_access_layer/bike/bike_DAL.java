@@ -16,7 +16,6 @@ public class Bike_DAL {
         ResultSet result = statement.executeQuery(query);
         Bike bike = new Bike();
         result.next();
-        bike.setBikeName(result.getString("name"));
         bike.setBikeValue(result.getInt("bikeValue"));
         bike.setBikeImageUrl(result.getString("bike_image_url"));
         bike.setBikeType(result.getInt("bike_type_id"));
@@ -34,7 +33,6 @@ public class Bike_DAL {
         while(resultSet.next())
         {
             Bike bike = new Bike();
-            bike.setBikeName(resultSet.getString("name"));
             bike.setBikeValue(resultSet.getInt("bikeValue"));
             bike.setBikeImageUrl(resultSet.getString("bike_image_url"));
             bike.setBikeType(resultSet.getInt("bike_type_id"));

@@ -1,14 +1,12 @@
 package entity.bike;
 
-public abstract class Bike {
+public class Bike {
 
 	private int bikeId;
 
 	private int bikeType;
 
 	private String rentalCode;
-
-	private String bikeName;
 
 	private int bikeValue;
 
@@ -20,18 +18,21 @@ public abstract class Bike {
 
 	private String bikeImageUrl;
 
-	// type bike rèactorrrrrrrrrrrrrrrrrrrrrrr
-	public static final int STANDARD_BICYCLE_VALUE = 1;
+	public Bike() {
 
-	public static final int STANDARD_E_BIKE_VALUE = 2;
+	}
 
-	public static final int TWIN_BIKE_VALUE = 3;
-
-	public static final String STANDARD_BICYCLE_STRING = "standard bicycle";
-
-	public static final String STANDARD_E_BIKE_STRING = "standard e bike";
-
-	public static final String TWIN_BIKE_STRING = "twin bike";
+	public Bike(int bikeId, int bikeType, String rentalCode, int bikeValue, boolean isBeingUsed,
+			String licensePlate, String brand, String bikeImageUrl) {
+		this.bikeId = bikeId;
+		this.bikeType = bikeType;
+		this.rentalCode = rentalCode;
+		this.bikeValue = bikeValue;
+		this.isBeingUsed = isBeingUsed;
+		this.licensePlate = licensePlate;
+		this.brand = brand;
+		this.bikeImageUrl = bikeImageUrl;
+	}
 
 	// getter setter operation
 	public int getBikeId() {
@@ -56,14 +57,6 @@ public abstract class Bike {
 
 	public void setRentalCode(String rentalCode) {
 		this.rentalCode = rentalCode;
-	}
-
-	public String getBikeName() {
-		return bikeName;
-	}
-
-	public void setBikeName(String bikeName) {
-		this.bikeName = bikeName;
 	}
 
 	public int getBikeValue() {
@@ -105,7 +98,5 @@ public abstract class Bike {
 	public void setBikeImageUrl(String bikeImageUrl) {
 		this.bikeImageUrl = bikeImageUrl;
 	}
-
-
 
 }

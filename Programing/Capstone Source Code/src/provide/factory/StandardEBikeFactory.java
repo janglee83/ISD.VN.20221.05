@@ -7,7 +7,6 @@ public class StandardEBikeFactory implements BikeFactory {
 
     @Override
     public Bike createBike() {
-        new StandardEBike();
-
+        return new StandardEBike();
     }
 }

@@ -19,7 +19,7 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
 
     private BikeRentInfo bikeRentInfo;
 
-    private PaymentController paymentController = new PaymentController();
+    private final PaymentController paymentController = new PaymentController();
 
     @FXML
     private Label bikeTypeLabel, brandLabel, licensePlateLabel, timeRentLabel, payAmountLabel, payDepositeLabel,
