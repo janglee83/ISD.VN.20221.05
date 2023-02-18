@@ -1,6 +1,9 @@
 package controller;
 
+import java.sql.SQLException;
+
 import business_layer.RentBike_BL;
+import entity.bike.Bike;
 
 public class RentBikeController extends BaseController {
 
