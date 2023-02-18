@@ -25,7 +25,7 @@ public class PaymentAmountVer1Strategy implements PaymentAmountStrategy {
             amount = 10000;
         }
 
-        if (bikeRentInfo.getBike().getBikeType() != Bike.STANDARD_BICYCLE_VALUE)
+        if (bikeRentInfo.getBike().getBikeType() != 1)
             amount *= 1.5;
 
         return amount;

@@ -48,22 +48,22 @@ public class Helper {
 
 	public static String convertToStringBikeType(int bikeType) {
 		switch (bikeType) {
-			case Bike.STANDARD_BICYCLE_VALUE:
-				return Bike.STANDARD_BICYCLE_STRING;
-			case Bike.STANDARD_E_BIKE_VALUE:
-				return Bike.STANDARD_E_BIKE_STRING;
+			case 1:
+				return "STANDARD BICYCLE";
+			case 2:
+				return "STANDARD E BIKE";
 			default:
-				return Bike.TWIN_BIKE_STRING;
+				return "TWIN BIKE";
 		}
 	}
 
 	public static int getDepositeAmount(int bikeType) {
 		switch (bikeType) {
-			case Bike.STANDARD_BICYCLE_VALUE:
+			case 1:
 				return 400000;
-			case Bike.STANDARD_E_BIKE_VALUE:
+			case 2:
 				return 700000;
-			case Bike.TWIN_BIKE_VALUE:
+			case 3:
 				return 550000;
 			default:
 				return 0;

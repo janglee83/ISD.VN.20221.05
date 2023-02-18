@@ -41,10 +41,10 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
         dockAddress.setText(dock.getDockAddress());
         dockArea.setText(Integer.toString(dock.getDockArea()));
         availableStandardBikePoint
-                .setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_BICYCLE_STRING)));
+                .setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(1)));
         availableStandardEBikePoint
-                .setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_E_BIKE_STRING)));
-        availableTwinBikePoint.setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING)));
+                .setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(2)));
+        availableTwinBikePoint.setText(Integer.toString(dock.getNumberOfEmptyDockPoint().get(3)));
 
         // set image
         Image imageLink = new Image(dock.getDockImageUrl());

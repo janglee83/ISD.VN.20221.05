@@ -30,23 +30,23 @@ public class Dock_DAL {
         return docksList;
     }
 
-    public HashMap<String, Integer> getNumberOfEmptyDockPoint(Integer dockId) throws SQLException {
+    public HashMap<Integer, Integer> getNumberOfEmptyDockPoint(Integer dockId) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery("select * from dock inner join dock_empty_point on dock_empty_point.dock_id = dock.id");
-        HashMap<String, Integer> numberOfEmptyDockEach = new HashMap<String, Integer>();
+        HashMap<Integer, Integer> numberOfEmptyDockEach = new HashMap<Integer, Integer>();
 
         while(resultSet.next()) {
             if (dockId == resultSet.getInt("dock.id")) {
                 int emptyPoint = resultSet.getInt("dock_empty_point.empty_points");
                 switch (resultSet.getInt("dock_empty_point.bike_type_id")) {
-                    case Bike.STANDARD_BICYCLE_VALUE:
-                        numberOfEmptyDockEach.put(Bike.STANDARD_BICYCLE_STRING, emptyPoint);
+                    case 1:
+                        numberOfEmptyDockEach.put(resultSet.getInt("dock_empty_point.bike_type_id"), emptyPoint);
                         break;
-                    case Bike.STANDARD_E_BIKE_VALUE:
-                        numberOfEmptyDockEach.put(Bike.STANDARD_E_BIKE_STRING, emptyPoint);
+                    case 2:
+                        numberOfEmptyDockEach.put(resultSet.getInt("dock_empty_point.bike_type_id"), emptyPoint);
                         break;
                     default:
-                        numberOfEmptyDockEach.put(Bike.TWIN_BIKE_STRING, emptyPoint);
+                        numberOfEmptyDockEach.put(resultSet.getInt("dock_empty_point.bike_type_id"), emptyPoint);
                         break;
                 }
             }

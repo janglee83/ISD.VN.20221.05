@@ -51,7 +51,7 @@ public class HomeScreenHandler extends BaseScreenHandler {
     private Button searchButton;
 
     private static RentBikeController rentBikeController = new RentBikeController();
-    //private BikeRentInfo bikeRentInfo;
+    // private BikeRentInfo bikeRentInfo;
 
     public HomeScreenHandler(String screenPath, Stage stage) throws IOException {
         super(screenPath, stage);
@@ -90,16 +90,17 @@ public class HomeScreenHandler extends BaseScreenHandler {
             }
         });
     }
-    public void viewDockInfoHandler(Dock dock) throws IOException
-    {
-        ViewDockInfoHandler viewDockInfoHandler = new ViewDockInfoHandler(Configs.DOCK_DETAIL_SCREEN_PATH, this.stage, dock);
+
+    public void viewDockInfoHandler(Dock dock) throws IOException {
+        ViewDockInfoHandler viewDockInfoHandler = new ViewDockInfoHandler(Configs.DOCK_DETAIL_SCREEN_PATH, this.stage,
+                dock);
         viewDockInfoHandler.setPreviousScreen(this);
         viewDockInfoHandler.setHomeScreenHandler(homeScreenHandler);
         viewDockInfoHandler.setScreenTitle("Home - Dock info");
         viewDockInfoHandler.show();
     }
-    private void displayDock(Dock dock) throws IOException
-    {
+
+    private void displayDock(Dock dock) throws IOException {
         // display each dock
         ViewDockCompHandler viewDockCompHandler = new ViewDockCompHandler(Configs.VIEW_DOCK_COMP_PATH, this);
         viewDockCompHandler.setDock(dock);
@@ -114,6 +115,7 @@ public class HomeScreenHandler extends BaseScreenHandler {
             displayDock(dock);
         }
     }
+
     @FXML
     void enterBarcodeHandler(MouseEvent event) throws SQLException {
         try {

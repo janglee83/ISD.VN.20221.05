@@ -64,7 +64,7 @@ public class ViewDockInfoHandler extends BaseScreenHandler {
         dockArea.setText(Integer.toString(dock.getDockArea()));
         // todo
         final DockBikeList bikeList = new DockBikeList();
-        view_BL.getListBike(bikeList, dock);
+        // view_BL.getListBike(bikeList, dock);
         bikeListVbox.getChildren().clear();
         try {
             displayBikes(bikeList);

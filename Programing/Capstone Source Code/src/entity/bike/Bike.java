@@ -106,6 +106,4 @@ public abstract class Bike {
 		this.bikeImageUrl = bikeImageUrl;
 	}
 
-
-
 }
