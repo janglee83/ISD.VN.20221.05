@@ -51,7 +51,7 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
         final DockList dockList = new DockList();
 
         // get list dock from bussiness layer
-        // returnBikeController.getListDock(dockList);
+        returnBikeController.getListDock(dockList);
 
         // clear all old data
         listDockVBox.getChildren().clear();
