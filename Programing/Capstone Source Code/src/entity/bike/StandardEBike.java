@@ -5,20 +5,28 @@ import java.sql.SQLException;
 
 public class StandardEBike extends Bike {
 
-    private int bateryPercent;
+    public static final int BIKE_TYPE_VALUE = 2;
+
+    private String bateryPercent;
+
+    public StandardEBike(int bikeId, int bikeType, String rentalCode, int bikeValue,
+            boolean isBeingUsed,
+            String licensePlate, String brand, String bikeImageUrl, String bateryPercent) {
+        super(bikeId, bikeType, rentalCode, bikeValue, isBeingUsed,
+                licensePlate, brand, bikeImageUrl);
+        this.bateryPercent = bateryPercent;
+    }
 
     public StandardEBike() {
-
+        super();
     }
-    public StandardEBike createStandardEBike(ResultSet result) throws SQLException{
-        StandardEBike standardEBike = new StandardEBike();
-        standardEBike.setBikeId(result.getInt("id"));
-        standardEBike.setBikeImageUrl(result.getString("bike_image_url"));
-        standardEBike.setBikeName(result.getString("name"));
-        standardEBike.setBikeType(result.getInt("bike_type_id"));
-        standardEBike.setBikeValue(result.getInt("bikeValue"));
-        standardEBike.setBrand(result.getString("brand"));
-        standardEBike.setLicensePlate(result.getString("licence_plate"));
-        return standardEBike;
+
+    // getter setter operation
+    public String getBateryPercent() {
+        return bateryPercent;
+    }
+
+    public void setBateryPercent(String bateryPercent) {
+        this.bateryPercent = bateryPercent;
     }
 }

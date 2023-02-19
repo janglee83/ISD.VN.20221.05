@@ -37,11 +37,11 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
 
     private BikeRentInfo bikeRentInfo;
 
-    private PaymentController paymentController = new PaymentController();
+    private final PaymentController paymentController = new PaymentController();
 
-    private InterbankSubsystem interbankSubsystem = new InterbankSubsystem();
+    private final InterbankSubsystem interbankSubsystem = new InterbankSubsystem();
 
-    private ReturnBikeController returnBikeController = new ReturnBikeController();
+    private final ReturnBikeController returnBikeController = new ReturnBikeController();
 
     private Transaction transaction;
 
@@ -146,9 +146,6 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
 
         try {
             transaction = interbankSubsystem.payDeposite(card, depositeAmount, transactionContent);
-
-            // update point
-            returnBikeController.returnBikeUpdateDatabase(bikeRentInfo.getBike());
         } catch (Exception exception) {
             throw new CapstoneException(exception.getMessage());
         }

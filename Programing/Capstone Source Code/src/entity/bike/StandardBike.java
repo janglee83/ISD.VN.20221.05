@@ -1,22 +1,18 @@
 package entity.bike;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 public class StandardBike extends Bike {
-    public StandardBike(){
-        
+   
+    public static final int BIKE_TYPE_VALUE = 1;
+
+    public StandardBike(int bikeId, int bikeType, String rentalCode, int bikeValue, boolean isBeingUsed,
+            String licensePlate, String brand, String bikeImageUrl) {
+        super(bikeId, bikeType, rentalCode, bikeValue, isBeingUsed, licensePlate, brand, bikeImageUrl);
     }
 
-    public StandardBike createStandardBike(ResultSet result) throws SQLException{
-        StandardBike standardBike = new StandardBike();
-        standardBike.setBikeId(result.getInt("id"));
-        standardBike.setBikeImageUrl(result.getString("bike_image_url"));
-        standardBike.setBikeName(result.getString("name"));
-        standardBike.setBikeType(result.getInt("bike_type_id"));
-        standardBike.setBikeValue(result.getInt("bikeValue"));
-        standardBike.setBrand(result.getString("brand"));
-        standardBike.setLicensePlate(result.getString("licence_plate"));
-        return standardBike;
+    public StandardBike() {
+        super();
     }
+
 }
