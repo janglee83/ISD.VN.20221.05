@@ -1,8 +1,5 @@
 package business_layer;
-
 import java.sql.SQLException;
-
-import common.exception.CapstoneException;
 import data_access_layer.bike.Bike_DAL;
 import data_access_layer.dock.Dock_DAL;
 import entity.bike.Bike;

@@ -21,17 +21,17 @@ public abstract class Bike {
 	private String bikeImageUrl;
 
 	// type bike rèactorrrrrrrrrrrrrrrrrrrrrrr
-	public static final int STANDARD_BICYCLE_VALUE = 1;
+	// public static final int STANDARD_BICYCLE_VALUE = 1;
 
-	public static final int STANDARD_E_BIKE_VALUE = 2;
+	// public static final int STANDARD_E_BIKE_VALUE = 2;
 
-	public static final int TWIN_BIKE_VALUE = 3;
+	// public static final int TWIN_BIKE_VALUE = 3;
 
-	public static final String STANDARD_BICYCLE_STRING = "standard bicycle";
+	// public static final String STANDARD_BICYCLE_STRING = "standard bicycle";
 
-	public static final String STANDARD_E_BIKE_STRING = "standard e bike";
+	// public static final String STANDARD_E_BIKE_STRING = "standard e bike";
 
-	public static final String TWIN_BIKE_STRING = "twin bike";
+	// public static final String TWIN_BIKE_STRING = "twin bike";
 
 	// getter setter operation
 	public int getBikeId() {

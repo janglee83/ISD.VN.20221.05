@@ -15,7 +15,6 @@ public class Bike_DAL {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
         ResultSet result = statement.executeQuery(query);
-        
         result.next();
         BikeFactory bikeFactory = new BikeFactory();
         return bikeFactory.getBike(result);

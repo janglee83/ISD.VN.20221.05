@@ -2,10 +2,7 @@ package provide.factory;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
-
 import entity.bike.Bike;
-import entity.bike.BikeType;
 import entity.bike.StandardBike;
 import entity.bike.StandardEBike;
 import entity.bike.TwinBike;

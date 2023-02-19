@@ -17,7 +17,6 @@ public class StandardBike extends Bike {
         standardBike.setBikeValue(result.getInt("bikeValue"));
         standardBike.setBrand(result.getString("brand"));
         standardBike.setLicensePlate(result.getString("licence_plate"));
-        standardBike.setIsBeingUsed(result.getBoolean("isBeingUsed"));
         return standardBike;
     }
 }

@@ -1,6 +1,5 @@
 package provide.strategy.implement_strategy;
 
-import entity.bike.Bike;
 import entity.bike.BikeRentInfo;
 import provide.strategy.PaymentAmountStrategy;
 

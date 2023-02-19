@@ -17,7 +17,6 @@ public class TwinBike extends Bike{
         twinBike.setBikeValue(result.getInt("bikeValue"));
         twinBike.setBrand(result.getString("brand"));
         twinBike.setLicensePlate(result.getString("licence_plate"));
-        twinBike.setIsBeingUsed(result.getBoolean("isBeingUsed"));
         return twinBike;
     }
 }
