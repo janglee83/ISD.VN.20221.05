@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 import utlis.Configs;
 import view.BaseScreenHandler;
 
-public class ReturnBikeDockListHandler extends BaseScreenHandler implements Initializable {
+public class ReturnBikeDockListHandler extends BaseScreenHandler {
 
     private Logger LOGGER = utlis.Helper.getLogger(ReturnBikeDockListHandler.class.getName());
 
@@ -40,10 +40,10 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler implements Init
     public ReturnBikeDockListHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
         this.bikeRentInfo = bikeRentInfo;
+        this.initialize();
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    private void initialize() {
         // set error invisible
         invalidText.setVisible(false);
 

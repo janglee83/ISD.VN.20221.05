@@ -3,11 +3,16 @@ import java.sql.SQLException;
 
 import common.exception.CapstoneException;
 import data_access_layer.bike.Bike_DAL;
+import data_access_layer.bike.Bike_Type_DAL;
 import data_access_layer.dock.Dock_DAL;
+import entity.bike.BikeType;
 import entity.dock.Dock;
 import entity.dock.DockBikeList;
 import entity.dock.DockList;
 public class View_BL {
+
+    private final Bike_Type_DAL bike_Type_DAL = new Bike_Type_DAL();
+
     public void getListDock(DockList dockList) {
 		// gennerate Dock_DAL
         final Dock_DAL dock_DAL = new Dock_DAL();
@@ -16,9 +21,13 @@ public class View_BL {
             // get docklist
             dockList.setDocksList(dock_DAL.getListDock());
 
+            // get list bike type
+            BikeType bikeType = new BikeType();
+            bikeType.setListBikeType(bike_Type_DAL.getListBikeType());
+
             for (Dock dock : dockList.getDocksList()) {
                 // get number empty dock point
-                dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId()));;
+                dock.setNumberOfEmptyDockPoint(dock_DAL.getNumberOfEmptyDockPoint(dock.getDockId(), bikeType));;
             }
 
         } catch (SQLException exception) {

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import controller.RentBikeController;
+import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
 import entity.transaction.Transaction;
 import javafx.fxml.FXML;
@@ -26,6 +27,8 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
 
     private final RentBikeController rentBikeController = new RentBikeController();
 
+    private final ReturnBikeController returnBikeController = new ReturnBikeController();
+
     @FXML
     private Button returnButton;
 
@@ -45,12 +48,15 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
     @FXML
     public void handleReturnPayment(MouseEvent event) throws IOException, SQLException {
         if (typePayment.equals(Transaction.RETURN)) {
+            // update point
+            returnBikeController.returnBikeUpdateDatabase(bikeRentInfo.getBike(), bikeRentInfo.getReturnedDock().getDockId());
+
             HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_SCREEN_PATH, this.stage);
             homeScreenHandler.setScreenTitle("Home Screen");
             homeScreenHandler.setHomeScreenHandler(homeScreenHandler);
             homeScreenHandler.show();
-
         } else {
+            rentBikeController.updateAfterRentBike(bikeRentInfo.getBike());
             BikeRentDataHandler bikeRentDataHandler = new BikeRentDataHandler(Configs.BIKE_RENT_DATA_SCREEN_PATH,
                     this.stage, bikeRentInfo);
             // configs
@@ -58,7 +64,6 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
             bikeRentDataHandler.setHomeScreenHandler(homeScreenHandler);
             bikeRentDataHandler.setScreenTitle("Bike rent data");
             bikeRentDataHandler.show();
-            rentBikeController.updateAfterRentBike(bikeRentInfo.getBike());
         }
     }
 

@@ -1,9 +1,13 @@
 package view.handler.returnbike;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
+import common.exception.CapstoneException;
 import controller.PaymentController;
+import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
+import entity.bike.StandardEBike;
 import entity.transaction.Transaction;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -23,10 +27,12 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
 
     @FXML
     private Label bikeTypeLabel, brandLabel, licensePlateLabel, timeRentLabel, payAmountLabel, payDepositeLabel,
-            totalAmount;
+            totalAmount, bateryTitle, bateryPercent;
 
     @FXML
     private ImageView image;
+
+    private final ReturnBikeController returnBikeController = new ReturnBikeController();
 
     public ReturnBikeInfoHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
@@ -61,6 +67,19 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
         Image imageLink = new Image(bikeRentInfo.getBike().getBikeImageUrl());
         image.setImage(imageLink);
         image.setPreserveRatio(false);
+
+        // set attr visible
+        bateryTitle.setVisible(false);
+        bateryPercent.setVisible(false);
+
+        switch (bikeRentInfo.getBike().getBikeType()) {
+            case StandardEBike.BIKE_TYPE_VALUE:
+                setEBikeAttrData();
+                break;
+            default:
+                break;
+        }
+
     }
 
     @FXML
@@ -79,5 +98,18 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
     @FXML
     public void handleReturn(MouseEvent event) {
         getPreviousScreen().show();
+    }
+
+    private void setEBikeAttrData() {
+        StandardEBike eBike;
+        bateryTitle.setVisible(true);
+        bateryPercent.setVisible(true);
+
+        try {
+            eBike = returnBikeController.getEBikeAttr(bikeRentInfo.getBike());
+            bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
+        } catch (SQLException e) {
+            throw new CapstoneException(e.getMessage());
+        }
     }
 }

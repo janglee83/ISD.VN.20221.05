@@ -146,9 +146,6 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
 
         try {
             transaction = interbankSubsystem.payDeposite(card, depositeAmount, transactionContent);
-
-            // update point
-            returnBikeController.returnBikeUpdateDatabase(bikeRentInfo.getBike());
         } catch (Exception exception) {
             throw new CapstoneException(exception.getMessage());
         }

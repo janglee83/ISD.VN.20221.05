@@ -4,11 +4,11 @@ public class StandardEBike extends Bike {
 
     public static final int BIKE_TYPE_VALUE = 2;
 
-    private int bateryPercent;
+    private String bateryPercent;
 
     public StandardEBike(int bikeId, int bikeType, String rentalCode, int bikeValue,
             boolean isBeingUsed,
-            String licensePlate, String brand, String bikeImageUrl, int bateryPercent) {
+            String licensePlate, String brand, String bikeImageUrl, String bateryPercent) {
         super(bikeId, bikeType, rentalCode, bikeValue, isBeingUsed,
                 licensePlate, brand, bikeImageUrl);
         this.bateryPercent = bateryPercent;
@@ -19,11 +19,11 @@ public class StandardEBike extends Bike {
     }
 
     // getter setter operation
-    public int getBateryPercent() {
+    public String getBateryPercent() {
         return bateryPercent;
     }
 
-    public void setBateryPercent(int bateryPercent) {
+    public void setBateryPercent(String bateryPercent) {
         this.bateryPercent = bateryPercent;
     }
 }

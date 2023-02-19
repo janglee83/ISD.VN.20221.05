@@ -1,10 +1,16 @@
 package view.handler.view;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.logging.Logger;
 
 import common.exception.CapstoneException;
+import controller.ReturnBikeController;
 import entity.bike.Bike;
+import entity.bike.BikeType;
+import entity.bike.StandardBike;
+import entity.bike.StandardEBike;
+import entity.bike.TwinBike;
 import entity.dock.Dock;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
@@ -32,15 +38,20 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
 
     private HomeScreenHandler homeScreenChooseDockHandler;
     private Dock dock;
+
+    private final ReturnBikeController returnBikeController = new ReturnBikeController();
+
     public ViewDockCompHandler(String screenPath, HomeScreenHandler homeScreenChooseDockHandler) throws IOException {
         super(screenPath);
         this.homeScreenChooseDockHandler = homeScreenChooseDockHandler;
         hboxDock.setAlignment(Pos.CENTER);
     }
+
     public void setDock(Dock dock)
     {
         this.dock = dock;
     }
+
     public void setDockInfo()
     {
         title.setText(dock.getDockName());
@@ -52,11 +63,17 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         image.setImage(imageLink);
         image.setPreserveRatio(false);
 
-        String text1 = new String("Number of " + Bike.STANDARD_BICYCLE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_BICYCLE_STRING));
+        // get list bike type
+        BikeType bikeType = new BikeType();
+        utlis.Helper.getListBikeType(bikeType);
+
+        // set number empty dock point REFACTOR
+        String text1 = setTextDockPoint(StandardBike.BIKE_TYPE_VALUE, bikeType);
+        emptyDockPoint1.setText("");
         emptyDockPoint1.setText(text1);
-        String text2 = new String("Number of " + Bike.STANDARD_E_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.STANDARD_E_BIKE_STRING));
+        String text2 = setTextDockPoint(StandardEBike.BIKE_TYPE_VALUE, bikeType);
         emptyDockPoint2.setText(text2);
-        String text3 = new String("Number of " + Bike.TWIN_BIKE_STRING + "is: " + dock.getNumberOfEmptyDockPoint().get(Bike.TWIN_BIKE_STRING));
+        String text3 = setTextDockPoint(TwinBike.BIKE_TYPE_VALUE, bikeType);
         emptyDockPoint3.setText(text3);
 
         viewDockDetailButton.setOnMouseClicked(event -> {
@@ -69,5 +86,9 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
                 throw new CapstoneException(exception.getMessage());
             }
         });
+    }
+
+    private String setTextDockPoint(int bikeTypeValue, BikeType bikeType) {
+        return new String("Number of " + bikeType.getNameBikeType(bikeTypeValue) + " is: " + dock.getNumberOfEmptyDockPoint().get(bikeType.getNameBikeType(bikeTypeValue)));
     }
 }

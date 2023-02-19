@@ -1,7 +1,7 @@
 package provide.strategy.implement_strategy;
 
-import entity.bike.Bike;
 import entity.bike.BikeRentInfo;
+import entity.bike.StandardBike;
 import provide.strategy.PaymentAmountStrategy;
 
 public class PaymentAmountVer1Strategy implements PaymentAmountStrategy {
@@ -25,7 +25,7 @@ public class PaymentAmountVer1Strategy implements PaymentAmountStrategy {
             amount = 10000;
         }
 
-        if (bikeRentInfo.getBike().getBikeType() != Bike.STANDARD_BICYCLE_VALUE)
+        if (bikeRentInfo.getBike().getBikeType() != StandardBike.BIKE_TYPE_VALUE)
             amount *= 1.5;
 
         return amount;
