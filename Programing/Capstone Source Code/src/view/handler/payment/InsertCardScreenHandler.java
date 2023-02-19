@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import common.exception.CapstoneException;
 import controller.PaymentController;
-import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
 import entity.card.Card;
 import entity.transaction.Transaction;
@@ -16,7 +15,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import subsystem.InterbankSubsystem;
 import utlis.Configs;
 import view.BaseScreenHandler;
 
@@ -38,10 +36,6 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
     private BikeRentInfo bikeRentInfo;
 
     private final PaymentController paymentController = new PaymentController();
-
-    private final InterbankSubsystem interbankSubsystem = new InterbankSubsystem();
-
-    private final ReturnBikeController returnBikeController = new ReturnBikeController();
 
     private Transaction transaction;
 
@@ -145,7 +139,7 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
         }
 
         try {
-            transaction = interbankSubsystem.payDeposite(card, depositeAmount, transactionContent);
+            transaction = paymentController.payDeposite(card, depositeAmount, transactionContent);
         } catch (Exception exception) {
             throw new CapstoneException(exception.getMessage());
         }
