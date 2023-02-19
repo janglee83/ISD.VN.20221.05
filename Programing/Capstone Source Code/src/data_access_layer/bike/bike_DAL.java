@@ -11,7 +11,7 @@ import entity.bike.StandardEBike;
 
 public class Bike_DAL {
     
-    public Bike getBikeInDock(int bike_id) throws SQLException {
+    public Bike getBikeByBikeId(int bike_id) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
         ResultSet result = statement.executeQuery(query);
@@ -64,7 +64,7 @@ public class Bike_DAL {
         return eBike;
     }
 
-    public void updateRentBike(Bike bike) throws SQLException {
+    public void updateAfterRentBike(Bike bike) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
         statement.execute(query);
@@ -87,5 +87,13 @@ public class Bike_DAL {
         result.next();
         return result.getInt("dock_id");
     }
+
+    public int convertBarcodeToBikeId(String barcode) throws SQLException {
+		Statement statement = Database.getConnection().createStatement();
+		String query = String.format("select bike_id from(rental_bike_code) where bar_code = '%s' ;", barcode);
+		ResultSet result = statement.executeQuery(query);
+		result.next();
+		return result.getInt("bike_id");
+	}
 
 }

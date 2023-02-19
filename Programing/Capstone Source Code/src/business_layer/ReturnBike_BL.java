@@ -41,7 +41,7 @@ public class ReturnBike_BL {
 
     public void returnBikeUpdateDatabase(Bike bike, int returnedDockId) throws SQLException {
         bike_DAL.returnBikeUpdateBikeIsUsed(bike);
-        dock_DAL.updateReturnBikeDockPoint(bike, returnedDockId);
+        dock_DAL.updateReturnBikeDockPoint(bike);
     }
 
     public void getListBikeType(BikeType listBikeType) throws SQLException {
