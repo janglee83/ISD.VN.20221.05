@@ -7,27 +7,10 @@ import java.util.ArrayList;
 
 import data_access_layer.database.Database;
 import entity.bike.Bike;
-<<<<<<< HEAD
-import entity.dock.DockBikeList;
-import provide.factory.BikeFactory;
-
-public class Bike_DAL {
-    public Bike getBikeByBikeId(int bike_id) throws SQLException {
-        Statement statement = Database.getConnection().createStatement();
-        String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
-        ResultSet result = statement.executeQuery(query);
-        result.next();
-        BikeFactory bikeFactory = new BikeFactory();
-        return bikeFactory.getBike(result);
-    }
-
-    public ArrayList<Bike> getBikeListInDock(int dock_id) throws SQLException
-    {
-=======
 import entity.bike.StandardEBike;
 
 public class Bike_DAL {
-
+    
     public Bike getBikeInDock(int bike_id) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
@@ -45,17 +28,10 @@ public class Bike_DAL {
     }
 
     public ArrayList<Bike> getBikeListInDock(int dock_id) throws SQLException {
->>>>>>> 676631def06222bf8b7220aa36da5626c03d30c3
         ArrayList<Bike> bikeList = new ArrayList<Bike>();
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where dock_id = %d and isBeingUsed = 0", dock_id);
         ResultSet resultSet = statement.executeQuery(query);
-<<<<<<< HEAD
-        BikeFactory bikeFactory = new BikeFactory();
-        while(resultSet.next())
-        {
-            Bike bike = bikeFactory.getBike(resultSet);
-=======
         while (resultSet.next()) {
             Bike bike = utlis.Helper.createBike(resultSet.getInt("bike_type_id"));
             bike.setBikeValue(resultSet.getInt("bikeValue"));
@@ -64,23 +40,11 @@ public class Bike_DAL {
             bike.setBrand(resultSet.getString("brand"));
             bike.setBikeId(resultSet.getInt("id"));
             bike.setLicensePlate(resultSet.getString("licence_plate"));
->>>>>>> 676631def06222bf8b7220aa36da5626c03d30c3
             bikeList.add(bike);
         }
         return bikeList;
     }
 
-<<<<<<< HEAD
-    public int convertBarcodeToBikeId(String barcode) throws SQLException {
-		Statement statement = Database.getConnection().createStatement();
-		String query = String.format("select bike_id from(rental_bike_code) where bar_code = '%s' ;", barcode);
-		ResultSet result = statement.executeQuery(query);
-		result.next();
-		return result.getInt("bike_id");
-	}
-
-    public void updateAfterRentBike(Bike bike) throws SQLException{
-=======
     public StandardEBike getEBikeAttr(Bike bike) throws SQLException {
         StandardEBike eBike = (StandardEBike) bike;
         Statement statement = Database.getConnection().createStatement();
@@ -101,7 +65,6 @@ public class Bike_DAL {
     }
 
     public void updateRentBike(Bike bike) throws SQLException {
->>>>>>> 676631def06222bf8b7220aa36da5626c03d30c3
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
         statement.execute(query);
@@ -124,4 +87,5 @@ public class Bike_DAL {
         result.next();
         return result.getInt("dock_id");
     }
+
 }

@@ -12,7 +12,7 @@ public class Dock {
 
 	private int dockArea;
 
-	private HashMap<Integer, Integer> numberOfEmptyDockPoint;
+	private HashMap<String, Integer> numberOfEmptyDockPoint;
 
 	private String dockImageUrl;
 
@@ -57,17 +57,17 @@ public class Dock {
 		this.dockImageUrl = dockImageUrl;
 	}
 
-	public HashMap<Integer, Integer> getNumberOfEmptyDockPoint() {
+	public HashMap<String, Integer> getNumberOfEmptyDockPoint() {
 		return numberOfEmptyDockPoint;
 	}
 
-	public void setNumberOfEmptyDockPoint(int typeBike, int number) {
+	public void setNumberOfEmptyDockPoint(String typeBike, int number) {
 		if (numberOfEmptyDockPoint == null)
 			numberOfEmptyDockPoint = new HashMap<>();
 		this.numberOfEmptyDockPoint.put(typeBike, number);
 	}
 
-	public void setNumberOfEmptyDockPoint(HashMap<Integer, Integer> numberOfEmptyDockPoint) {
+	public void setNumberOfEmptyDockPoint(HashMap<String, Integer> numberOfEmptyDockPoint) {
 		this.numberOfEmptyDockPoint = numberOfEmptyDockPoint;
 	}
 
