@@ -15,6 +15,10 @@ public class RentBike_BL {
 		return  bike_DAL.getBikeByBikeId(bikeId);
 	}
 
+	public int deposit(Bike bike) {
+		return utlis.Helper.getDepositeAmount(bike.getBikeType());
+	}
+
 	public void updateAfterRentBike(Bike bike) throws SQLException {
 		bike_DAL.updateAfterRentBike(bike);
 	}

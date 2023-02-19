@@ -1,9 +1,6 @@
 package business_layer;
 import java.sql.SQLException;
-<<<<<<< HEAD
-=======
 
->>>>>>> 676631def06222bf8b7220aa36da5626c03d30c3
 import data_access_layer.bike.Bike_DAL;
 import data_access_layer.bike.Bike_Type_DAL;
 import data_access_layer.dock.Dock_DAL;
