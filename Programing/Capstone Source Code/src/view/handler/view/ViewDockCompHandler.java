@@ -63,6 +63,7 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         image.setImage(imageLink);
         image.setPreserveRatio(false);
 
+
         // get list bike type
         BikeType bikeType = new BikeType();
         utlis.Helper.getListBikeType(bikeType);

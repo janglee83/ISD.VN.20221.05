@@ -50,6 +50,7 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
         dockAddress.setText(dock.getDockAddress());
         dockArea.setText(Integer.toString(dock.getDockArea()));
 
+
         // get list bike type
         BikeType bikeType = new BikeType();
         utlis.Helper.getListBikeType(bikeType);

@@ -34,6 +34,21 @@ public class Dock_DAL {
         return docksList;
     }
 
+    public Dock getInfoDock(int bikeId) throws SQLException {
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("select * from bike inner join dock on bike.dock_id = dock.id where bike.id = %d",
+                bikeId);
+        ResultSet resultSet = statement.executeQuery(query);
+        resultSet.next();
+        Dock dock = new Dock();
+        dock.setDockId(resultSet.getInt("id"));
+        dock.setDockName(resultSet.getString("name"));
+        dock.setDockArea(resultSet.getInt("dockArea"));
+        dock.setDockAddress(resultSet.getString("address"));
+        dock.setDockImageUrl(resultSet.getString("dock_image_url"));
+        return dock;
+    }
+
     public HashMap<String, Integer> getNumberOfEmptyDockPoint(Integer dockId, BikeType listBikeType)
             throws SQLException {
         Statement statement = Database.getConnection().createStatement();

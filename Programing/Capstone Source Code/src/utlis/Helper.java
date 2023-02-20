@@ -33,7 +33,7 @@ public class Helper {
 		for (String key : data.keySet()) {
 			mapAsString.append(key + "=" + data.get(key) + ", ");
 		}
-		mapAsString.delete(mapAsString.length()-2, mapAsString.length()).append("}");
+		mapAsString.delete(mapAsString.length() - 2, mapAsString.length()).append("}");
 		return mapAsString.toString();
 	}
 
@@ -57,6 +57,7 @@ public class Helper {
 
 	public static int getDepositeAmount(int bikeType) {
 		switch (bikeType) {
+
 			case StandardBike.BIKE_TYPE_VALUE:
 				return 400000;
 			case StandardEBike.BIKE_TYPE_VALUE:
@@ -93,5 +94,6 @@ public class Helper {
             throw new CapstoneException(e.getMessage());
         }
 	}
+
 
 }

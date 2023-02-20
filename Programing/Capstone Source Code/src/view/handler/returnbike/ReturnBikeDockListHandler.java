@@ -50,6 +50,7 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler {
         // gennerate list dock
         final DockList dockList = new DockList();
 
+
         // get list dock from controller
         try {
             returnBikeController.getListDock(dockList);

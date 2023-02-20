@@ -69,6 +69,7 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
         utlis.Helper.getListBikeType(bikeType);
 
         // set number empty dock point REFACTOR
+
         String text1 = setTextDockPoint(StandardBike.BIKE_TYPE_VALUE, bikeType);
         emptyDockPoint1.setText(text1);
         String text2 = setTextDockPoint(StandardEBike.BIKE_TYPE_VALUE, bikeType);
