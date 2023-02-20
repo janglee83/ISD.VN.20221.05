@@ -8,6 +8,10 @@ import java.util.HashMap;
 
 import data_access_layer.database.Database;
 import entity.bike.Bike;
+import entity.bike.BikeType;
+import entity.bike.StandardBike;
+import entity.bike.StandardEBike;
+import entity.bike.TwinBike;
 import entity.dock.Dock;
 
 public class Dock_DAL {
@@ -16,7 +20,7 @@ public class Dock_DAL {
         ResultSet resultSet = statement.executeQuery("select * from dock");
         ArrayList<Dock> docksList = new ArrayList<Dock>();
 
-        while(resultSet.next()) {
+        while (resultSet.next()) {
             Dock dock = new Dock();
             dock.setDockId(resultSet.getInt("id"));
             dock.setDockName(resultSet.getString("name"));
@@ -30,23 +34,27 @@ public class Dock_DAL {
         return docksList;
     }
 
-    public HashMap<String, Integer> getNumberOfEmptyDockPoint(Integer dockId) throws SQLException {
+    public HashMap<String, Integer> getNumberOfEmptyDockPoint(Integer dockId, BikeType listBikeType)
+            throws SQLException {
         Statement statement = Database.getConnection().createStatement();
-        ResultSet resultSet = statement.executeQuery("select * from dock inner join dock_empty_point on dock_empty_point.dock_id = dock.id");
+        ResultSet resultSet = statement
+                .executeQuery("select * from dock inner join dock_empty_point on dock_empty_point.dock_id = dock.id");
         HashMap<String, Integer> numberOfEmptyDockEach = new HashMap<String, Integer>();
 
-        while(resultSet.next()) {
+        while (resultSet.next()) {
             if (dockId == resultSet.getInt("dock.id")) {
                 int emptyPoint = resultSet.getInt("dock_empty_point.empty_points");
                 switch (resultSet.getInt("dock_empty_point.bike_type_id")) {
-                    case Bike.STANDARD_BICYCLE_VALUE:
-                        numberOfEmptyDockEach.put(Bike.STANDARD_BICYCLE_STRING, emptyPoint);
+                    case StandardBike.BIKE_TYPE_VALUE:
+                        numberOfEmptyDockEach.put(listBikeType.getNameBikeType(StandardBike.BIKE_TYPE_VALUE),
+                                emptyPoint);
                         break;
-                    case Bike.STANDARD_E_BIKE_VALUE:
-                        numberOfEmptyDockEach.put(Bike.STANDARD_E_BIKE_STRING, emptyPoint);
+                    case StandardEBike.BIKE_TYPE_VALUE:
+                        numberOfEmptyDockEach.put(listBikeType.getNameBikeType(StandardEBike.BIKE_TYPE_VALUE),
+                                emptyPoint);
                         break;
-                    default:
-                        numberOfEmptyDockEach.put(Bike.TWIN_BIKE_STRING, emptyPoint);
+                    case TwinBike.BIKE_TYPE_VALUE:
+                        numberOfEmptyDockEach.put(listBikeType.getNameBikeType(TwinBike.BIKE_TYPE_VALUE), emptyPoint);
                         break;
                 }
             }
@@ -56,19 +64,11 @@ public class Dock_DAL {
         return numberOfEmptyDockEach;
     }
 
-    public void updateReturnBikeDockPoint(Bike bike) throws SQLException{
+    public void updateReturnBikeDockPoint(Bike bike, int dockId) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format(
-                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where dock_id = %d and bike_type_id = %d",
-                getDockIdOfBike(bike), bike.getBikeType(), getDockIdOfBike(bike), bike.getBikeType());
+                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) - 1 where dock_id = %d and bike_type_id = %d",
+                dockId, bike.getBikeType(), dockId, bike.getBikeType());
         statement.execute(query);
-    }
-
-    private int getDockIdOfBike(Bike bike) throws SQLException {
-        Statement statement = Database.getConnection().createStatement();
-        String query = String.format("select dock_id from(bike) where id = %d", bike.getBikeId());
-        ResultSet result = statement.executeQuery(query);
-        result.next();
-        return result.getInt("dock_id");
     }
 }
