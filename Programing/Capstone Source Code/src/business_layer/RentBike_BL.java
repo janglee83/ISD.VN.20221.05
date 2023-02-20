@@ -29,7 +29,8 @@ public class RentBike_BL {
 	}
 
 	public void updateAfterRentBike(Bike bike) throws SQLException {
-		bike_DAL.updateAfterRentBike(bike);
+		bike_DAL.rentBikeUpdateBikeIsUsed(bike);
+		dock_DAL.updateRentBikeDockPoint(bike);
 	}
 
 	public StandardEBike getEBikeAttr(Bike bike) throws SQLException {

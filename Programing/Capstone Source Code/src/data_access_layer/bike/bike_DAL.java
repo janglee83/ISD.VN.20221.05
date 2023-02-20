@@ -64,28 +64,16 @@ public class Bike_DAL {
         return eBike;
     }
 
-    public void updateAfterRentBike(Bike bike) throws SQLException {
+    public void rentBikeUpdateBikeIsUsed(Bike bike) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
         statement.execute(query);
-        String query1 = String.format(
-                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where dock_id = %d and bike_type_id = %d",
-                getDockIdOfBike(bike), bike.getBikeType(), getDockIdOfBike(bike), bike.getBikeType());
-        statement.execute(query1);
     }
 
     public void returnBikeUpdateBikeIsUsed(Bike bike) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("update bike set isBeingUsed = 0 where id = %d", bike.getBikeId());
         statement.execute(query);
-    }
-
-    private int getDockIdOfBike(Bike bike) throws SQLException {
-        Statement statement = Database.getConnection().createStatement();
-        String query = String.format("select dock_id from(bike) where id = %d", bike.getBikeId());
-        ResultSet result = statement.executeQuery(query);
-        result.next();
-        return result.getInt("dock_id");
     }
 
     public int convertBarcodeToBikeId(String barcode) throws SQLException {
