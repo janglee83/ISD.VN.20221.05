@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -9,7 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line endX="-1.220703143189894E-5" endY="104.50000762939453" layoutY="-11.0" startX="1365.9998779296875" startY="104.4999771118164" />
       <Line endX="101.49998474121094" endY="-1.5258789289873675E-6" startX="101.49998474121094" startY="93.00000762939453" />
@@ -39,58 +45,58 @@
             </ImageView>
          </children>
       </Pane>
-      <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="492.0" layoutY="169.0" startX="-30.17376708984375" startY="-74.79287719726562" />
+      <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="500.0" layoutY="167.0" startX="-30.17376708984375" startY="-74.79287719726562" />
       <Label layoutX="502.0" layoutY="7.0" text="Bike's Infomation">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="124.0" text="Loại xe: ">
+      <Label layoutX="34.0" layoutY="259.0" text="Loại xe: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="bikeType" layoutX="157.0" layoutY="124.0" text="Xe điện ">
+      <Label fx:id="bikeType" layoutX="163.0" layoutY="259.0" text="Xe điện ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="201.0" text="Hãng: ">
+      <Label layoutX="34.0" layoutY="319.0" text="Hãng: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="brand" layoutX="161.0" layoutY="201.0" text="Ninja">
+      <Label fx:id="brand" layoutX="163.0" layoutY="319.0" text="Ninja">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="277.0" text="Biển số: ">
+      <Label layoutX="33.0" layoutY="386.0" text="Biển số: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="licensePlate" layoutX="152.0" layoutY="277.0" text="12AA456">
+      <Label fx:id="licensePlate" layoutX="158.0" layoutY="386.0" text="12AA456">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="359.0" text="Tiền cọc:  ">
+      <Label layoutX="32.0" layoutY="447.0" text="Tiền cọc:  ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="deposit" layoutX="151.0" layoutY="359.0" text="500,000VND">
+      <Label fx:id="deposit" layoutX="163.0" layoutY="447.0" text="500,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="30.0" layoutY="441.0" text="Barcode:">
+      <Label layoutX="31.0" layoutY="517.0" text="Barcode:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="barcodelb" layoutX="150.0" layoutY="441.0" text="123456">
+      <Label fx:id="barcodelb" layoutX="162.0" layoutY="517.0" text="123456">
          <font>
             <Font size="24.0" />
          </font>
@@ -100,10 +106,40 @@
             <Image url="@image/xdd.jpg" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" layoutX="130.0" layoutY="542.0" mnemonicParsing="false" onMouseClicked="#confirmToRentBike" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
+      <Button alignment="CENTER" layoutX="131.0" layoutY="674.0" mnemonicParsing="false" onMouseClicked="#confirmToRentBike" prefHeight="46.0" prefWidth="173.0" style="-fx-background-color: #33FFFF; -fx-border-color: #000000;" text="Xác nhận " wrapText="true">
          <font>
             <Font name="Arial" size="24.0" />
          </font>
       </Button>
+      <Label fx:id="bateryTitle" layoutX="32.0" layoutY="585.0" text="Batery percent:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="bateryPercent" layoutX="221.0" layoutY="585.0" text="100">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="133.0" text="Bãi xe:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="197.0" text="Địa chỉ:  ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameDock" layoutX="158.0" layoutY="137.0" text="Đại La ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="address" layoutX="158.0" layoutY="197.0" text="Đại La, Hà Nội">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

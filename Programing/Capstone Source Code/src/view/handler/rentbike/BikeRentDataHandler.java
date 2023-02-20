@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
-import entity.bike.Bike;
 import entity.bike.BikeRentInfo;
 import entity.bike.BikeType;
 import entity.bike.StandardEBike;

@@ -1,8 +1,4 @@
 package entity.bike;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 public class StandardEBike extends Bike {
 
     public static final int BIKE_TYPE_VALUE = 2;

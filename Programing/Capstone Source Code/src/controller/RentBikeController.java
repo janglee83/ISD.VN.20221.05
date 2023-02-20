@@ -1,12 +1,11 @@
 package controller;
-import java.sql.SQLException;
-import business_layer.RentBike_BL;
-import entity.bike.Bike;
 
 import java.sql.SQLException;
-
 import business_layer.RentBike_BL;
+import data_access_layer.dock.Dock_DAL;
 import entity.bike.Bike;
+import entity.bike.StandardEBike;
+import entity.dock.Dock;
 
 public class RentBikeController extends BaseController {
 
@@ -20,6 +19,10 @@ public class RentBikeController extends BaseController {
 		return rentBike_BL.getBikeByBikeId(bikeId);
 	}
 
+	public Dock getDockInfo(int bikeId) throws SQLException {
+		return rentBike_BL.getDockInfo(bikeId);
+	}
+
 	public int getDeposit(int bikeType) {
 		return utlis.Helper.getDepositeAmount(bikeType);
 	}
@@ -28,4 +31,7 @@ public class RentBikeController extends BaseController {
 		rentBike_BL.updateAfterRentBike(bike);
 	}
 
+	public StandardEBike getEBikeAttr(Bike bike) throws SQLException {
+		return rentBike_BL.getEBikeAttr(bike);
+	}
 }
