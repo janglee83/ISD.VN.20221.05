@@ -5,14 +5,16 @@ import common.exception.CapstoneException;
 import data_access_layer.bike.Bike_DAL;
 import data_access_layer.bike.Bike_Type_DAL;
 import data_access_layer.dock.Dock_DAL;
+import entity.bike.Bike;
 import entity.bike.BikeType;
+import entity.bike.StandardEBike;
 import entity.dock.Dock;
 import entity.dock.DockBikeList;
 import entity.dock.DockList;
 public class View_BL {
 
     private final Bike_Type_DAL bike_Type_DAL = new Bike_Type_DAL();
-
+    private final Bike_DAL bike_DAL = new Bike_DAL();
     public void getListDock(DockList dockList) {
 		// gennerate Dock_DAL
         final Dock_DAL dock_DAL = new Dock_DAL();
@@ -43,5 +45,8 @@ public class View_BL {
         {
             throw new CapstoneException(exception.getMessage());
         }
+    }
+    public StandardEBike getEBikeAttr(Bike bike) throws SQLException{
+        return bike_DAL.getEBikeAttr(bike);
     }
 }

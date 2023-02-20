@@ -28,7 +28,7 @@
             </VBox>
             <VBox prefHeight="99.0" prefWidth="348.0">
                <children>
-                  <Label fx:id="title" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                  <Label fx:id="dockName" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="25.0" />
                      </font>
@@ -36,12 +36,12 @@
                         <Insets />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="title1" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media2" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                  <Label fx:id="dockAddress" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media2" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="25.0" />
                      </font>
                   </Label>
-                  <Label fx:id="title2" contentDisplay="CENTER" layoutX="10.0" layoutY="56.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media3" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
+                  <Label fx:id="dockArea" contentDisplay="CENTER" layoutX="10.0" layoutY="56.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="353.0" text="Title of Media3" textAlignment="CENTER" textFill="#5091e6" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="25.0" />
                      </font>
@@ -56,17 +56,17 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="161.0" prefWidth="337.0">
                <children>
-                  <Label fx:id="emptyDockPoint1" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="Số lượng xe đạp trống: 1dasdasdsadasdsa" textFill="#5091e6">
+                  <Label fx:id="emptyStandardBike" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="Số lượng xe đạp trống: 1dasdasdsadasdsa" textFill="#5091e6">
                      <font>
                         <Font name="Segoe UI Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="emptyDockPoint2" alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="asdsadsadSố lượng xe đạp trống: 2" textFill="#5091e6">
+                  <Label fx:id="emptyStandardEBike" alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="68.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="329.0" text="asdsadsadSố lượng xe đạp trống: 2" textFill="#5091e6">
                      <font>
                         <Font name="Segoe UI Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="emptyDockPoint3" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="330.0" text="Số lượng xe đạp trống: 3" textFill="#5091e6">
+                  <Label fx:id="emptyTwinBike" alignment="BOTTOM_RIGHT" contentDisplay="CENTER" layoutX="10.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="330.0" text="Số lượng xe đạp trống: 3" textFill="#5091e6">
                      <font>
                         <Font name="Segoe UI Bold" size="18.0" />
                      </font>

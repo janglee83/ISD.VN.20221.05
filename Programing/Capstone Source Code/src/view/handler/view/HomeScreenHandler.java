@@ -1,31 +1,18 @@
 package view.handler.view;
 
 import java.io.IOException;
-import java.io.ObjectInputFilter.Config;
-import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
-import business_layer.RentBike_BL;
-import data_access_layer.bike.Bike_DAL;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TextInputDialog;
-import javafx.scene.control.Alert.AlertType;
 import business_layer.View_BL;
 import common.exception.CapstoneException;
 import controller.RentBikeController;
-import controller.ViewController;
-import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
 import entity.dock.DockList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -35,10 +22,6 @@ import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
 
 public class HomeScreenHandler extends BaseScreenHandler {
-    private static Logger LOGGER = utlis.Helper.getLogger(HomeScreenHandler.class.getName());
-
-    private static ViewController viewController = new ViewController();
-
     private static View_BL view_BL = new View_BL();
 
     @FXML

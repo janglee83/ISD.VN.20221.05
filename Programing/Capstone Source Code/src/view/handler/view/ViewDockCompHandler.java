@@ -1,12 +1,9 @@
 package view.handler.view;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.logging.Logger;
 
 import common.exception.CapstoneException;
-import controller.ReturnBikeController;
-import entity.bike.Bike;
 import entity.bike.BikeType;
 import entity.bike.StandardBike;
 import entity.bike.StandardEBike;
@@ -22,13 +19,15 @@ import javafx.scene.layout.HBox;
 import view.FXMLScreenHandler;
 public class ViewDockCompHandler extends FXMLScreenHandler{
     private static Logger LOGGER = utlis.Helper.getLogger(ViewDockCompHandler.class.getName());
+    
     @FXML
     private HBox hboxDock;
+    
     @FXML
-    private Label title, title1, title2;
+    private Label dockName, dockAddress, dockArea;
 
     @FXML
-    private Label emptyDockPoint1, emptyDockPoint2, emptyDockPoint3;
+    private Label emptyStandardBike, emptyStandardEBike, emptyTwinBike;
 
     @FXML
     private ImageView image;
@@ -38,8 +37,6 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
 
     private HomeScreenHandler homeScreenChooseDockHandler;
     private Dock dock;
-
-    private final ReturnBikeController returnBikeController = new ReturnBikeController();
 
     public ViewDockCompHandler(String screenPath, HomeScreenHandler homeScreenChooseDockHandler) throws IOException {
         super(screenPath);
@@ -54,9 +51,9 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
 
     public void setDockInfo()
     {
-        title.setText(dock.getDockName());
-        title1.setText(dock.getDockAddress());
-        title2.setText(new String(Integer.toString(dock.getDockArea()) + "m2"));
+        dockName.setText(dock.getDockName());
+        dockAddress.setText(dock.getDockAddress());
+        dockArea.setText(new String(Integer.toString(dock.getDockArea()) + "m2"));
 
         // set image
         Image imageLink = new Image(dock.getDockImageUrl());
@@ -70,12 +67,12 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
 
         // set number empty dock point REFACTOR
         String text1 = setTextDockPoint(StandardBike.BIKE_TYPE_VALUE, bikeType);
-        emptyDockPoint1.setText("");
-        emptyDockPoint1.setText(text1);
+        emptyStandardBike.setText("");
+        emptyStandardBike.setText(text1);
         String text2 = setTextDockPoint(StandardEBike.BIKE_TYPE_VALUE, bikeType);
-        emptyDockPoint2.setText(text2);
+        emptyStandardEBike.setText(text2);
         String text3 = setTextDockPoint(TwinBike.BIKE_TYPE_VALUE, bikeType);
-        emptyDockPoint3.setText(text3);
+        emptyTwinBike.setText(text3);
 
         viewDockDetailButton.setOnMouseClicked(event -> {
             // todo

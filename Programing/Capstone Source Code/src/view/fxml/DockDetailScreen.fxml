@@ -57,12 +57,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="373.0" text="Số xe khả dụng: ">
+      <Label layoutX="23.0" layoutY="373.0" prefHeight="35.0" prefWidth="235.0" text="Số xe khả dụng : ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="availableBike" layoutX="249.0" layoutY="376.0" text="5">
+      <Label fx:id="availableBike" layoutX="251.0" layoutY="373.0" text="5">
          <font>
             <Font size="24.0" />
          </font>
