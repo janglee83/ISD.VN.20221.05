@@ -2,11 +2,10 @@ package subsystem.interbank;
 
 import common.exception.CapstoneException;
 import entity.card.Card;
-import lib.TransactionLib;
 
 public class InterbankBoundary {
 
-	private TransactionLib transactionLib;
+	private TransactionProcess transactionLib;
 
 	public String sendRequest(String param) {
 		String response = null;
