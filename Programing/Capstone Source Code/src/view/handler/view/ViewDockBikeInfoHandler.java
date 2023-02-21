@@ -15,7 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import view.BaseScreenHandler;
-
+import entity.bike.BikeType;
 public class ViewDockBikeInfoHandler extends BaseScreenHandler {
 
     @FXML
@@ -32,7 +32,7 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
 
     private final ViewController viewController = new ViewController();
     private Bike bike;
-
+    
     //private StandardEBike standardEBike;
     public ViewDockBikeInfoHandler(String screenPath, Stage stage, Bike bike) throws IOException {
         super(screenPath, stage);
@@ -42,7 +42,7 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
 
     private void initialize()
     {
-        typeBike.setText(Integer.toString(bike.getBikeType()));
+        typeBike.setText(utlis.Helper.convertToStringBikeType(bike.getBikeType()));
         brandBike.setText(bike.getBrand());
         licensePlates.setText(bike.getLicensePlate());
         deposit.setText(Integer.toString(bike.getBikeValue()));
