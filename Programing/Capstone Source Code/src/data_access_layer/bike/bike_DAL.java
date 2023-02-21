@@ -64,9 +64,9 @@ public class Bike_DAL {
         return eBike;
     }
 
-    public void rentBikeUpdateBikeIsUsed(Bike bike) throws SQLException {
+    public void rentBikeUpdateBikeIsUsed(int bikeId) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
-        String query = String.format("update bike set isBeingUsed = 1 where id = %d", bike.getBikeId());
+        String query = String.format("update bike set isBeingUsed = 1 where id = %d", bikeId);
         statement.execute(query);
     }
 

@@ -26,8 +26,8 @@ public class RentBikeController extends BaseController {
 		return utlis.Helper.getDepositeAmount(bikeType);
 	}
 
-	public void updateAfterRentBike(Bike bike) throws SQLException {
-		rentBike_BL.updateAfterRentBike(bike);
+	public void updateAfterRentBike(int bikeId, int bikeType) throws SQLException {
+		rentBike_BL.updateAfterRentBike(bikeId, bikeType);
 	}
 
 	public StandardEBike getEBikeAttr(Bike bike) throws SQLException {

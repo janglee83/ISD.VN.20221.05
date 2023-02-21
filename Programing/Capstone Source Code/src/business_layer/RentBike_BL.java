@@ -24,13 +24,13 @@ public class RentBike_BL {
 		return dock_DAL.getInfoDock(bikeId);
 	}
 
-	public int deposit(Bike bike) {
-		return utlis.Helper.getDepositeAmount(bike.getBikeType());
+	public int deposit(int bikeType) {
+		return utlis.Helper.getDepositeAmount(bikeType);
 	}
 
-	public void updateAfterRentBike(Bike bike) throws SQLException {
-		bike_DAL.rentBikeUpdateBikeIsUsed(bike);
-		dock_DAL.updateRentBikeDockPoint(bike);
+	public void updateAfterRentBike(int bikeId, int bikeType) throws SQLException {
+		bike_DAL.rentBikeUpdateBikeIsUsed(bikeId);
+		dock_DAL.updateRentBikeDockPoint(bikeId,bikeType);
 	}
 
 	public StandardEBike getEBikeAttr(Bike bike) throws SQLException {
