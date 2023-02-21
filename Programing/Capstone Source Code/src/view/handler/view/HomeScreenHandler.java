@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 import business_layer.RentBike_BL;
-import data_access_layer.bike.Bike_DAL;
+import data_access_layer.bike.bike_DAL;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextInputDialog;

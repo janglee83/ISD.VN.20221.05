@@ -14,7 +14,7 @@ import entity.bike.StandardEBike;
 import entity.bike.TwinBike;
 import entity.dock.Dock;
 
-public class Dock_DAL {
+public class dock_DAL {
     public ArrayList<Dock> getListDock() throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery("select * from dock");

@@ -11,7 +11,7 @@ import business_layer.RentBike_BL;
 import business_layer.View_BL;
 import common.exception.CapstoneException;
 import controller.ViewController;
-import data_access_layer.bike.Bike_DAL;
+import data_access_layer.bike.bike_DAL;
 import entity.bike.Bike;
 import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
@@ -37,7 +37,7 @@ public class ViewDockInfoHandler extends BaseScreenHandler {
     private View_BL view_BL = new View_BL();
     private static RentBike_BL rentBike_BL = new RentBike_BL();
 
-    private static Bike_DAL bike_DAL = new Bike_DAL();
+    private static bike_DAL bike_DAL = new bike_DAL();
     private BikeRentInfo bikeRentInfo;
 
     @FXML
