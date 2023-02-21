@@ -9,7 +9,7 @@ import data_access_layer.database.Database;
 import entity.bike.Bike;
 import entity.bike.StandardEBike;
 
-public class bike_DAL {
+public class Bike_DAL {
 
     public Bike getBikeByBikeId(int bike_id) throws SQLException {
         Statement statement = Database.getConnection().createStatement();

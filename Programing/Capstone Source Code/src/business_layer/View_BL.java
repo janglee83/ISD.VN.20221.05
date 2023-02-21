@@ -2,9 +2,9 @@ package business_layer;
 import java.sql.SQLException;
 
 import common.exception.CapstoneException;
-import data_access_layer.bike.bike_DAL;
+import data_access_layer.bike.Bike_DAL;
 import data_access_layer.bike.Bike_Type_DAL;
-import data_access_layer.dock.dock_DAL;
+import data_access_layer.dock.Dock_DAL;
 import entity.bike.BikeType;
 import entity.dock.Dock;
 import entity.dock.DockBikeList;
@@ -15,7 +15,7 @@ public class View_BL {
 
     public void getListDock(DockList dockList) {
 		// gennerate Dock_DAL
-        final dock_DAL dock_DAL = new dock_DAL();
+        final Dock_DAL dock_DAL = new Dock_DAL();
 
 		try {
             // get docklist
@@ -36,7 +36,7 @@ public class View_BL {
 	}
     public void getListBike(DockBikeList bikeList, Dock dock)
     {
-        final bike_DAL bike_DAL = new bike_DAL();
+        final Bike_DAL bike_DAL = new Bike_DAL();
         try {
             bikeList.setDockBikeList(bike_DAL.getBikeListInDock(dock.getDockId()));
         } catch (SQLException exception)
