@@ -46,6 +46,7 @@ public class RentBikeInfoHandler extends BaseScreenHandler {
     }
 
     private void initialize() throws SQLException {
+        
         Dock dock = rentBikeController.getDockInfo(bike.getBikeId());
         nameDock.setText(dock.getDockName());
         address.setText(dock.getDockAddress());
