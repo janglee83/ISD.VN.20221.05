@@ -22,7 +22,7 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
     private Label typeBike, brandBike, licensePlates, deposit;
 
     @FXML
-    private Label availableTime, battery, tgkd, pin; 
+    private Label availableTime, battery, tgkd, batteryLabel; 
 
     @FXML
     private ImageView image;
@@ -50,8 +50,10 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
         Image imageLink = new Image(bike.getBikeImageUrl());
         image.setImage(imageLink);
         image.setPreserveRatio(false);
+
         battery.setVisible(false);
-        pin.setVisible(false);
+        batteryLabel.setVisible(false);
+        
         switch (bike.getBikeType()) {
             case StandardEBike.BIKE_TYPE_VALUE:
                 setEBikeAttrData();
@@ -69,7 +71,7 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
     // E-bike display 
     private void setEBikeAttrData() {
         StandardEBike eBike;
-        pin.setVisible(true);
+        batteryLabel.setVisible(true);
         battery.setVisible(true);
 
         try {

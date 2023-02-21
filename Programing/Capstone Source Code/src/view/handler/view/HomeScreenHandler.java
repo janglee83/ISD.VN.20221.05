@@ -6,9 +6,9 @@ import java.util.Optional;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextInputDialog;
-import business_layer.View_BL;
 import common.exception.CapstoneException;
 import controller.RentBikeController;
+import controller.ViewController;
 import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.scene.control.Alert;
@@ -22,8 +22,9 @@ import view.BaseScreenHandler;
 import view.handler.rentbike.RentBikeInfoHandler;
 
 public class HomeScreenHandler extends BaseScreenHandler {
-    private static View_BL view_BL = new View_BL();
 
+    private final ViewController viewController = new ViewController();
+    
     @FXML
     private VBox VBoxListDock;
 
@@ -43,7 +44,12 @@ public class HomeScreenHandler extends BaseScreenHandler {
 
     private void initialize() {
         final DockList dockList = new DockList();
-        view_BL.getListDock(dockList);
+        try {
+            viewController.getListDock(dockList);
+        }catch (Exception e)
+        {
+            throw new CapstoneException(e.getMessage());
+        }
         VBoxListDock.getChildren().clear();
 
         try {

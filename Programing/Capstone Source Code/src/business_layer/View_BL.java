@@ -50,4 +50,8 @@ public class View_BL {
     public StandardEBike getEBikeAttr(Bike bike) throws SQLException{
         return bike_DAL.getEBikeAttr(bike);
     }
+    public void getListBikeType(BikeType listBikeType) throws SQLException
+    {
+        listBikeType.setListBikeType(BikeType_DAL.getListBikeType());
+    }
 }

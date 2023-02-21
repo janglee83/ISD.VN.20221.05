@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import business_layer.View_BL;
 import common.exception.CapstoneException;
+import controller.ViewController;
 import entity.bike.Bike;
 import entity.dock.Dock;
 import entity.dock.DockBikeList;
@@ -17,9 +18,11 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 
 public class ViewDockInfoHandler extends BaseScreenHandler {
+
+    private final ViewController viewController = new ViewController();
+    
     // available Bike in dock count
     private int availableValue = 0;
-    private View_BL view_BL = new View_BL();
 
     @FXML
     private Label dockName, dockAddress, dockArea;
@@ -45,10 +48,20 @@ public class ViewDockInfoHandler extends BaseScreenHandler {
         dockName.setText(dock.getDockName());
         dockAddress.setText(dock.getDockAddress());
         dockArea.setText(Integer.toString(dock.getDockArea()));
-        // todo 
+        
         final DockBikeList bikeList = new DockBikeList();
-        view_BL.getListBike(bikeList, dock);
+
+        // get list bike
+        try{
+            viewController.getListBike(bikeList, dock);
+        } catch (Exception e) 
+        {
+            throw new CapstoneException(e.getMessage());
+        }
+
         bikeListVbox.getChildren().clear();
+
+        // display list bike
         try {
             displayBikes(bikeList);
         } catch (IOException exception) {
