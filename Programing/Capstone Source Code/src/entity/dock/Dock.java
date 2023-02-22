@@ -70,5 +70,4 @@ public class Dock {
 	public void setNumberOfEmptyDockPoint(HashMap<String, Integer> numberOfEmptyDockPoint) {
 		this.numberOfEmptyDockPoint = numberOfEmptyDockPoint;
 	}
-
 }
