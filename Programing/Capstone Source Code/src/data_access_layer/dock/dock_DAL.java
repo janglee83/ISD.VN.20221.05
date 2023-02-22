@@ -79,7 +79,7 @@ public class Dock_DAL {
         return numberOfEmptyDockEach;
     }
 
-    public void updateReturnBikeDockPoint(Bike bike, int dockId) throws SQLException {
+    public void updateReturnBikeDockAvailablePosition(Bike bike, int dockId) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format(
                 "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) - 1 where dock_id = %d and bike_type_id = %d",
@@ -92,6 +92,13 @@ public class Dock_DAL {
         String query = String.format(
                 "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where dock_id = %d and bike_type_id = %d",
                 getInfoDock(bikeId).getDockId(), bikeType, getInfoDock(bikeId).getDockId(), bikeType);
+        statement.execute(query);
+    }
+    
+    public void updateReturnBikeDockPoint(Bike bike, int dockId) throws SQLException {
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format(
+                "update bike set dock_id = %d where id = %d",dockId, bike.getBikeId());
         statement.execute(query);
     }
 }

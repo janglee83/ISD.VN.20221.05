@@ -13,14 +13,21 @@ public class PaymentAmountVer1Strategy implements PaymentAmountStrategy {
 
         int totalMinus = bikeRentInfo.getMinutes();
         totalMinus += bikeRentInfo.getHours() * 60;
-        if (bikeRentInfo.getSeconds() > 0)
+        if (bikeRentInfo.getSeconds() > 0) {
             totalMinus += 1;
+        }
 
-        if (totalMinus > 30) {
+        if (totalMinus <= 10) {
+            amount = 0;
+        } else if (totalMinus > 30) {
             amount += 10000;
             totalMinus -= 30;
-            long roundedQuotient = Math.round((double)totalMinus / 15);
-            amount += roundedQuotient*3000;
+            
+            int quotient = totalMinus / 15;
+            int remainder = totalMinus - quotient * 15;
+            quotient = quotient + (remainder > 0 ? 1 : 0);
+
+            amount += quotient*3000;
         } else {
             amount = 10000;
         }
