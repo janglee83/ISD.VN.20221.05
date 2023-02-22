@@ -19,10 +19,10 @@ import entity.bike.BikeType;
 public class ViewDockBikeInfoHandler extends BaseScreenHandler {
 
     @FXML
-    private Label typeBike, brandBike, licensePlates, deposit;
+    private Label typeBike, brandBike, licensePlates, deposit, rentalCode;
 
     @FXML
-    private Label availableTime, battery, tgkd, batteryLabel; 
+    private Label battery, batteryLabel; 
 
     @FXML
     private ImageView image;
@@ -46,6 +46,11 @@ public class ViewDockBikeInfoHandler extends BaseScreenHandler {
         brandBike.setText(bike.getBrand());
         licensePlates.setText(bike.getLicensePlate());
         deposit.setText(Integer.toString(bike.getBikeValue()));
+        try {
+            rentalCode.setText(viewController.getBarcode(bike));
+        } catch (Exception e) {
+            throw new CapstoneException(e.getMessage());
+        }
         // set image
         Image imageLink = new Image(bike.getBikeImageUrl());
         image.setImage(imageLink);

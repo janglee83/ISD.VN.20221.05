@@ -54,4 +54,7 @@ public class View_BL {
     {
         listBikeType.setListBikeType(BikeType_DAL.getListBikeType());
     }
+    public String getBarcodeBike(Bike bike) throws SQLException{
+        return this.bike_DAL.getBarcodeById(bike.getBikeId());
+    }
 }

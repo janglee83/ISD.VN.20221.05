@@ -11,6 +11,15 @@ import entity.bike.StandardEBike;
 
 public class Bike_DAL {
 
+    public String getBarcodeById(int bike_id) throws SQLException
+    {
+        Statement statement = Database.getConnection().createStatement();
+        String query = String.format("select bar_code from(rental_bike_code) where id = %d ;", bike_id);
+        ResultSet result = statement.executeQuery(query);
+        result.next();
+        return result.getString("bar_code");
+    }
+
     public Bike getBikeByBikeId(int bike_id) throws SQLException {
         Statement statement = Database.getConnection().createStatement();
         String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);

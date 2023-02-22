@@ -29,7 +29,7 @@
             <Font name="Arial" size="18.0" />
          </font>
       </Label>
-      <Line endX="-30.17376708984375" endY="620.5000610351562" layoutX="450.0" layoutY="169.0" startX="-30.17376708984375" startY="-74.79287719726562" />
+      <Line endX="100.4927978515625" endY="621.300048828125" layoutX="450.0" layoutY="169.0" startX="100.4927978515625" startY="-74.7928695678711" />
       <Label layoutX="502.0" layoutY="7.0" text="Bike's Infomation">
          <font>
             <Font size="48.0" />
@@ -40,7 +40,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="typeBike" layoutX="231.0" layoutY="123.0" text="Xe điện ">
+      <Label fx:id="typeBike" layoutX="200.0" layoutY="123.0" text="Xe điện ">
          <font>
             <Font size="24.0" />
          </font>
@@ -50,17 +50,17 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="brandBike" layoutX="231.0" layoutY="223.0" text="Ninja">
+      <Label fx:id="brandBike" layoutX="200.0" layoutY="223.0" text="Ninja">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="batteryLabel" layoutX="30.0" layoutY="523.0" text="Pin: ">
+      <Label fx:id="batteryLabel" layoutX="30.0" layoutY="623.0" text="Pin: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="battery" layoutX="231.0" layoutY="523.0" text="60%">
+      <Label fx:id="battery" layoutX="200.0" layoutY="623.0" text="60%">
          <font>
             <Font size="24.0" />
          </font>
@@ -70,7 +70,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="licensePlates" layoutX="231.0" layoutY="323.0" text="12AA456">
+      <Label fx:id="licensePlates" layoutX="200.0" layoutY="323.0" text="12AA456">
          <font>
             <Font size="24.0" />
          </font>
@@ -80,12 +80,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="deposit" layoutX="231.0" layoutY="423.0" text="400,000VND">
+      <Label fx:id="deposit" layoutX="200.0" layoutY="423.0" text="400,000VND">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ImageView fx:id="image" fitHeight="622.0" fitWidth="674.0" layoutX="577.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="image" fitHeight="622.0" fitWidth="674.0" layoutX="640.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/xdd.jpg" />
          </image>
@@ -103,5 +103,15 @@
             </Button>
          </children>
       </Pane>
+      <Label layoutX="30.0" layoutY="523.0" text="BarCode:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="rentalCode" layoutX="200.0" layoutY="523.0" text="asdsd">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
