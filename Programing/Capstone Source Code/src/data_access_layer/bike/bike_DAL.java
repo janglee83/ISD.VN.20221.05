@@ -1,5 +1,6 @@
 package data_access_layer.bike;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -12,7 +13,8 @@ import entity.bike.StandardEBike;
 public class Bike_DAL {
 
     public Bike getBikeByBikeId(int bike_id) throws SQLException {
-        Statement statement = Database.getConnection().createStatement();
+        Connection connection = Database.getConnection();
+        Statement statement = connection.createStatement();
         String query = String.format("select * from(bike) where id =  %d and isBeingUsed = 0", bike_id);
         ResultSet result = statement.executeQuery(query);
 
@@ -24,12 +26,17 @@ public class Bike_DAL {
         bike.setBrand(result.getString("brand"));
         bike.setBikeId(result.getInt("id"));
         bike.setLicensePlate(result.getString("licence_plate"));
+
+        Database.close(connection);
         return bike;
     }
 
     public ArrayList<Bike> getBikeListInDock(int dock_id) throws SQLException {
         ArrayList<Bike> bikeList = new ArrayList<Bike>();
-        Statement statement = Database.getConnection().createStatement();
+
+        Connection connection = Database.getConnection();
+        Statement statement = connection.createStatement();
+
         String query = String.format("select * from(bike) where dock_id = %d and isBeingUsed = 0", dock_id);
         ResultSet resultSet = statement.executeQuery(query);
         while (resultSet.next()) {
@@ -42,12 +49,17 @@ public class Bike_DAL {
             bike.setLicensePlate(resultSet.getString("licence_plate"));
             bikeList.add(bike);
         }
+
+        Database.close(connection);
         return bikeList;
     }
 
     public StandardEBike getEBikeAttr(Bike bike) throws SQLException {
         StandardEBike eBike = (StandardEBike) bike;
-        Statement statement = Database.getConnection().createStatement();
+
+        Connection connection = Database.getConnection();
+        Statement statement = connection.createStatement();
+
         String query = String.format("select * from(standard_e_bike_attribute) where bike_id = %d", eBike.getBikeId());
         ResultSet resultSet = statement.executeQuery(query);
 
@@ -61,27 +73,46 @@ public class Bike_DAL {
             }
         }
 
+        Database.close(connection);
+
         return eBike;
     }
 
     public void rentBikeUpdateBikeIsUsed(int bikeId) throws SQLException {
-        Statement statement = Database.getConnection().createStatement();
+
+        Connection connection = Database.getConnection();
+        Statement statement = connection.createStatement();
+
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bikeId);
         statement.execute(query);
+
+        Database.close(connection);
     }
 
     public void returnBikeUpdateBikeIsUsed(Bike bike) throws SQLException {
-        Statement statement = Database.getConnection().createStatement();
+
+        Connection connection = Database.getConnection();
+        Statement statement = connection.createStatement();
+
         String query = String.format("update bike set isBeingUsed = 0 where id = %d", bike.getBikeId());
         statement.execute(query);
+
+        Database.close(connection);
     }
 
     public int convertBarcodeToBikeId(String barcode) throws SQLException {
-        Statement statement = Database.getConnection().createStatement();
+
+        Connection connection = Database.getConnection();
+        Statement statement = connection.createStatement();
+
         String query = String.format("select bike_id from(rental_bike_code) where bar_code = '%s' ;", barcode);
         ResultSet result = statement.executeQuery(query);
         result.next();
-        return result.getInt("bike_id");
+        int bikeId = result.getInt("bike_id");
+
+        Database.close(connection);
+
+        return bikeId;
     }
 
 }

@@ -1,5 +1,6 @@
 package data_access_layer.transaction;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
@@ -11,7 +12,9 @@ public class Transaction_DAL {
     public void saveTransaction(Transaction transaction) throws SQLException {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-        Statement statement = Database.getConnection().createStatement();
+        Connection connection = Database.getConnection();
+        Statement statement = connection.createStatement();
+
         String query = String.format("INSERT INTO transaction (name, code, time, content, amount) VALUES ("
                 + "'" + transaction.getCard().getCardHolderName() + "'" + ","
                 + "'" + transaction.getCard().getCardNumber() + "'" + ","
@@ -21,5 +24,7 @@ public class Transaction_DAL {
                 + ")");
         statement.executeUpdate(query);
         transaction.setTime(timestamp.toString());
+
+        Database.close(connection);
     }
 }
