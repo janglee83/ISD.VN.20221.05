@@ -1,4 +1,4 @@
-package lib;
+package subsystem.interbank;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class TransactionLib {
+public class TransactionProcess {
 
 	// connect
 	private static final String PATCH = "PATCH";

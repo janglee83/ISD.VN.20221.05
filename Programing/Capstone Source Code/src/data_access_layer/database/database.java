@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.logging.Logger;
 
+import common.exception.CapstoneException;
 import utlis.Configs;
 
 public class Database {
@@ -34,13 +35,13 @@ public class Database {
     }
 
     // You need to close the resultSet
-    private void close() {
+    public static void close(Connection con) {
         try {
-            if (connect != null) {
-                connect.close();
+            if (con != null) {
+                con.close();
             }
         } catch (Exception e) {
-
+            throw new CapstoneException(e.getMessage());
         }
     }
 

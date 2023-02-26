@@ -42,37 +42,37 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="dockName" layoutX="202.0" layoutY="125.0" text="ABC Station">
+      <Label fx:id="dockName" layoutX="238.0" layoutY="124.0" text="ABC Station">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="213.0" text="Địa chỉ: ">
+      <Label layoutX="33.0" layoutY="224.0" text="Địa chỉ: ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="dockAddress" layoutX="182.0" layoutY="212.0" text="15 ABC, EcoPark">
+      <Label fx:id="dockAddress" layoutX="238.0" layoutY="224.0" text="15 ABC, EcoPark">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="23.0" layoutY="373.0" text="Số xe khả dụng: ">
+      <Label layoutX="33.0" layoutY="424.0" prefHeight="35.0" prefWidth="235.0" text="Số xe khả dụng : ">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="availableBike" layoutX="249.0" layoutY="376.0" text="5">
+      <Label fx:id="availableBike" layoutX="238.0" layoutY="424.0" text="5">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="297.0" text="Diện tích:">
+      <Label layoutX="33.0" layoutY="324.0" text="Diện tích:">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="dockArea" layoutX="206.0" layoutY="297.0" text="123 m2">
+      <Label fx:id="dockArea" layoutX="238.0" layoutY="324.0" text="123 m2">
          <font>
             <Font size="24.0" />
          </font>

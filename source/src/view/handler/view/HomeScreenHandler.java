@@ -127,7 +127,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             if (result.isPresent()) {
                 // System.out.println(result.get());
                 RentBikeInfoHandler rentBikeInfoHandler = new RentBikeInfoHandler(Configs.RENT_BIKE_INFO_SCREEN_PATH,
-                        this.stage, bike_DAL.getBikeInDock(rentBike_BL.convertToRentalCode(result.get())),
+                        this.stage, bike_DAL.getBike(rentBike_BL.convertToRentalCode(result.get())),
                         result.get());
                 rentBikeInfoHandler.setPreviousScreen(this);
                 rentBikeInfoHandler.setHomeScreenHandler(homeScreenHandler);

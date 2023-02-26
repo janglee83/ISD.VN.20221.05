@@ -1,8 +1,13 @@
 package view.handler.rentbike;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
+import common.exception.CapstoneException;
+import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
+import entity.bike.BikeType;
+import entity.bike.StandardEBike;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -25,6 +30,9 @@ public class BikeRentDataHandler extends BaseScreenHandler {
     @FXML
     private Button stopButton;
 
+    @FXML
+    private Label typeBikeLabel, brandLabel, licencePlateLabel, bateryPercentTitle, bateryPercent;
+
     private int hours;
 
     private int minutes;
@@ -42,6 +50,8 @@ public class BikeRentDataHandler extends BaseScreenHandler {
 
     private BikeRentInfo bikeRentInfo;
 
+    private final ReturnBikeController returnBikeController = new ReturnBikeController();
+
     public BikeRentDataHandler(String screenPath, Stage stage, BikeRentInfo bikeRentInfo) throws IOException {
         super(screenPath, stage);
         this.bikeRentInfo = bikeRentInfo;
@@ -49,6 +59,27 @@ public class BikeRentDataHandler extends BaseScreenHandler {
     }
 
     private void initialize() {
+        // get list bike type
+        BikeType bikeType = new BikeType();
+        utlis.Helper.getListBikeType(bikeType);
+
+        // int basic data
+        typeBikeLabel.setText(bikeType.getNameBikeType(bikeRentInfo.getBike().getBikeType()));
+        brandLabel.setText(bikeRentInfo.getBike().getBrand());
+        licencePlateLabel.setText(bikeRentInfo.getBike().getLicensePlate());
+
+        // set attr visible
+        bateryPercentTitle.setVisible(false);
+        bateryPercent.setVisible(false);
+
+        switch (bikeRentInfo.getBike().getBikeType()) {
+            case StandardEBike.BIKE_TYPE_VALUE:
+                setEBikeAttrData();
+                break;
+            default:
+                break;
+        }
+
         // set image
         Image imageLink = new Image(bikeRentInfo.getBike().getBikeImageUrl());
         image.setImage(imageLink);
@@ -126,7 +157,20 @@ public class BikeRentDataHandler extends BaseScreenHandler {
         timeline.pause();
     }
 
-    public void resume() {
+    private void resume() {
         timeline.play();
+    }
+
+    private void setEBikeAttrData() {
+        StandardEBike eBike;
+        bateryPercentTitle.setVisible(true);
+        bateryPercent.setVisible(true);
+
+        try {
+            eBike = returnBikeController.getEBikeAttr(bikeRentInfo.getBike());
+            bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
+        } catch (SQLException e) {
+            throw new CapstoneException(e.getMessage());
+        }
     }
 }

@@ -13,7 +13,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import view.FXMLScreenHandler;
 
 public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
@@ -39,20 +38,19 @@ public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
     private VBox spinnerFX;
 
     private ViewDockInfoHandler viewDockChooseBikeHandler;
-
     private Bike bike;
-
-    private Stage stage;
 
     public ViewDockBikeInfoCompHandler(String screenPath, ViewDockInfoHandler viewDockChooseBikeHandler) throws IOException {
         super(screenPath);
         this.viewDockChooseBikeHandler = viewDockChooseBikeHandler;
         hboxBike.setAlignment(Pos.CENTER);
     }
+
     public void setBike(Bike bike)
     {
         this.bike = bike;
     }
+
     public void setBikeInfo()
     {
         bikeTypeString.setText(utlis.Helper.convertToStringBikeType(bike.getBikeType()));
