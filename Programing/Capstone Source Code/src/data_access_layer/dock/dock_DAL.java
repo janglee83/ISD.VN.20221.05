@@ -35,8 +35,6 @@ public class Dock_DAL {
             docksList.add(dock);
         }
 
-        Database.close(connection);
-
         return docksList;
     }
 
@@ -55,8 +53,6 @@ public class Dock_DAL {
         dock.setDockArea(resultSet.getInt("dockArea"));
         dock.setDockAddress(resultSet.getString("address"));
         dock.setDockImageUrl(resultSet.getString("dock_image_url"));
-
-        Database.close(connection);
 
         return dock;
     }
@@ -91,8 +87,6 @@ public class Dock_DAL {
 
         }
 
-        Database.close(connection);
-
         return numberOfEmptyDockEach;
     }
 
@@ -106,7 +100,6 @@ public class Dock_DAL {
                 dockId, bike.getBikeType(), dockId, bike.getBikeType());
         statement.execute(query);
 
-        Database.close(connection);
     }
 
     public void updateRentBikeDockPoint(int bikeId, int bikeType) throws SQLException {
@@ -119,7 +112,6 @@ public class Dock_DAL {
                 getInfoDock(bikeId).getDockId(), bikeType, getInfoDock(bikeId).getDockId(), bikeType);
         statement.execute(query);
 
-        Database.close(connection);
     }
 
     public void updateReturnBikeDockPoint(Bike bike, int dockId) throws SQLException {
@@ -131,6 +123,5 @@ public class Dock_DAL {
                 "update bike set dock_id = %d where id = %d",dockId, bike.getBikeId());
         statement.execute(query);
 
-        Database.close(connection);
     }
 }

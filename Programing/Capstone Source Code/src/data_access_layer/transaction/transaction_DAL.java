@@ -25,6 +25,5 @@ public class Transaction_DAL {
         statement.executeUpdate(query);
         transaction.setTime(timestamp.toString());
 
-        Database.close(connection);
     }
 }

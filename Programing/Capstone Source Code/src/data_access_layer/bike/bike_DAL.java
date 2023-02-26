@@ -26,8 +26,6 @@ public class Bike_DAL {
         bike.setBrand(result.getString("brand"));
         bike.setBikeId(result.getInt("id"));
         bike.setLicensePlate(result.getString("licence_plate"));
-
-        Database.close(connection);
         return bike;
     }
 
@@ -50,7 +48,6 @@ public class Bike_DAL {
             bikeList.add(bike);
         }
 
-        Database.close(connection);
         return bikeList;
     }
 
@@ -73,8 +70,6 @@ public class Bike_DAL {
             }
         }
 
-        Database.close(connection);
-
         return eBike;
     }
 
@@ -85,8 +80,6 @@ public class Bike_DAL {
 
         String query = String.format("update bike set isBeingUsed = 1 where id = %d", bikeId);
         statement.execute(query);
-
-        Database.close(connection);
     }
 
     public void returnBikeUpdateBikeIsUsed(Bike bike) throws SQLException {
@@ -97,7 +90,6 @@ public class Bike_DAL {
         String query = String.format("update bike set isBeingUsed = 0 where id = %d", bike.getBikeId());
         statement.execute(query);
 
-        Database.close(connection);
     }
 
     public int convertBarcodeToBikeId(String barcode) throws SQLException {
@@ -109,8 +101,6 @@ public class Bike_DAL {
         ResultSet result = statement.executeQuery(query);
         result.next();
         int bikeId = result.getInt("bike_id");
-
-        Database.close(connection);
 
         return bikeId;
     }

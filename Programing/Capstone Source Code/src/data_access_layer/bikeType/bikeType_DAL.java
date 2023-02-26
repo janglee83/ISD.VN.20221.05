@@ -21,7 +21,6 @@ public class BikeType_DAL {
         result.next();
         String name = result.getString("name");
 
-        Database.close(connection);
 
         return name;
     }
@@ -38,8 +37,6 @@ public class BikeType_DAL {
         while (result.next()) {
             listbikeType.put(result.getInt("value"), result.getString("name"));
         }
-
-        Database.close(connection);
 
         return listbikeType;
     }
