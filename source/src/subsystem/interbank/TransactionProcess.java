@@ -1,4 +1,4 @@
-package lib;
+package subsystem.interbank;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class TransactionLib {
+public class TransactionProcess {
 
 	// connect
 	private static final String PATCH = "PATCH";
@@ -26,7 +26,7 @@ public class TransactionLib {
 		// // get payload
 		// final String payload = utlis.Helper.convertHashmapWithIteration(body);
 
-		//Start connect
+		// Start connect
 		HttpURLConnection connection = generateConnection(utlis.Configs.URL, PATCH, null);
 		Writer writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));
 		writer.write(payload);
@@ -52,7 +52,8 @@ public class TransactionLib {
 		LOGGER.info("Request Info:\nRequest URL: " + url + "\n" + "Payload Data: " + payload + "\n");
 	}
 
-	private static HttpURLConnection generateConnection(String url, String requestMethod, String token) throws IOException {
+	private static HttpURLConnection generateConnection(String url, String requestMethod, String token)
+			throws IOException {
 		// setup conncection
 		final var connection = (HttpURLConnection) turnStringIntoUrl(url).openConnection();
 		connection.setDoInput(true);

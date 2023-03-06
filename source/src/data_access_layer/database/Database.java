@@ -4,15 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.logging.Logger;
 
+import common.exception.CapstoneException;
 import utlis.Configs;
 
 public class Database {
-    //connection
+    // connection
     private static Connection connect = null;
 
     private static final String className = "com.mysql.cj.jdbc.Driver";
 
-    //logger
+    // logger
     private static Logger LOGGER = utlis.Helper.getLogger(Connection.class.getName());
 
     public static Connection getConnection() {
@@ -23,9 +24,10 @@ public class Database {
             Class.forName(className);
 
             // Setup the connection with the DB
-            connect = DriverManager.getConnection("jdbc:mysql://localhost/" + Configs.DATABASE_NAME + "?" + "user=" + Configs.DATABASE_USER +"&password=" + Configs.DATABASE_PASSWORD);
+            connect = DriverManager.getConnection("jdbc:mysql://localhost/" + Configs.DATABASE_NAME + "?" + "user="
+                    + Configs.DATABASE_USER + "&password=" + Configs.DATABASE_PASSWORD);
 
-            //logger
+            // logger
             LOGGER.info("Connect database successfully");
         } catch (Exception exception) {
             LOGGER.info(exception.getMessage());
@@ -34,13 +36,13 @@ public class Database {
     }
 
     // You need to close the resultSet
-    private void close() {
+    public static void close(Connection con) {
         try {
-            if (connect != null) {
-                connect.close();
+            if (con != null) {
+                con.close();
             }
         } catch (Exception e) {
-
+            throw new CapstoneException(e.getMessage());
         }
     }
 

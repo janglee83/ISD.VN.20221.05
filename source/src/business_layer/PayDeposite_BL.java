@@ -6,7 +6,7 @@ import provide.strategy.implement_strategy.PaymentAmountVer1Strategy;
 
 public class PayDeposite_BL {
 
-	public int caculateAmount(BikeRentInfo bikeRentInfo) {
+    public int caculateAmount(BikeRentInfo bikeRentInfo) {
         PaymentMethod paymentMethod = new PaymentMethod();
         paymentMethod.setBikeRentInfo(bikeRentInfo);
         paymentMethod.setPaymentMethod(new PaymentAmountVer1Strategy());

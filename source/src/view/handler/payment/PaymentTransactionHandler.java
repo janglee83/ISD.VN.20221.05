@@ -3,7 +3,8 @@ package view.handler.payment;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import business_layer.RentBike_BL;
+import controller.RentBikeController;
+import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
 import entity.transaction.Transaction;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.stage.Stage;
 import utlis.Configs;
 import view.BaseScreenHandler;
 import view.handler.rentbike.BikeRentDataHandler;
+import view.handler.view.HomeScreenHandler;
 
 public class PaymentTransactionHandler extends BaseScreenHandler {
 
@@ -23,7 +25,9 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
 
     private BikeRentInfo bikeRentInfo;
 
-    private static RentBike_BL rentBike_BL = new RentBike_BL();
+    private final RentBikeController rentBikeController = new RentBikeController();
+
+    private final ReturnBikeController returnBikeController = new ReturnBikeController();
 
     @FXML
     private Button returnButton;
@@ -44,8 +48,17 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
     @FXML
     public void handleReturnPayment(MouseEvent event) throws IOException, SQLException {
         if (typePayment.equals(Transaction.RETURN)) {
+            // update point
+            returnBikeController.returnBikeUpdateDatabase(bikeRentInfo.getBike(),
+                    bikeRentInfo.getReturnedDock().getDockId());
+
+            HomeScreenHandler homeScreenHandler = new HomeScreenHandler(Configs.HOME_SCREEN_PATH, this.stage);
+            homeScreenHandler.setScreenTitle("Home Screen");
+            homeScreenHandler.setHomeScreenHandler(homeScreenHandler);
             homeScreenHandler.show();
         } else {
+            rentBikeController.updateAfterRentBike(bikeRentInfo.getBike().getBikeId(),
+                    bikeRentInfo.getBike().getBikeType());
             BikeRentDataHandler bikeRentDataHandler = new BikeRentDataHandler(Configs.BIKE_RENT_DATA_SCREEN_PATH,
                     this.stage, bikeRentInfo);
             // configs
@@ -53,7 +66,6 @@ public class PaymentTransactionHandler extends BaseScreenHandler {
             bikeRentDataHandler.setHomeScreenHandler(homeScreenHandler);
             bikeRentDataHandler.setScreenTitle("Bike rent data");
             bikeRentDataHandler.show();
-            rentBike_BL.updateAfterRentBike(bikeRentInfo.getBike());
         }
     }
 

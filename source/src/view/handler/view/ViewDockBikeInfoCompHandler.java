@@ -13,10 +13,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import view.FXMLScreenHandler;
 
-public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
+public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler {
 
     private static Logger LOGGER = utlis.Helper.getLogger(ViewDockBikeInfoCompHandler.class.getName());
 
@@ -39,28 +38,26 @@ public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
     private VBox spinnerFX;
 
     private ViewDockInfoHandler viewDockChooseBikeHandler;
-
     private Bike bike;
 
-    private Stage stage;
-
-    public ViewDockBikeInfoCompHandler(String screenPath, ViewDockInfoHandler viewDockChooseBikeHandler) throws IOException {
+    public ViewDockBikeInfoCompHandler(String screenPath, ViewDockInfoHandler viewDockChooseBikeHandler)
+            throws IOException {
         super(screenPath);
         this.viewDockChooseBikeHandler = viewDockChooseBikeHandler;
         hboxBike.setAlignment(Pos.CENTER);
     }
-    public void setBike(Bike bike)
-    {
+
+    public void setBike(Bike bike) {
         this.bike = bike;
     }
-    public void setBikeInfo()
-    {
+
+    public void setBikeInfo() {
         bikeTypeString.setText(utlis.Helper.convertToStringBikeType(bike.getBikeType()));
 
         String brandString = new String("Hãng " + bike.getBrand());
         brandLabel.setText(brandString);
 
-        String depositeString = new String("Giá cọc: " + utlis.Helper.getDepositeAmount(bike.getBikeType()));
+        String depositeString = new String("Giá cọc: " + utlis.Helper.getDepositeAmount(bike.getBikeValue()));
         depositeAmountLabel.setText(depositeString);
 
         // set image
@@ -68,14 +65,11 @@ public class ViewDockBikeInfoCompHandler extends FXMLScreenHandler{
         image.setImage(imageLink);
         image.setPreserveRatio(false);
 
-        viewBikeInfoButton.setOnMouseClicked(event ->
-        {
+        viewBikeInfoButton.setOnMouseClicked(event -> {
             LOGGER.info("Comfirm to view Bike info");
-            try{
+            try {
                 viewDockChooseBikeHandler.viewDockBikeInfoHandler(bike);
-            }
-            catch (IOException exception)
-            {
+            } catch (IOException exception) {
                 throw new CapstoneException(exception.getMessage());
             }
         });

@@ -1,20 +1,18 @@
 package request_layer;
 
-public class Card_RL {
+import entity.card.Card;
+
+public class Card_RL extends BaseRequestLayer {
 
 	public void validateString(String name) throws Exception {
-		// Check name is not null
-		if (name == "")
-			throw new Exception();
-		// Check if contain only leter and space
-		if (name.matches("^[a-zA-Z0-9 ]*$") == false)
-			throw new Exception();
+		super.fieldToValidate = name;
+		super.validateField(super.REQUIRED, "");
+		super.validateField(super.TEXT, "");
 	}
 
 	public void validateStringNumber(String stringNumber) throws Exception {
-		// Check name is not null
-		if (stringNumber == "")
-			throw new Exception();
+		super.fieldToValidate = stringNumber;
+		super.validateField(super.REQUIRED, "");
 
 		try {
 			double d = Double.parseDouble(stringNumber);
@@ -23,4 +21,10 @@ public class Card_RL {
 		}
 	}
 
+	public void validateCard(Card card) throws Exception {
+		validateString(card.getCardHolderName());
+        validateStringNumber(card.getExpirationDate());
+        validateStringNumber(card.getCardNumber());
+        validateStringNumber(card.getSecurityCode());
+	}
 }

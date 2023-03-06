@@ -23,20 +23,20 @@ public class App extends Application {
   @Override
   public void start(Stage primaryStage) {
     try {
-      //initialize the screen
+      // initialize the screen
       VBox root = (VBox) FXMLLoader.load(getClass().getResource(Configs.LOADING_SCREEN_PATH));
       Scene scene = new Scene(root);
 
       primaryStage.setScene(scene);
       primaryStage.show();
 
-      //Load splash screen with effect
+      // Load splash screen with effect
       FadeTransition fadeIn = new FadeTransition(Duration.seconds(2), root);
       fadeIn.setFromValue(0);
       fadeIn.setToValue(1);
       fadeIn.setCycleCount(1);
 
-      //Finish splash
+      // Finish splash
       FadeTransition fadeOut = new FadeTransition(Duration.seconds(1), root);
       fadeOut.setFromValue(1);
       fadeOut.setToValue(0);

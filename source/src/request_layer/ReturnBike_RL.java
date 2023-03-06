@@ -1,14 +1,16 @@
 package request_layer;
 
-public class ReturnBike_RL {
+public class ReturnBike_RL extends BaseRequestLayer {
 
     public void validateName(String name) throws Exception {
-        // Check name is not null
-        if (name == null)
-            throw new Exception();
-        // Check if contain only leter and space
-        if (name.matches("^[a-zA-Z ]*$") == false)
-            throw new Exception();
+        // // Check name is not null
+        // if (name == null)
+        // throw new Exception();
+        // // Check if contain only leter and space
+        // if (name.matches("^[a-zA-Z ]*$") == false)
+        // throw new Exception();
+        super.fieldToValidate = name;
+        super.validateField(super.REQUIRED, "");
     }
 
     public boolean validateAddress(String address) {

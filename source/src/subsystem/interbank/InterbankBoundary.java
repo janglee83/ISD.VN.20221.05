@@ -2,11 +2,10 @@ package subsystem.interbank;
 
 import common.exception.CapstoneException;
 import entity.card.Card;
-import lib.TransactionLib;
 
 public class InterbankBoundary {
 
-	private TransactionLib transactionLib;
+	private TransactionProcess transactionLib;
 
 	public String sendRequest(String param) {
 		String response = null;
@@ -21,9 +20,9 @@ public class InterbankBoundary {
 
 	public void sendRequestHard(Card card) throws Exception {
 		if (!card.getCardHolderName().equals(Card.ownerTest)
-			|| !card.getCardNumber().equals(Card.cardCodeTest)
-			|| !card.getSecurityCode().equals(Card.ccvCodeTest)
-			|| !card.getExpirationDate().equals(Card.dateExpiredTest))
+				|| !card.getCardNumber().equals(Card.cardCodeTest)
+				|| !card.getSecurityCode().equals(Card.ccvCodeTest)
+				|| !card.getExpirationDate().equals(Card.dateExpiredTest))
 			throw new Exception();
 	}
 

@@ -1,5 +1,7 @@
 package entity.bike;
 
+import entity.dock.Dock;
+
 public class BikeRentInfo {
 
     private Bike bike;
@@ -9,6 +11,8 @@ public class BikeRentInfo {
     private int minutes;
 
     private int hours;
+
+    private Dock returnedDock;
 
     public BikeRentInfo() {
     }
@@ -50,5 +54,13 @@ public class BikeRentInfo {
 
     public void setBike(Bike bike) {
         this.bike = bike;
+    }
+
+    public Dock getReturnedDock() {
+        return returnedDock;
+    }
+
+    public void setReturnedDock(Dock returnedDock) {
+        this.returnedDock = returnedDock;
     }
 }

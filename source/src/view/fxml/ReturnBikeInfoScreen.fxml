@@ -83,7 +83,7 @@
             <Font name="Arial" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="20.0" layoutY="250.0" text="Pin: ">
+      <Label fx:id="bateryTitle" layoutX="20.0" layoutY="250.0" text="Pin: ">
          <font>
             <Font size="24.0" />
          </font>
@@ -113,7 +113,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="350.0" layoutY="250.0" text="60%">
+      <Label fx:id="bateryPercent" layoutX="350.0" layoutY="250.0" text="60%">
          <font>
             <Font size="24.0" />
          </font>
