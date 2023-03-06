@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import data_access_layer.database.Database;
-import entity.bike.Bike;
 import entity.bike.BikeType;
 import entity.bike.StandardBike;
 import entity.bike.StandardEBike;
@@ -90,37 +89,25 @@ public class Dock_DAL {
         return numberOfEmptyDockEach;
     }
 
-    public void updateReturnBikeDockAvailablePosition(Bike bike, int dockId) throws SQLException {
+    public void updateReturnBikeDockPoint(int bikeId, int dockId) throws SQLException {
 
         Connection connection = Database.getConnection();
         Statement statement = connection.createStatement();
 
         String query = String.format(
-                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) - 1 where dock_id = %d and bike_type_id = %d",
-                dockId, bike.getBikeType(), dockId, bike.getBikeType());
+                "update bike set dock_id = %d where id = %d", dockId, bikeId);
         statement.execute(query);
 
     }
 
-    public void updateRentBikeDockPoint(int bikeId, int bikeType) throws SQLException {
+    public void updateDockPoint(int bikeId, int bikeType, int numberPoint) throws SQLException {
 
         Connection connection = Database.getConnection();
         Statement statement = connection.createStatement();
 
         String query = String.format(
-                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + 1 where dock_id = %d and bike_type_id = %d",
-                getInfoDock(bikeId).getDockId(), bikeType, getInfoDock(bikeId).getDockId(), bikeType);
-        statement.execute(query);
-
-    }
-
-    public void updateReturnBikeDockPoint(Bike bike, int dockId) throws SQLException {
-
-        Connection connection = Database.getConnection();
-        Statement statement = connection.createStatement();
-
-        String query = String.format(
-                "update bike set dock_id = %d where id = %d",dockId, bike.getBikeId());
+                "update dock_empty_point set empty_points = (select empty_points where dock_id = %d and bike_type_id = %d) + %d where dock_id = %d and bike_type_id = %d",
+                getInfoDock(bikeId).getDockId(), bikeType, numberPoint ,getInfoDock(bikeId).getDockId(), bikeType);
         statement.execute(query);
 
     }

@@ -26,7 +26,7 @@ public class TransactionProcess {
 		// // get payload
 		// final String payload = utlis.Helper.convertHashmapWithIteration(body);
 
-		//Start connect
+		// Start connect
 		HttpURLConnection connection = generateConnection(utlis.Configs.URL, PATCH, null);
 		Writer writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream()));
 		writer.write(payload);
@@ -52,7 +52,8 @@ public class TransactionProcess {
 		LOGGER.info("Request Info:\nRequest URL: " + url + "\n" + "Payload Data: " + payload + "\n");
 	}
 
-	private static HttpURLConnection generateConnection(String url, String requestMethod, String token) throws IOException {
+	private static HttpURLConnection generateConnection(String url, String requestMethod, String token)
+			throws IOException {
 		// setup conncection
 		final var connection = (HttpURLConnection) turnStringIntoUrl(url).openConnection();
 		connection.setDoInput(true);

@@ -15,12 +15,9 @@ public class PaymentController extends BaseController {
 
     private final InterbankSubsystem interbankSubsystem = new InterbankSubsystem();
 
-	public void validateCardData(Card card) throws Exception {
-		card_RL.validateString(card.getCardHolderName());
-		card_RL.validateStringNumber(card.getExpirationDate());
-		card_RL.validateStringNumber(card.getCardNumber());
-		card_RL.validateStringNumber(card.getSecurityCode());
-	}
+    public void validateCardData(Card card) throws Exception {
+        card_RL.validateCard(card);
+    }
 
     public void validateString(String string) throws Exception {
         card_RL.validateString(string);

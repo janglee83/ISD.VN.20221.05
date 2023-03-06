@@ -1,7 +1,6 @@
 package view.handler.returnbike;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
@@ -39,8 +38,6 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
     private ReturnBikeDockListHandler returnBikeChooseDockHandler;
 
     private Dock dock; // selected dock
-
-    private final ReturnBikeController returnBikeController = new ReturnBikeController();
 
     public ReturnBikeDockCompHandler(String screenPath, ReturnBikeDockListHandler returnBikeChooseDockHandler)
             throws IOException {
@@ -89,7 +86,8 @@ public class ReturnBikeDockCompHandler extends FXMLScreenHandler {
     }
 
     private String setTextDockPoint(int bikeTypeValue, BikeType bikeType) {
-        return new String("Number of " + bikeType.getNameBikeType(bikeTypeValue) + "is: " + dock.getNumberOfEmptyDockPoint().get(bikeType.getNameBikeType(bikeTypeValue)));
+        return new String("Number of " + bikeType.getNameBikeType(bikeTypeValue) + "is: "
+                + dock.getNumberOfEmptyDockPoint().get(bikeType.getNameBikeType(bikeTypeValue)));
     }
 
 }

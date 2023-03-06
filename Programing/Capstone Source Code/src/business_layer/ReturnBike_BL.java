@@ -1,12 +1,11 @@
 package business_layer;
+
 import java.sql.SQLException;
 
 import data_access_layer.bike.Bike_DAL;
 import data_access_layer.bikeType.BikeType_DAL;
 import data_access_layer.dock.Dock_DAL;
-import entity.bike.Bike;
 import entity.bike.BikeType;
-import entity.bike.StandardEBike;
 import entity.dock.Dock;
 import entity.dock.DockList;
 
@@ -36,18 +35,14 @@ public class ReturnBike_BL {
 
     }
 
-    public void returnBikeUpdateDatabase(Bike bike, int returnedDockId) throws SQLException {
-        bike_DAL.returnBikeUpdateBikeIsUsed(bike);
-        dock_DAL.updateReturnBikeDockAvailablePosition(bike, returnedDockId);
-        dock_DAL.updateReturnBikeDockPoint(bike, returnedDockId);
+    public void returnBikeUpdateDatabase(int bikeId, int returnedDockId) throws SQLException {
+        bike_DAL.updateBikeStatus(bikeId, utlis.Constants.IS_NOT_USED);
+        dock_DAL.updateDockPoint(bikeId, returnedDockId, -1);
+        dock_DAL.updateReturnBikeDockPoint(bikeId, returnedDockId);
     }
 
     public void getListBikeType(BikeType listBikeType) throws SQLException {
         listBikeType.setListBikeType(BikeType_DAL.getListBikeType());
-    }
-
-    public StandardEBike getEBikeAttr(Bike bike) throws SQLException {
-        return bike_DAL.getEBikeAttr(bike);
     }
 
 }

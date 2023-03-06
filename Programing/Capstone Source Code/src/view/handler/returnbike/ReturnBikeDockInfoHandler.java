@@ -3,7 +3,6 @@ package view.handler.returnbike;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import common.exception.CapstoneException;
 import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
 import entity.bike.BikeType;
@@ -33,8 +32,6 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
     @FXML
     private ImageView image;
 
-    private final ReturnBikeController returnBikeController = new ReturnBikeController();
-
     public ReturnBikeDockInfoHandler(String screenPath, Stage stage, Dock dock, BikeRentInfo bikeRentInfo)
             throws IOException {
         super(screenPath, stage);
@@ -49,7 +46,6 @@ public class ReturnBikeDockInfoHandler extends BaseScreenHandler {
         dockName.setText(dock.getDockName());
         dockAddress.setText(dock.getDockAddress());
         dockArea.setText(Integer.toString(dock.getDockArea()));
-
 
         // get list bike type
         BikeType bikeType = new BikeType();

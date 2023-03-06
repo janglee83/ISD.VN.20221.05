@@ -20,9 +20,9 @@ public class InterbankBoundary {
 
 	public void sendRequestHard(Card card) throws Exception {
 		if (!card.getCardHolderName().equals(Card.ownerTest)
-			|| !card.getCardNumber().equals(Card.cardCodeTest)
-			|| !card.getSecurityCode().equals(Card.ccvCodeTest)
-			|| !card.getExpirationDate().equals(Card.dateExpiredTest))
+				|| !card.getCardNumber().equals(Card.cardCodeTest)
+				|| !card.getSecurityCode().equals(Card.ccvCodeTest)
+				|| !card.getExpirationDate().equals(Card.dateExpiredTest))
 			throw new Exception();
 	}
 

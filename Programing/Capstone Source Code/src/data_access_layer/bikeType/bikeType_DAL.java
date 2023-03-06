@@ -21,7 +21,6 @@ public class BikeType_DAL {
         result.next();
         String name = result.getString("name");
 
-
         return name;
     }
 

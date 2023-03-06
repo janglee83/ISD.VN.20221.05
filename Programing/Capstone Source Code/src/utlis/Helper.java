@@ -50,23 +50,13 @@ public class Helper {
 
 	public static String convertToStringBikeType(int bikeType) {
 		// get list bike type
-        BikeType obj = new BikeType();
+		BikeType obj = new BikeType();
 		obj.getEntityBikeType(obj);
 		return obj.getNameBikeType(bikeType);
 	}
 
-	public static int getDepositeAmount(int bikeType) {
-		switch (bikeType) {
-
-			case StandardBike.BIKE_TYPE_VALUE:
-				return 400000;
-			case StandardEBike.BIKE_TYPE_VALUE:
-				return 700000;
-			case TwinBike.BIKE_TYPE_VALUE:
-				return 550000;
-			default:
-				return 0;
-		}
+	public static int getDepositeAmount(int bikeValue) {
+		return bikeValue* utlis.Constants.DEPOSITE_VALUE / 100;
 	}
 
 	public static Bike createBike(int bikeType) {
@@ -88,12 +78,11 @@ public class Helper {
 	}
 
 	public static void getListBikeType(BikeType bikeType) {
-        try {
-            returnBike_BL.getListBikeType(bikeType);
-        } catch (SQLException e) {
-            throw new CapstoneException(e.getMessage());
-        }
+		try {
+			returnBike_BL.getListBikeType(bikeType);
+		} catch (SQLException e) {
+			throw new CapstoneException(e.getMessage());
+		}
 	}
-
 
 }

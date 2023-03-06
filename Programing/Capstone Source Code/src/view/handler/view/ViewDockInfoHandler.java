@@ -2,7 +2,6 @@ package view.handler.view;
 
 import java.io.IOException;
 
-import business_layer.View_BL;
 import common.exception.CapstoneException;
 import controller.ViewController;
 import entity.bike.Bike;
@@ -20,7 +19,7 @@ import view.BaseScreenHandler;
 public class ViewDockInfoHandler extends BaseScreenHandler {
 
     private final ViewController viewController = new ViewController();
-    
+
     // available Bike in dock count
     private int availableValue = 0;
 
@@ -35,7 +34,7 @@ public class ViewDockInfoHandler extends BaseScreenHandler {
 
     @FXML
     private Button returnButton;
-    
+
     private Dock dock;
 
     public ViewDockInfoHandler(String screenPath, Stage stage, Dock dock) throws IOException {
@@ -48,14 +47,13 @@ public class ViewDockInfoHandler extends BaseScreenHandler {
         dockName.setText(dock.getDockName());
         dockAddress.setText(dock.getDockAddress());
         dockArea.setText(Integer.toString(dock.getDockArea()));
-        
+
         final DockBikeList bikeList = new DockBikeList();
 
         // get list bike
-        try{
+        try {
             viewController.getListBike(bikeList, dock);
-        } catch (Exception e) 
-        {
+        } catch (Exception e) {
             throw new CapstoneException(e.getMessage());
         }
 
@@ -70,9 +68,9 @@ public class ViewDockInfoHandler extends BaseScreenHandler {
         availableBike.setText(new String("" + availableValue));
     }
 
-
     public void viewDockBikeInfoHandler(Bike bike) throws IOException {
-        ViewDockBikeInfoHandler viewDockBikeInfoHandler = new ViewDockBikeInfoHandler(Configs.BIKE_DETAIL_SCREEN_PATH,this.stage, bike);
+        ViewDockBikeInfoHandler viewDockBikeInfoHandler = new ViewDockBikeInfoHandler(Configs.BIKE_DETAIL_SCREEN_PATH,
+                this.stage, bike);
         viewDockBikeInfoHandler.setPreviousScreen(this);
         viewDockBikeInfoHandler.setHomeScreenHandler(homeScreenHandler);
         viewDockBikeInfoHandler.setScreenTitle("Bike Info");
@@ -90,7 +88,7 @@ public class ViewDockInfoHandler extends BaseScreenHandler {
     private void displayBikes(DockBikeList bikeList) throws IOException {
         for (Bike bike : bikeList.getBikesList()) {
             displayBike(bike);
-            availableValue ++;
+            availableValue++;
         }
     }
 

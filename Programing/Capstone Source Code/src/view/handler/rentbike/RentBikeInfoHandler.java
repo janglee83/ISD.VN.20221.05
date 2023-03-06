@@ -46,7 +46,7 @@ public class RentBikeInfoHandler extends BaseScreenHandler {
     }
 
     private void initialize() throws SQLException {
-        
+
         Dock dock = rentBikeController.getDockInfo(bike.getBikeId());
         nameDock.setText(dock.getDockName());
         address.setText(dock.getDockAddress());
@@ -88,12 +88,8 @@ public class RentBikeInfoHandler extends BaseScreenHandler {
         StandardEBike eBike;
         bateryTitle.setVisible(true);
         bateryPercent.setVisible(true);
-        try {
-            eBike = rentBikeController.getEBikeAttr(bike);
-            bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
-        } catch (SQLException e) {
-            throw new CapstoneException(e.getMessage());
-        }
+        eBike = (StandardEBike) bike;
+        bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
     }
 
     @FXML

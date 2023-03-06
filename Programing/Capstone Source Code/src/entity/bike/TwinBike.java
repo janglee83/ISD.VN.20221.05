@@ -1,6 +1,6 @@
 package entity.bike;
 
-public class TwinBike extends Bike{
+public class TwinBike extends Bike {
 
     public static final int BIKE_TYPE_VALUE = 3;
 

@@ -38,7 +38,8 @@ public class FXMLScreenHandler {
 
 	/**
 	 * This is a set image's operation
-	 * @param imv Link image
+	 *
+	 * @param imv  Link image
 	 * @param path Path of the image
 	 */
 	public void setImage(ImageView imv, String path) {

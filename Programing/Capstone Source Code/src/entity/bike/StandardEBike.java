@@ -1,4 +1,5 @@
 package entity.bike;
+
 public class StandardEBike extends Bike {
 
     public static final int BIKE_TYPE_VALUE = 2;

@@ -56,7 +56,7 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
         payAmountLabel.setText(Integer.toString(amount));
 
         // paydeposite amount
-        int depositeAmount = utlis.Helper.getDepositeAmount(bikeRentInfo.getBike().getBikeType());
+        int depositeAmount = utlis.Helper.getDepositeAmount(bikeRentInfo.getBike().getBikeValue());
         payDepositeLabel.setText(Integer.toString(depositeAmount));
 
         // total amount
@@ -101,15 +101,9 @@ public class ReturnBikeInfoHandler extends BaseScreenHandler {
     }
 
     private void setEBikeAttrData() {
-        StandardEBike eBike;
+        StandardEBike eBike = (StandardEBike) bikeRentInfo.getBike();
         bateryTitle.setVisible(true);
         bateryPercent.setVisible(true);
-
-        try {
-            eBike = returnBikeController.getEBikeAttr(bikeRentInfo.getBike());
-            bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
-        } catch (SQLException e) {
-            throw new CapstoneException(e.getMessage());
-        }
+        bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
     }
 }

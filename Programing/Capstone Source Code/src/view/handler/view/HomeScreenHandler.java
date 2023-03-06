@@ -24,7 +24,7 @@ import view.handler.rentbike.RentBikeInfoHandler;
 public class HomeScreenHandler extends BaseScreenHandler {
 
     private final ViewController viewController = new ViewController();
-    
+
     @FXML
     private VBox VBoxListDock;
 
@@ -46,8 +46,7 @@ public class HomeScreenHandler extends BaseScreenHandler {
         final DockList dockList = new DockList();
         try {
             viewController.getListDock(dockList);
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             throw new CapstoneException(e.getMessage());
         }
         VBoxListDock.getChildren().clear();
@@ -117,7 +116,8 @@ public class HomeScreenHandler extends BaseScreenHandler {
             if (result.isPresent()) {
                 // System.out.println(result.get());
                 RentBikeInfoHandler rentBikeInfoHandler = new RentBikeInfoHandler(Configs.RENT_BIKE_INFO_SCREEN_PATH,
-                        this.stage, rentBikeController.getBikeByBikeId(rentBikeController.convertBarcodeToBikeId(result.get())),
+                        this.stage,
+                        rentBikeController.getBikeByBikeId(rentBikeController.convertBarcodeToBikeId(result.get())),
                         result.get());
                 rentBikeInfoHandler.setPreviousScreen(this);
                 rentBikeInfoHandler.setHomeScreenHandler(homeScreenHandler);

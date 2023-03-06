@@ -17,12 +17,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import view.FXMLScreenHandler;
-public class ViewDockCompHandler extends FXMLScreenHandler{
+
+public class ViewDockCompHandler extends FXMLScreenHandler {
     private static Logger LOGGER = utlis.Helper.getLogger(ViewDockCompHandler.class.getName());
-    
+
     @FXML
     private HBox hboxDock;
-    
+
     @FXML
     private Label dockName, dockAddress, dockArea;
 
@@ -44,13 +45,11 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         hboxDock.setAlignment(Pos.CENTER);
     }
 
-    public void setDock(Dock dock)
-    {
+    public void setDock(Dock dock) {
         this.dock = dock;
     }
 
-    public void setDockInfo()
-    {
+    public void setDockInfo() {
         dockName.setText(dock.getDockName());
         dockAddress.setText(dock.getDockAddress());
         dockArea.setText(new String(Integer.toString(dock.getDockArea()) + "m2"));
@@ -59,7 +58,6 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
         Image imageLink = new Image(dock.getDockImageUrl());
         image.setImage(imageLink);
         image.setPreserveRatio(false);
-
 
         // get list bike type
         BikeType bikeType = new BikeType();
@@ -79,14 +77,14 @@ public class ViewDockCompHandler extends FXMLScreenHandler{
             LOGGER.info("Confirm to view dock");
             try {
                 homeScreenChooseDockHandler.viewDockInfoHandler(dock);
-            } catch (IOException exception)
-            {
+            } catch (IOException exception) {
                 throw new CapstoneException(exception.getMessage());
             }
         });
     }
 
     private String setTextDockPoint(int bikeTypeValue, BikeType bikeType) {
-        return new String("Number of " + bikeType.getNameBikeType(bikeTypeValue) + " is: " + dock.getNumberOfEmptyDockPoint().get(bikeType.getNameBikeType(bikeTypeValue)));
+        return new String("Number of " + bikeType.getNameBikeType(bikeTypeValue) + " is: "
+                + dock.getNumberOfEmptyDockPoint().get(bikeType.getNameBikeType(bikeTypeValue)));
     }
 }

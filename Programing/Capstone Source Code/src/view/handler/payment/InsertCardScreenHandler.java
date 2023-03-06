@@ -130,7 +130,7 @@ public class InsertCardScreenHandler extends BaseScreenHandler implements Initia
     }
 
     private void handlePayment() {
-        int depositeAmount = utlis.Helper.getDepositeAmount(bikeRentInfo.getBike().getBikeType());
+        int depositeAmount = utlis.Helper.getDepositeAmount(bikeRentInfo.getBike().getBikeValue());
         String transactionContent = new String("Process to payment");
 
         if (typePayment.equals(Transaction.RETURN)) {

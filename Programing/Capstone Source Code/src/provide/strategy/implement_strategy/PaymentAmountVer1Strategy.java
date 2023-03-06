@@ -22,12 +22,12 @@ public class PaymentAmountVer1Strategy implements PaymentAmountStrategy {
         } else if (totalMinus > 30) {
             amount += 10000;
             totalMinus -= 30;
-            
+
             int quotient = totalMinus / 15;
             int remainder = totalMinus - quotient * 15;
             quotient = quotient + (remainder > 0 ? 1 : 0);
 
-            amount += quotient*3000;
+            amount += quotient * 3000;
         } else {
             amount = 10000;
         }

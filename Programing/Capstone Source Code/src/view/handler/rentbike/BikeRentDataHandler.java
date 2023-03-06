@@ -3,6 +3,8 @@ package view.handler.rentbike;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import org.junit.jupiter.api.DisplayNameGenerator.Standard;
+
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
 import entity.bike.BikeRentInfo;
@@ -162,15 +164,9 @@ public class BikeRentDataHandler extends BaseScreenHandler {
     }
 
     private void setEBikeAttrData() {
-        StandardEBike eBike;
+        StandardEBike eBike = (StandardEBike) bikeRentInfo.getBike();
         bateryPercentTitle.setVisible(true);
         bateryPercent.setVisible(true);
-
-        try {
-            eBike = returnBikeController.getEBikeAttr(bikeRentInfo.getBike());
-            bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
-        } catch (SQLException e) {
-            throw new CapstoneException(e.getMessage());
-        }
+        bateryPercent.setText(new String(eBike.getBateryPercent() + "%"));
     }
 }

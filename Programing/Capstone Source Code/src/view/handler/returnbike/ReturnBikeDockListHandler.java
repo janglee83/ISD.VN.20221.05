@@ -1,9 +1,6 @@
 package view.handler.returnbike;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 import common.exception.CapstoneException;
 import controller.ReturnBikeController;
@@ -11,7 +8,6 @@ import entity.bike.BikeRentInfo;
 import entity.dock.Dock;
 import entity.dock.DockList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -21,8 +17,6 @@ import utlis.Configs;
 import view.BaseScreenHandler;
 
 public class ReturnBikeDockListHandler extends BaseScreenHandler {
-
-    private Logger LOGGER = utlis.Helper.getLogger(ReturnBikeDockListHandler.class.getName());
 
     private final ReturnBikeController returnBikeController = new ReturnBikeController();
 
@@ -49,7 +43,6 @@ public class ReturnBikeDockListHandler extends BaseScreenHandler {
 
         // gennerate list dock
         final DockList dockList = new DockList();
-
 
         // get list dock from controller
         try {

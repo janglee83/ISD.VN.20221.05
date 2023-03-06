@@ -14,11 +14,11 @@ public class BaseScreenHandler extends FXMLScreenHandler {
 
 	private Scene scene;
 
-  	protected final Stage stage;
+	protected final Stage stage;
 
-  	protected Hashtable<String, String> messages;
+	protected Hashtable<String, String> messages;
 
-	protected HomeScreenHandler  homeScreenHandler;
+	protected HomeScreenHandler homeScreenHandler;
 
 	protected BaseScreenHandler(String screenPath) throws IOException {
 		super(screenPath);
