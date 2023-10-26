@@ -41,4 +41,8 @@ public class ViewController extends BaseController {
 	{
 		view_BL.getListBike(bikeList, dock);
 	}
+	public String getBarcode(Bike bike) throws Exception
+	{
+		return view_BL.getBarcodeBike(bike);
+	}
 }

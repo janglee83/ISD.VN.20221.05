@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3bb496a5-8f78-4618-9719-b5d0b3926312" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Architectural Design/View Dock Infomation/Class Diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Architectural Design/View Dock Infomation/Class Diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Architectural Design/View Dock Infomation/Communication Diagram0.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Architectural Design/View Dock Infomation/Communication Diagram0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Architectural Design/View Dock Infomation/Sequence diagram.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Architectural Design/View Dock Infomation/Sequence diagram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Capstone Project's Astah files/Bike Info.asta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/dock/Dock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/dock/Dock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utlis/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utlis/Configs.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2M6OvqQLGetljavrTbMHNBD0dPf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3bb496a5-8f78-4618-9719-b5d0b3926312" name="Changes" comment="" />
+      <created>1677084843648</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677084843648</updated>
+    </task>
+    <servers />
+  </component>
+</project>
